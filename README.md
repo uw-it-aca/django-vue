@@ -21,7 +21,7 @@ Create a new repo
 Create your django app using the AXDD app template
 
         $ sudo pip install django
-        $ django-admin startapp --template=https://github.com/charlon/axdd-django-vue/archive/master.zip --extension=py,rst,in <myapp_name>
+        $ django-admin startapp --template=https://github.com/charlon/axdd-django-vue/archive/master.zip --extension=py,in,md,js,yml,html,json,vue --name Dockerfile,.coveragerc <myapp_name>
 
 Push the newly created django app to the repo
 
