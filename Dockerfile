@@ -4,7 +4,7 @@ USER root
 RUN apt-get update && apt-get install mysql-client libmysqlclient-dev -y
 USER acait
 
-ADD --chown=acait:acait prereq_map/VERSION /app/prereq_map/
+ADD --chown=acait:acait {{ app_name }}/VERSION /app/{{ app_name }}/
 ADD --chown=acait:acait setup.py /app/
 ADD --chown=acait:acait requirements.txt /app/
 
@@ -28,6 +28,6 @@ RUN npx webpack --mode=production
 FROM django
 
 
-COPY --chown=acait:acait --from=wpack /app/prereq_map/static/prereq_map/bundles/* /app/prereq_map/static/prereq_map/bundles/
-COPY --chown=acait:acait --from=wpack /app/prereq_map/static/ /static/
-COPY --chown=acait:acait --from=wpack /app/prereq_map/static/webpack-stats.json /app/prereq_map/static/webpack-stats.json
+COPY --chown=acait:acait --from=wpack /app/{{ app_name }}/static/{{ app_name }}/bundles/* /app/{{ app_name }}/static/{{ app_name }}/bundles/
+COPY --chown=acait:acait --from=wpack /app/{{ app_name }}/static/ /static/
+COPY --chown=acait:acait --from=wpack /app/{{ app_name }}/static/webpack-stats.json /app/{{ app_name }}/static/webpack-stats.json
