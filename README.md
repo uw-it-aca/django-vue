@@ -28,34 +28,16 @@ Push the newly created django app to the repo
         $ git add .
         $ git push
 
-## Development
+## Development (using Docker)
 
-Docker/Docker Compose is used to containerize your local build environment
-and deploy it to a local container so you can view your application. Docker
-is configured to build an empty 'project' and copy the settings files located
-in the 'docker' directory.
+Docker/Docker Compose is used to containerize your local build environment and deploy it to an 'app' container which is exposed to your localhost so you can view your application. Docker Compose creates a 'devtools' container - which is used for local development. Changes made locally are automatically syncd to the 'app' container
 
         $ docker-compose up
 
-In the case that changes are made to the Dockerfile or docker-compose.yml file,
-you will need to rebuild the image. In this case, 'app' is the name of the
-Docker image for the Django project.
+In the case that changes are made to the Dockerfile or docker-compose.yml file, you will need to rebuild the image.
 
         $ docker-compose up --build
 
 View your application
 
         Demo: http://localhost:8000/
-
-## Node (local for now)
-
-Install the node dependencies on your local machine (for now). This will create
-a local 'node_modules' directory.
-
-         $ npm install
-
-Start the webpack "watch mode". This will leave the webpack compiler running
-and compile bundles automatically when changes are made to the source files.
-You'll need to restart this command if you make changes to the webpack config.
-
-         $ ./node_modules/.bin/webpack --config webpack.config.js --watch
