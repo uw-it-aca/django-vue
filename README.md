@@ -9,13 +9,24 @@ System Requirements
 * Docker
 * Node
 
-Docker
+Github
 ------
 
 1. Clone the repository
 
         $ git clone https://github.com/uw-it-aca/prereq-map
         $ cd prereq-map
+
+Django
+------
+
+Create your new app using the django app template
+
+        $ sudo pip install django
+        $ django-admin startapp --template=https://github.com/charlon/axdd-django-vue/archive/master.zip --extension=py,rst,in <myapp_name>
+
+Docker
+------
 
 2. Docker/Docker Compose is used to containerize your local build environment
     and deploy it to a local container so you can view your application. Docker
