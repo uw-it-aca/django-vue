@@ -6,8 +6,6 @@
 
 <head>
     <meta charset="utf-8" />
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" href="{% static '/{{ app_name }}/img/favicon.png' %}">
     <title>{{ app_name }}</title>
@@ -18,7 +16,6 @@
 
     <!-- base js libs -->
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>
 
     <!-- load bundled vendor files using webpack loader -->
     {% render_bundle 'vendor' %}
