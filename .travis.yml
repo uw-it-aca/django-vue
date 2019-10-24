@@ -16,10 +16,10 @@ before_script:
   - pip install .
   - cp travis/manage.py manage.py
 script:
-  - pycodestyle prereq_map/ --exclude=migrations,prereq_map/static
+  - pycodestyle {{ app_name }}/ --exclude=migrations,{{ app_name }}/static
   - ./node_modules/.bin/stylelint '**/*.vue' '**/*.css' '**/*.scss'
-  - ./node_modules/.bin/eslint --ext .js,.vue prereq_map/static/prereq_map/js/components/
-  - ./node_modules/.bin/eslint --ext .js,.vue prereq_map/static/prereq_map/js/pages/
-  - coverage run --source=prereq_map/ --omit=prereq_map/migrations/* manage.py test prereq_map
+  - ./node_modules/.bin/eslint --ext .js,.vue {{ app_name }}/static/{{ app_name }}/js/components/
+  - ./node_modules/.bin/eslint --ext .js,.vue {{ app_name }}/static/{{ app_name }}/js/pages/
+  - coverage run --source={{ app_name }}/ --omit={{ app_name }}/migrations/* manage.py test {{ app_name }}
 after_success:
   - coveralls
