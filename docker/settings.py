@@ -4,13 +4,13 @@ ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS += [
     'webpack_loader',
-    'prereq_map'
+    '{{ app_name }}'
 ]
 
 WEBPACK_LOADER = {
     'DEFAULT': {
-        'BUNDLE_DIR_NAME': 'prereq_map/bundles/',
-        'STATS_FILE': os.path.join(BASE_DIR, 'prereq_map', 'static', 'webpack-stats.json'),
+        'BUNDLE_DIR_NAME': '{{ app_name }}/bundles/',
+        'STATS_FILE': os.path.join(BASE_DIR, '{{ app_name }}', 'static', 'webpack-stats.json'),
     }
 }
 
@@ -19,7 +19,7 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 )
 
-DATA_ROOT = os.path.join(BASE_DIR, "prereq_map/data")
+DATA_ROOT = os.path.join(BASE_DIR, "{{ app_name }}/data")
 
 GOOGLE_ANALYTICS_KEY = os.getenv("GOOGLE_ANALYTICS_KEY", default=" ")
 
@@ -34,8 +34,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'prereq_map.context_processors.google_analytics',
-                'prereq_map.context_processors.django_debug',
+                '{{ app_name }}.context_processors.google_analytics',
+                '{{ app_name }}.context_processors.django_debug',
             ],
         }
     }

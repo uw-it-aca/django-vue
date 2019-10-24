@@ -32,7 +32,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'webpack_loader',
-    'prereq_map'
+    '{{ app_name }}'
 ]
 
 MIDDLEWARE = [
@@ -81,14 +81,14 @@ STATICFILES_FINDERS = (
     #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
-DATA_ROOT = os.path.join(BASE_DIR, "prereq_map/data")
+DATA_ROOT = os.path.join(BASE_DIR, "{{ app_name }}/data")
 
 # webpack loader (vuejs)
 
 WEBPACK_LOADER = {
     'DEFAULT': {
-        'BUNDLE_DIR_NAME': 'prereq_map/bundles/',
-        'STATS_FILE': os.path.join(BASE_DIR, 'prereq_map', 'static', 'webpack-stats.json'),
+        'BUNDLE_DIR_NAME': '{{ app_name }}/bundles/',
+        'STATS_FILE': os.path.join(BASE_DIR, '{{ app_name }}', 'static', 'webpack-stats.json'),
     }
 }
 

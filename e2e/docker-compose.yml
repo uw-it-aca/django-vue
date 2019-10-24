@@ -7,7 +7,7 @@ services:
     env_file:
       - ../.env
     volumes:
-      - ../prereq_map:/app/prereq_map
+      - ../{{ app_name }}:/app/{{ app_name }}
   cypress:
     build:
       context: .
