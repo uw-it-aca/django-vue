@@ -6,7 +6,7 @@
           <ul class="navbar-nav flex-row nav-feedback">
             <li class="nav-item">
               <a href="/about/" class="nav-link px-2">
-                About Prereq Map
+                About
               </a>
             </li>
             <li class="nav-item">
@@ -36,7 +36,7 @@
           <b-row>
             <b-col sm="5">
               <router-link to="/" class="nav-link p-0">
-                <b-img src="/static/prereq_map/img/gr-PreReqMap-logo.png" fluid alt="PreReq Map" />
+                {{ app_name }}
               </router-link>
             </b-col>
             <b-col sm="7" class="prereq-banner-inputs mt-auto mb-auto">
@@ -76,14 +76,8 @@
 </template>
 
 <script>
-  import CourseTypeahead from "./components/course-typeahead.vue";
-  import CurricTypeahead from "./components/curric-typeahead.vue";
-
   export default {
-    components: {
-      "course-typeahead": CourseTypeahead,
-      "curric-typeahead": CurricTypeahead,
-    }
+    components: { }
   };
 </script>
 
