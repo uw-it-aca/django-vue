@@ -6,9 +6,7 @@ import VueMq from 'vue-mq';
 import BootstrapVue from 'bootstrap-vue';
 
 import App from "./App.vue";
-import Search from './pages/search.vue';
-import Curriculum from './pages/curriculum.vue';
-import Course from './pages/course.vue';
+import Home from './pages/home.vue';
 import About from './pages/about.vue';
 
 const gaCode = $("body").data("google-analytics");
@@ -22,10 +20,6 @@ var router = new VueRouter({
   mode: "history",
   routes: [
     { path: '/', component: Search },
-    { path: '/curriculum-search/', redirect: '/curriculum/' },
-    { path: '/course-search/', redirect: '/course/' },
-    { path: '/curriculum/', name: 'curriculum', component: Curriculum },
-    { path: '/course/', name: 'course', component: Course },
     { path: '/about/', component: About },
   ]
 });

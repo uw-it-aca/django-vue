@@ -1,7 +1,7 @@
-// search.vue
+// home.vue
 
 <template>
-  <b-container id="search">
+  <b-container id="home">
     <user-accept />
     <b-row class="justify-content-center">
       <b-col md="9">
@@ -31,7 +31,7 @@
   import UserAccept from "../components/user-accept.vue";
 
   export default {
-    name: "Search",
+    name: "Home",
     components: {
       "user-accept": UserAccept,
       "curric-typeahead": CurricTypeahead,

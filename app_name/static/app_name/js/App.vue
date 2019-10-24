@@ -94,13 +94,4 @@
   @import '../css/custom.scss';
   @import '../css/base.scss';
 
-  body { background: #444; }
-
-  .prereq { background: #fff; }
-
-  /* branding */
-
-  .prereq-banner {
-    background-color: $uw-purple;
-  }
 </style>
