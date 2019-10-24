@@ -19,7 +19,7 @@ Vue.use(BootstrapVue);
 var router = new VueRouter({
   mode: "history",
   routes: [
-    { path: '/', component: Search },
+    { path: '/', component: Home },
     { path: '/about/', component: About },
   ]
 });
