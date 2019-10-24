@@ -11,16 +11,16 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget pulvinar 
 
 ## Setup
 
-Create a new repo
+Create a new repo and initial for Github
 
-        $ git init
-        $ git add .
-        $ git remote add origin git@github.com:username/new-repo
+        $ mkdir new-repo
         $ cd new-repo
+        $ git init
+        $ git remote add origin git@github.com:username/new-repo
 
 Create your django app using the AXDD app template
 
-        $ sudo pip install django
+        $ sudo pip3 install django
         $ django-admin startapp --template=https://github.com/charlon/axdd-django-vue/archive/master.zip --extension=py,in,md,js,yml,html,json,vue --name Dockerfile,.coveragerc <myapp_name>
 
 Push the newly created django app to the repo
