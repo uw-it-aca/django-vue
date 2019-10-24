@@ -11,8 +11,7 @@ module.exports = {
     //context: __dirname,
 
     entry: {
-        base: './prereq_map/static/prereq_map/js/base.js',
-        main: './prereq_map/static/prereq_map/js/main.js'
+        main: './{{ app_name }}/static/{{ app_name }}/js/main.js'
     },
 
     optimization: {
@@ -31,14 +30,14 @@ module.exports = {
     },
 
     output: {
-        path: path.resolve('./prereq_map/static/prereq_map/bundles/'),
+        path: path.resolve('./{{ app_name }}/static/{{ app_name }}/bundles/'),
         filename: "[name]-[hash].js",
     },
 
     plugins: [
         new CleanWebpackPlugin(),
         new BundleTracker({
-            filename: './prereq_map/static/webpack-stats.json'
+            filename: './{{ app_name }}/static/webpack-stats.json'
         }),
         new VueLoaderPlugin(),
         new MiniCssExtractPlugin({
