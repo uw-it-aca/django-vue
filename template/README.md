@@ -11,19 +11,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget pulvinar 
 
 ## Setup
 
-Clone this template repo as a new repo
+Clone this repo
 
-        $ git clone https://github.com/mlavin/django-app-template new-repo
+        $ git clone https://github.com/charlon/new-repo
         $ cd new-repo
-
-Create your django app using the AXDD app 'template'
-
-        $ sudo pip3 install django
-        $ django-admin startapp --template=template --extension=py,in,md,js,yml,html,json,vue --name Dockerfile,.coveragerc myapp_name .
-
-Delete the 'template'
-
-        $ rm -rf template
 
 ## Development (using Docker)
 
