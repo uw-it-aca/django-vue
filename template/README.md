@@ -1,4 +1,4 @@
-# {{ app_name }
+# {{ app_name }}
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget pulvinar est.
 
