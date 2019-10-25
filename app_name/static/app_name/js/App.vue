@@ -2,14 +2,16 @@
 
   <div>
 
-    <h1>hello world</h1>
+    <header>header</header>
 
     <main >
       <router-view />
     </main>
 
+    <footer>footer</footer>
 
   </div>
+
 </template>
 
 <script>
