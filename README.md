@@ -11,22 +11,19 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget pulvinar 
 
 ## Setup
 
-Create a new repo and initial for Github
+Clone this template repo as a new repo
 
-        $ mkdir new-repo
+        $ git clone https://github.com/mlavin/django-app-template new-repo
         $ cd new-repo
-        $ git init
-        $ git remote add origin git@github.com:username/new-repo
 
-Create your django app using the AXDD app template
+Create your django app using the AXDD app 'template'
 
         $ sudo pip3 install django
-        $ django-admin startapp --template=https://github.com/charlon/axdd-django-vue/archive/master.zip --extension=py,in,md,js,yml,html,json,vue --name Dockerfile,.coveragerc myapp_name .
+        $ django-admin startapp --template=template --extension=py,in,md,js,yml,html,json,vue --name Dockerfile,.coveragerc myapp_name .
 
-Push the newly created django app to the repo
+Delete the 'template'
 
-        $ git add .
-        $ git push
+        $ rm -rf template
 
 ## Development (using Docker)
 
