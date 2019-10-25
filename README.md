@@ -38,6 +38,8 @@ django app
 'app_name' with 'new_app'
 
 
+copy .env.sample to .env
+
 ## Development (using Docker)
 
 Go to your newly created repository
