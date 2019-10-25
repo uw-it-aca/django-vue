@@ -11,7 +11,7 @@ module.exports = {
     //context: __dirname,
 
     entry: {
-        main: './{{ app_name }}/static/{{ app_name }}/js/main.js'
+        main: './app_name/static/app_name/js/main.js'
     },
 
     optimization: {
@@ -30,14 +30,14 @@ module.exports = {
     },
 
     output: {
-        path: path.resolve('./{{ app_name }}/static/{{ app_name }}/bundles/'),
+        path: path.resolve('./app_name/static/app_name/bundles/'),
         filename: "[name]-[hash].js",
     },
 
     plugins: [
         new CleanWebpackPlugin(),
         new BundleTracker({
-            filename: './{{ app_name }}/static/webpack-stats.json'
+            filename: './app_name/static/webpack-stats.json'
         }),
         new VueLoaderPlugin(),
         new MiniCssExtractPlugin({
