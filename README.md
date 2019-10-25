@@ -17,28 +17,19 @@ Clone this template repo as a new repo (command line)
 
 OR.. using the Gihub interface, click on the "Use this template" button. Github will automatically clone this repo and setup everything for you.
 
-## Deprecated (skip this step)
+## Configuration
 
-Install Django (if you haven't done so already)
-
-        $ sudo pip3 install django
-
-Create your django app using the AXDD app 'template'. The dot is important!
-
-        $ django-admin startapp --template=https://https://github.com/charlon/axdd-django-vue/archive/master.zip --extension=py,in,md,js,yml,html,json,vue --name Dockerfile,.coveragerc myapp_name .
-
-
-## Replace
-
-repo name
+Find and replace the following instances for the repo.
 
 'axdd-django-vue' with 'new-repo'
 
-django app
+Find and replace the following instance of the django app_name.
+
 'app_name' with 'new_app'
 
+Copy the sample .env file so that your environment can be run.
 
-copy .env.sample to .env
+        $ cp .env.sample .env
 
 ## Development (using Docker)
 
