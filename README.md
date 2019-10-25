@@ -20,7 +20,7 @@ Delete the current README (this will be replaced by a templated one)
         
         $ rm -rf README.md
         
-Install Django (if you haven't done so already)reate your django app using the AXDD app 'template'
+Install Django (if you haven't done so already)
 
         $ sudo pip3 install django
     
