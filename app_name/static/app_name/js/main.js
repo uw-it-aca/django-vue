@@ -12,7 +12,6 @@ const gaCode = $("body").data("google-analytics");
 const debugMode = $("body").data("django-debug");
 
 Vue.use(VueRouter);
-Vue.use(VueAnnouncer);
 Vue.use(BootstrapVue);
 
 var router = new VueRouter({
