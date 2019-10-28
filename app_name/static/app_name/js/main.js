@@ -1,7 +1,6 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import VueAnalytics from "vue-analytics";
-import VueAnnouncer from 'vue-announcer';
 import VueMq from 'vue-mq';
 import BootstrapVue from 'bootstrap-vue';
 
@@ -23,8 +22,6 @@ var router = new VueRouter({
     { path: '/about/', component: About },
   ]
 });
-
-Vue.use(VueAnnouncer, {}, router);
 
 Vue.use(VueAnalytics, {
   id: gaCode,
