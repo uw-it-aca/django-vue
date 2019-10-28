@@ -7,17 +7,11 @@
 </template>
 
 <script>
-  import CourseTypeahead from "../components/course-typeahead.vue";
-  import CurricTypeahead from "../components/curric-typeahead.vue";
-  import UserAccept from "../components/user-accept.vue";
+
 
   export default {
     name: "Home",
-    components: {
-      "user-accept": UserAccept,
-      "curric-typeahead": CurricTypeahead,
-      "course-typeahead": CourseTypeahead
-    },
+    components: { },
     data() {
       return {
         selected: 'course',
