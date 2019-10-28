@@ -25,7 +25,10 @@
 
 <script>
   export default {
-    name: "About"
+    name: "About",
+    mounted() {
+      document.title = "about - example app";
+    },
   };
 </script>
 

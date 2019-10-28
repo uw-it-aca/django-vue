@@ -2,23 +2,24 @@
 
 <template>
   <b-container id="home">
-    hello world
+    <hello-world />
+    welcome to my example app!
   </b-container>
 </template>
 
 <script>
-
+  import HelloWorld from "../components/hello-world.vue";
 
   export default {
     name: "Home",
-    components: { },
+    components: {
+      "hello-world": HelloWorld
+    },
     data() {
-      return {
-        selected: 'course',
-      };
+      return { };
     },
     mounted() {
-      document.title = "Prereq Map - University of Washington";
+      document.title = "home - example app";
     },
     methods: {}
   };
