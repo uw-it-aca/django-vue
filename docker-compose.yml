@@ -11,7 +11,7 @@ services:
     volumes:
       - ./app_name:/app_name_app/app_name
     ports:
-      - "8001:8000"
+      - "${RUNSERVER_PORT:-8000}:8000"
   dev:
     restart: always
     container_name: app_name_dev
