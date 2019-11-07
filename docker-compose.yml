@@ -9,7 +9,7 @@ services:
     build:
       context: .
     volumes:
-      - ./app_name:/app_name_app/app_name
+      - ./app_name:/app/app_name
     ports:
       - "${RUNSERVER_PORT:-8000}:8000"
   devtools:
