@@ -8,7 +8,7 @@ services:
     env_file:
       - ../.env
     volumes:
-      - ../app_name:/app_name_app/app_name
+      - ../app_name:/app/app_name
   cypress:
     container_name: app_name_cypress
     build:
