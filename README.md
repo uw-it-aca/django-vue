@@ -37,6 +37,8 @@ Copy the sample .env file so that your environment can be run.
 
         $ cp .env.sample .env
 
+Update any .env variables for local development purposes
+
 ## Development (using Docker)
 
 Go to your newly created repository
