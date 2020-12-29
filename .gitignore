@@ -112,6 +112,7 @@ constring.txt
 
 # node
 node_modules/
+package-lock.json
 
 # react + webpack
 bundles/
