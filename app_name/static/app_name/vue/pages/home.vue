@@ -1,9 +1,11 @@
 // home.vue
 
 <template>
-  <b-container id="home">
+  <b-container>
     <hello-world />
-    welcome to my example app!
+    <div id="home">
+      welcome home... to my example app!
+    </div>
   </b-container>
 </template>
 

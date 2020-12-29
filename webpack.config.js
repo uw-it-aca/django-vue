@@ -11,7 +11,7 @@ module.exports = {
     //context: __dirname,
 
     entry: {
-        main: './app_name/static/app_name/js/main.js'
+        main: './app_name/static/app_name/vue/main.js'
     },
 
     optimization: {

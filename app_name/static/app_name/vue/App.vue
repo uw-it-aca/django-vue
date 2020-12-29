@@ -1,30 +1,22 @@
 <template>
-
   <div>
-
     <header>header</header>
-
-    <main >
+    <main>
       <router-view />
     </main>
-
     <footer>footer</footer>
-
   </div>
-
 </template>
 
 <script>
   export default {
-    components: { }
+    components: {},
   };
 </script>
 
 <style lang="scss">
-
-  // import custom bootstrap theme and base styling for app
-  @import '../css/_variables.scss';
-  @import '../css/custom.scss';
-  @import '../css/base.scss';
-
+// import custom bootstrap theme and base styling for app
+@import "../css/_variables.scss";
+@import "../css/custom.scss";
+@import "../css/base.scss";
 </style>
