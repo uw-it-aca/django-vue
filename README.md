@@ -5,9 +5,15 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget pulvinar 
 ## System Requirements
 
 - Python (3+)
-- Django (2+)
 - Docker
 - Node
+
+## Development Stack
+
+- Django (2.1 - 2.3)
+- Vue (2.x)
+- Webpack (5.x)
+- Bootstrap (4.5.x)
 
 ## Setup
 
