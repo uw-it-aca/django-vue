@@ -21,6 +21,7 @@
       return { };
     },
     mounted() {
+      // update page title
       document.title = "home - example app";
     },
     methods: {}

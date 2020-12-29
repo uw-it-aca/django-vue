@@ -27,6 +27,7 @@
   export default {
     name: "About",
     mounted() {
+      // update page title
       document.title = "about - example app";
     },
   };

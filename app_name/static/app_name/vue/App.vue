@@ -1,6 +1,13 @@
 <template>
   <div>
     <header>header</header>
+    <nav>
+      navigation
+      <ul>
+        <li><router-link to="/">home</router-link></li>
+        <li><router-link to="/about/">about</router-link></li>
+      </ul>
+    </nav>
     <main>
       <router-view />
     </main>
