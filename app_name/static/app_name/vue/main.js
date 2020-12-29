@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import VueAnalytics from "vue-analytics";
+import VueGtag from "vue-gtag";
 import VueMq from 'vue-mq';
 import BootstrapVue from 'bootstrap-vue';
 
@@ -8,8 +8,9 @@ import App from "./App.vue";
 import Home from './pages/home.vue';
 import About from './pages/about.vue';
 
-const gaCode = $("body").data("google-analytics");
-const debugMode = $("body").data("django-debug");
+// MARK: google analytics data stream measurement_id
+const gaCode = document.body.getAttribute('google-analytics');
+const debugMode = document.body.getAttribute('django-debug');
 
 Vue.use(VueRouter);
 Vue.use(BootstrapVue);
@@ -22,15 +23,15 @@ var router = new VueRouter({
   ]
 });
 
-Vue.use(VueAnalytics, {
-  id: gaCode,
-  router,
-  set: [
-    { field: 'anonymizeIp', value: true }
-  ],
-  debug: {
-    enabled: debugMode
-  }
+// vue-gtag
+Vue.use(VueGtag, {
+  config: {
+    id: gaCode,
+    params: {
+      anonymize_ip: true,
+    },
+  },
+  enabled: debugMode == 'true',
 });
 
 Vue.use(VueMq, {
