@@ -19,7 +19,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget pulvinar 
 
 Clone this template repo as a new repo (command line)
 
-        $ git clone https://github.com/charlon/axdd-django-vue new-repo
+        $ git clone https://github.com/charlon/axdd-django-vue <new-repo>
 
 OR.. using the Gihub interface, click on the "Use this template" button. Github will automatically clone this repo and setup everything for you.
 
@@ -27,11 +27,11 @@ OR.. using the Gihub interface, click on the "Use this template" button. Github 
 
 Find and replace the following instances for the repo.
 
-'axdd-django-vue' with 'new-repo'
+        'axdd-django-vue' with <new-repo>
 
-Find and replace the following instance of the django app_name.
+Find and replace the following instance of the Django app_name.
 
-'app_name' with 'new_app'
+        'app_name' with <new_app>
 
 Copy the sample .env file so that your environment can be run.
 
