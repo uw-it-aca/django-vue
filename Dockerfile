@@ -1,4 +1,4 @@
-FROM acait/django-container:1.0.1 as django
+FROM gcr.io/uwit-mci-axdd/django-container:1.3.1 as app-prewebpack-container
 
 USER root
 RUN apt-get update && apt-get install mysql-client libmysqlclient-dev -y
@@ -25,9 +25,15 @@ WORKDIR /app/
 RUN npm install .
 RUN npx webpack --mode=production
 
-FROM django
+FROM app-prewebpack-container as app-container
 
 
 COPY --chown=acait:acait --from=wpack /app/app_name/static/app_name/bundles/* /app/app_name/static/app_name/bundles/
 COPY --chown=acait:acait --from=wpack /app/app_name/static/ /static/
 COPY --chown=acait:acait --from=wpack /app/app_name/static/webpack-stats.json /app/app_name/static/webpack-stats.json
+
+
+FROM gcr.io/uwit-mci-axdd/django-test-container:1.3.1 as app-test-container
+
+COPY --from=app-container /app/ /app/
+COPY --from=app-container /static/ /static/
