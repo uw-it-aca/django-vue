@@ -27,6 +27,7 @@ RUN npx webpack --mode=production
 
 FROM app-prewebpack-container as app-container
 
+
 COPY --chown=acait:acait --from=wpack /app/app_name/static/app_name/bundles/* /app/app_name/static/app_name/bundles/
 COPY --chown=acait:acait --from=wpack /app/app_name/static/ /static/
 COPY --chown=acait:acait --from=wpack /app/app_name/static/webpack-stats.json /app/app_name/static/webpack-stats.json
