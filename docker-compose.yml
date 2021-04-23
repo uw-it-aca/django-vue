@@ -16,7 +16,7 @@ services:
   devtools:
     restart: always
     container_name: app_name_devtools
-    image: node:8.16.0-jessie
+    image: node:14.5.0-stretch
     volumes:
       - ./package.json:/devtools/axdd-django-vue/package.json
       - ./webpack.config.js:/devtools/axdd-django-vue/webpack.config.js
