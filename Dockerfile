@@ -1,4 +1,4 @@
-FROM acait/django-container:1.0.1 as django
+FROM gcr.io/uwit-mci-axdd/django-container:1.3.1 as app-prewebpack-container
 
 USER root
 RUN apt-get update && apt-get install mysql-client libmysqlclient-dev -y
@@ -16,18 +16,23 @@ ADD --chown=acait:acait docker/app_deploy.sh /scripts/app_deploy.sh
 ADD --chown=acait:acait docker/app_start.sh /scripts/app_start.sh
 ADD --chown=acait:acait docker/ project/
 RUN chmod u+x /scripts/app_deploy.sh
-RUN . /app/bin/activate && pip install django-webpack-loader
+RUN . /app/bin/activate && pip install django-webpack-bridge==0.1.0
 
 
-FROM node:8.16.0-jessie AS wpack
+FROM node:14.5.0-stretch AS wpack
 ADD . /app/
 WORKDIR /app/
 RUN npm install .
 RUN npx webpack --mode=production
 
-FROM django
-
+FROM app-prewebpack-container as app-container
 
 COPY --chown=acait:acait --from=wpack /app/app_name/static/app_name/bundles/* /app/app_name/static/app_name/bundles/
 COPY --chown=acait:acait --from=wpack /app/app_name/static/ /static/
 COPY --chown=acait:acait --from=wpack /app/app_name/static/webpack-stats.json /app/app_name/static/webpack-stats.json
+
+
+FROM gcr.io/uwit-mci-axdd/django-test-container:1.3.1 as app-test-container
+
+COPY --from=app-container /app/ /app/
+COPY --from=app-container /static/ /static/

@@ -1,5 +1,5 @@
 {% load static %}
-{% load render_bundle from webpack_loader %}
+{% load webpack_bridge %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -27,7 +27,7 @@
 
     <!-- vue app will be injected here -->
     <div id="main"></div>
-    {% render_bundle 'main' 'js' %}
+    {% render_webpack_entry 'main' js='defer' %}
 
 </body>
 

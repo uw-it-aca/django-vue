@@ -3,16 +3,13 @@ from .base_settings import *
 ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS += [
-    'webpack_loader',
+    'webpack_bridge',
     'app_name'
 ]
 
-WEBPACK_LOADER = {
-    'DEFAULT': {
-        'BUNDLE_DIR_NAME': 'app_name/bundles/',
-        'STATS_FILE': os.path.join(BASE_DIR, 'app_name', 'static', 'webpack-stats.json'),
-    }
-}
+STATICFILES_DIRS = [
+    './app_name/static/app_name/bundles/',
+]
 
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
