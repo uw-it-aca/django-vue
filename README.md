@@ -17,7 +17,7 @@ UPDATE THIS SECTION AFTER CLONING!
 - Webpack (5.x)
 - Bootstrap (4.5.x)
 
-## Setup
+## Cloning
 
 Clone this template repo as a new repo (command line)
 
@@ -25,11 +25,11 @@ Clone this template repo as a new repo (command line)
 
 OR.. using the Gihub interface, click on the "Use this template" button. Github will automatically clone this repo and setup everything for you.
 
-REMOVE THIS SECTION AFTER CLONING!
+REMOVE THIS SECTION AFTER CLONING IS COMPLETE!
 
-## Configuration (after cloning)
+## Configuration
 
-Find and replace the following instances to match your new repo name.
+After cloning this repo, find and replace the following instances to match your new repo name.
 
         'axdd-django-vue' with <new-repo>
 
@@ -43,11 +43,11 @@ Copy the sample .env file so that your environment can be run.
 
 Update any .env variables for local development purposes
 
-REMOVE THIS SECTION AFTER CLONING!
+REMOVE THIS SECTION AFTER CONFIGURATION IS COMPLETE!
 
 ## Development (using Docker)
 
-Go to your newly created repository
+Go to your repository
 
         $ cd new-repo
 
