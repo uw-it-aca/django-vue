@@ -2,6 +2,8 @@
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget pulvinar est.
 
+UPDATE THIS SECTION AFTER CLONING!
+
 ## System Requirements
 
 - Python (3+)
@@ -23,6 +25,8 @@ Clone this template repo as a new repo (command line)
 
 OR.. using the Gihub interface, click on the "Use this template" button. Github will automatically clone this repo and setup everything for you.
 
+REMOVE THIS SECTION AFTER CLONING!
+
 ## Configuration (after cloning)
 
 Find and replace the following instances to match your new repo name.
@@ -38,6 +42,8 @@ Copy the sample .env file so that your environment can be run.
         $ cp .env.sample .env
 
 Update any .env variables for local development purposes
+
+REMOVE THIS SECTION AFTER CLONING!
 
 ## Development (using Docker)
 
