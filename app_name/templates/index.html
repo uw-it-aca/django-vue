@@ -17,9 +17,7 @@
     <!-- base js libs -->
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
 
-    <!-- load bundled vendor files using webpack loader -->
-    {% render_bundle 'vendor' %}
-    {% render_bundle 'main' 'css' %}
+    {% render_webpack_entry 'main' js='defer' %}
 
 </head>
 
@@ -27,7 +25,6 @@
 
     <!-- vue app will be injected here -->
     <div id="main"></div>
-    {% render_webpack_entry 'main' js='defer' %}
 
 </body>
 

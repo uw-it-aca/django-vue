@@ -33,6 +33,7 @@ module.exports = {
     output: {
         path: path.resolve('./app_name/static/app_name/bundles/'),
         filename: "[name]-[hash].js",
+        publicPath: '/app_name/bundles/',
     },
 
     plugins: [

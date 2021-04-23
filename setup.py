@@ -25,7 +25,7 @@ setup(
     include_package_data=True,
     install_requires=[
         'django>=2.1,<2.3',
-        'django-webpack-bridge==0.1.0'
+        'django-webpack-bridge'
     ],
     license='Apache License, Version 2.0',
     description='A tool for visually displaying UW course prerequisites',

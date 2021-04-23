@@ -16,7 +16,7 @@ ADD --chown=acait:acait docker/app_deploy.sh /scripts/app_deploy.sh
 ADD --chown=acait:acait docker/app_start.sh /scripts/app_start.sh
 ADD --chown=acait:acait docker/ project/
 RUN chmod u+x /scripts/app_deploy.sh
-RUN . /app/bin/activate && pip install django-webpack-bridge==0.1.0
+RUN . /app/bin/activate && pip install .
 
 
 FROM node:14.5.0-stretch AS wpack
