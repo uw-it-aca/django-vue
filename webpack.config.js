@@ -1,5 +1,4 @@
 const path = require("path");
-const BundleTracker = require('webpack-bundle-tracker');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const TerserJSPlugin = require('terser-webpack-plugin');
@@ -18,34 +17,23 @@ module.exports = {
     optimization: {
         minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
         splitChunks: {
-            cacheGroups: {
-                vendor: {
-                    test: /node_modules/,
-                    chunks: "initial",
-                    name: "vendor",
-                    priority: 10,
-                    enforce: true
-                }
-            }
-        }
+          chunks: 'all',
+        },
     },
 
     output: {
-        path: path.resolve('./app_name/static/app_name/bundles/'),
+        path: path.resolve('../static/app_name/'),
         filename: "[name]-[hash].js",
-        publicPath: '/app_name/bundles/',
+        publicPath: '',
     },
 
     plugins: [
         new CleanWebpackPlugin(),
-        new BundleTracker({
-            filename: './app_name/static/webpack-stats.json'
-        }),
         new VueLoaderPlugin(),
         new MiniCssExtractPlugin({
             filename: "[name]-[hash].css",
         }),
-        new DjangoBridgePlugin()
+        new DjangoBridgePlugin(),
     ],
 
     module: {

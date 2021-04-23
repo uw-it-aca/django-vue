@@ -8,7 +8,7 @@ INSTALLED_APPS += [
 ]
 
 STATICFILES_DIRS = [
-    './app_name/static/app_name/bundles/',
+    '../static/app_name/',
 ]
 
 STATICFILES_FINDERS = (
