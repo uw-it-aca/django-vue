@@ -43,7 +43,8 @@ Update any .env variables for local development purposes
 
 Replace the README.md file with the README_sample.md
 
-        $ cp -f README.md README_sample.md
+        $ mv README_sample.md README.md
+        $ git rm README_sample.md
 
 Make any changes necessary to the new README file.
 
