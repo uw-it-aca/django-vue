@@ -1,8 +1,6 @@
 # app_name
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget pulvinar est.
-
-UPDATE THIS SECTION AFTER CLONING!
+Replace this description for your new application... lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget pulvinar est.
 
 ## System Requirements
 

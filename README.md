@@ -1,8 +1,6 @@
 # app_name
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget pulvinar est.
-
-UPDATE THIS SECTION AFTER CLONING!
+This is a template repository used for creating Django-Vue applications. Use this template to create a new project repository.
 
 ## System Requirements
 
@@ -25,8 +23,6 @@ Clone this template repo as a new repo (command line)
 
 OR.. using the Gihub interface, click on the "Use this template" button. Github will automatically clone this repo and setup everything for you.
 
-REMOVE THIS SECTION AFTER CLONING IS COMPLETE!
-
 ## Configuration
 
 After cloning this repo, find and replace the following instances to match your new repo name.
@@ -43,7 +39,13 @@ Copy the sample .env file so that your environment can be run.
 
 Update any .env variables for local development purposes
 
-REMOVE THIS SECTION AFTER CONFIGURATION IS COMPLETE!
+## Update README
+
+Replace the README.md file with the README_sample.md
+
+        $ cp -f README.md README_sample.md
+
+Make any changes necessary to the new README file.
 
 ## Development (using Docker)
 
