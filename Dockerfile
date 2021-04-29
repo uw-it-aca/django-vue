@@ -1,7 +1,9 @@
 FROM gcr.io/uwit-mci-axdd/django-container:1.3.1 as app-prewebpack-container
 
-USER root
-RUN apt-get update && apt-get install mysql-client libmysqlclient-dev -y
+# Choose one database connector for MCI
+#USER root
+#RUN apt-get update && apt-get install libpq-dev -y
+#RUN apt-get update && apt-get install mysql-client libmysqlclient-dev -y
 USER acait
 
 ADD --chown=acait:acait app_name/VERSION /app/app_name/
@@ -9,7 +11,9 @@ ADD --chown=acait:acait setup.py /app/
 ADD --chown=acait:acait requirements.txt /app/
 
 RUN . /app/bin/activate && pip install -r requirements.txt
-RUN . /app/bin/activate && pip install mysqlclient
+# Match db connector to your chosen DB
+#RUN . /app/bin/activate && pip install mysqlclient
+#RUN . /app/bin/activate && pip install psycopg2
 
 FROM node:14.6.0-stretch AS wpack
 
@@ -18,8 +22,9 @@ WORKDIR /app/
 RUN npm install .
 
 ADD . /app/
-ARG VUE_DEVTOOLS
-ENV VUE_DEVTOOLS=$VUE_DEVTOOLS
+# Unneeded?
+#ARG VUE_DEVTOOLS
+#ENV VUE_DEVTOOLS=$VUE_DEVTOOLS
 RUN npx webpack --mode=production
 
 FROM app-prewebpack-container as app-container
