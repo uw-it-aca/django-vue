@@ -1,12 +1,16 @@
-const path = require("path");
+const webpack = require('webpack');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const TerserJSPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const DjangoBridgePlugin = require('django-webpack-bridge');
 
-module.exports = {
+module.exports = (_env, options) => {
+  if (!('VUE_DEVTOOLS' in process.env) || process.env.VUE_DEVTOOLS.length === 0) {
+    process.env.VUE_DEVTOOLS = options.mode;
+  }
+
+  return {
 
     //context: __dirname,
 
@@ -15,23 +19,24 @@ module.exports = {
     },
 
     optimization: {
-        minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
+        minimizer: [new TerserJSPlugin({})],
         splitChunks: {
           chunks: 'all',
         },
     },
 
     output: {
-        path: path.resolve('../static/app_name/'),
-        filename: "[name]-[hash].js",
+        path: '/static/app_name/',
+        filename: "[name]-[contenthash].js",
         publicPath: '',
     },
 
     plugins: [
+        new webpack.EnvironmentPlugin(['VUE_DEVTOOLS']),
         new CleanWebpackPlugin(),
         new VueLoaderPlugin(),
         new MiniCssExtractPlugin({
-            filename: "[name]-[hash].css",
+            filename: "[name]-[contenthash].css",
         }),
         new DjangoBridgePlugin(),
     ],
@@ -58,5 +63,5 @@ module.exports = {
             'vue$': 'vue/dist/vue.esm.js'
         }
     }
-
-};
+  };
+} 

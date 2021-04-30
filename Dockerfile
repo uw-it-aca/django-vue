@@ -22,9 +22,9 @@ WORKDIR /app/
 RUN npm install .
 
 ADD . /app/
-# Unneeded?
-#ARG VUE_DEVTOOLS
-#ENV VUE_DEVTOOLS=$VUE_DEVTOOLS
+
+ARG VUE_DEVTOOLS
+ENV VUE_DEVTOOLS=$VUE_DEVTOOLS
 RUN npx webpack --mode=production
 
 FROM app-prewebpack-container as app-container
