@@ -1,3 +1,8 @@
+// These insert the polyfills to support older browsers (ie 11)
+// should be only included once for each entrypoint
+import "core-js";
+import "regenerator-runtime/runtime";
+
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import VueGtag from "vue-gtag";
