@@ -1,6 +1,6 @@
 # app_name
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget pulvinar est.
+This is a template repository used for creating Django-Vue applications. Use this template to create a new project repository.
 
 ## System Requirements
 
@@ -15,7 +15,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget pulvinar 
 - Webpack (5.x)
 - Bootstrap (4.5.x)
 
-## Setup
+## Cloning
 
 Clone this template repo as a new repo (command line)
 
@@ -25,11 +25,11 @@ OR.. using the Gihub interface, click on the "Use this template" button. Github 
 
 ## Configuration
 
-Find and replace the following instances for the repo.
+After cloning this repo, find and replace the following instances to match your new repo name.
 
         'axdd-django-vue' with <new-repo>
 
-Find and replace the following instance of the Django app_name.
+Find and replace the following instance of the new Django app_name.
 
         'app_name' with <new_app>
 
@@ -39,17 +39,22 @@ Copy the sample .env file so that your environment can be run.
 
 Update any .env variables for local development purposes
 
+## Update README
+
+Replace the README.md file with the README_sample.md
+
+        $ mv README_sample.md README.md
+        $ git rm README_sample.md
+
+Make any changes necessary to the new README file.
+
 ## Development (using Docker)
 
-Go to your newly created repository
+Go to your repository
 
         $ cd new-repo
 
-Docker/Docker Compose is used to containerize your local build environment and deploy it to an 'app' container which is exposed to your localhost so you can view your application. Docker Compose creates a 'devtools' container - which is used for local development. Changes made locally are automatically syncd to the 'app' container
-
-        $ docker-compose up
-
-In the case that changes are made to the Dockerfile or docker-compose.yml file, you will need to rebuild the image.
+Docker/Docker Compose is used to containerize your local build environment and deploy it to an 'app' container which is exposed to your localhost so you can view your application. Docker Compose creates a 'devtools' container - which is used for local development. Changes made locally are automatically syncd to the 'app' container.
 
         $ docker-compose up --build
 
