@@ -15,7 +15,7 @@ module.exports = (_env, options) => {
     //context: __dirname,
     
     entry: {
-      main: './app_name/static/app_name/vue/main.js'
+      main: './app_name_vue/main.js'
     },
     
     optimization: {
@@ -71,7 +71,15 @@ module.exports = (_env, options) => {
       {
         test: /\.css$/,
         use: [MiniCssExtractPlugin.loader, "css-loader"]
-      }
+      },
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+          },
+        ],
+      },
     ]
   },
   
