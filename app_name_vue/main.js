@@ -13,6 +13,10 @@ import App from "./App.vue";
 import Home from './pages/home.vue';
 import About from './pages/about.vue';
 
+// custom theming and global styles
+import './css/custom.scss';
+import './css/global.scss';
+
 // MARK: google analytics data stream measurement_id
 const gaCode = document.body.getAttribute('google-analytics');
 const debugMode = document.body.getAttribute('django-debug');
