@@ -6,50 +6,45 @@
     <template #title>
       {{ pageTitle }}
     </template>
-    <template #content>
-      <hello-world />
-      <div id="home">
-        welcome home... to my example app!
-      </div>
-      <p class="font-weight-light">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget
-        pulvinar est. Sed gravida neque justo, pellentesque finibus velit
-        scelerisque eu. Curabitur et dolor luctus, convallis magna at, mollis
-        purus. Nunc tincidunt risus quis nisl bibendum volutpat. Praesent ut
-        tincidunt ex. Interdum et malesuada fames ac ante ipsum primis in
-        faucibus. Praesent porta ante id aliquet pretium. Nam sit amet malesuada
-        elit. Mauris pharetra lorem in sollicitudin rutrum. Proin euismod dolor
-        in enim porta consequat hendrerit quis augue. Phasellus commodo purus
-        non aliquam rutrum.
-      </p>
 
-      <axdd-card>
-        <p class="font-weight-lighter">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget
+    <template #description>
+      <p class="p-0 col-md-8 lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget
           pulvinar est. Sed gravida neque justo, pellentesque finibus velit
           scelerisque eu. Curabitur et dolor luctus, convallis magna at, mollis
           purus. Nunc tincidunt risus quis nisl bibendum volutpat. Praesent ut
           tincidunt ex.
-        </p>
-      </axdd-card>
+      </p>
+    </template>
+
+    <template #content>
+      <div class="row">
+        <div class="col-md-6">
+          <h2>Development</h2>
+          <p>What's included? This template repository is intended to start you off with AXDD's supported development stack.</p>
+          <ul>
+            <li>Django Container</li>
+            <li>BootstrapVue (BS 4)</li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <h2>Customization</h2>
+          <p>Ready to go beyond the starter template and start buidling your application? Read about how to <a href="/customize/">customize</a> your application.</p>
+        </div>
+      </div>
     </template>
   </layout>
 </template>
 
 <script>
-  import { Card } from "axdd-components";
   import Layout from "../Layout.vue";
-  import HelloWorld from "../components/hello-world.vue";
 
   export default {
     components: {
-      layout: Layout,
-      "hello-world": HelloWorld,
-      "axdd-card": Card
+      "layout": Layout,
     },
     data() {
       return {
-        pageTitle: "My Home title"
+        pageTitle: "Getting started"
       };
     },
     methods: {}
