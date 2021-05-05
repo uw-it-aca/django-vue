@@ -10,15 +10,22 @@
     </nav>
     <main>
       <router-view />
+      <axdd-card>
+        Axdd card content
+      </axdd-card>
     </main>
     <footer>footer</footer>
   </div>
 </template>
 
 <script>
-  export default {
-    components: {},
-  };
+import {Card} from 'axdd-components';
+
+export default {
+  components: {
+    'axdd-card': Card,
+  },
+};
 </script>
 
 <style lang="scss">
