@@ -22,25 +22,37 @@
         in enim porta consequat hendrerit quis augue. Phasellus commodo purus
         non aliquam rutrum.
       </p>
+
+      <axdd-card>
+        <p class="font-weight-lighter">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget
+          pulvinar est. Sed gravida neque justo, pellentesque finibus velit
+          scelerisque eu. Curabitur et dolor luctus, convallis magna at, mollis
+          purus. Nunc tincidunt risus quis nisl bibendum volutpat. Praesent ut
+          tincidunt ex.
+        </p>
+      </axdd-card>
     </template>
   </layout>
 </template>
 
 <script>
+  import { Card } from "axdd-components";
   import Layout from "../Layout.vue";
   import HelloWorld from "../components/hello-world.vue";
 
   export default {
     components: {
-      'layout': Layout,
-      'hello-world': HelloWorld,
+      layout: Layout,
+      "hello-world": HelloWorld,
+      "axdd-card": Card
     },
     data() {
       return {
-        pageTitle: "My Home title",
+        pageTitle: "My Home title"
       };
     },
-    methods: {},
+    methods: {}
   };
 </script>
 
