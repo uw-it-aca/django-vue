@@ -16,6 +16,9 @@
     "url": "https://github.com/uw-it-aca/app_name/issues"
   },
   "homepage": "https://github.com/uw-it-aca/app_name#readme",
+  "dependencies": {
+    "axdd-components": "git+https://github.com/uw-it-aca/axdd-components.git#root-index"
+  },
   "devDependencies": {
     "@babel/core": "^7.14.0",
     "@babel/eslint-parser": "^7.13.14",
