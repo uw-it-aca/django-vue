@@ -36,7 +36,7 @@
 </template>
 
 <script>
-  import Layout from "../Layout.vue";
+  import Layout from "../layout.vue";
 
   export default {
     components: {

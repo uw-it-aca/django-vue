@@ -9,7 +9,7 @@ import VueGtag from "vue-gtag";
 import VueMq from 'vue-mq';
 import { BootstrapVue, BootstrapVueIcons } from 'bootstrap-vue';
 
-import App from "./App.vue";
+import App from "./app.vue";
 import Home from './pages/home.vue';
 import Customize from './pages/customize.vue';
 
