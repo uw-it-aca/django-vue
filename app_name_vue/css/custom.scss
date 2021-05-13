@@ -1,11 +1,6 @@
-// override theme colors
+// theme variables
+@import "./variables.scss";
 
-$theme-colors: (
-  'primary': #4d307f
-);
-
-$link-color: #0069d9; //a11y blue
-
-// Bootstrap and its default variables
-@import 'node_modules/bootstrap/scss/bootstrap';
-@import 'node_modules/bootstrap-vue/src/index.scss';
+// bootstrap + bootstrap-vue
+@import '~bootstrap';
+@import '~bootstrap-vue';
