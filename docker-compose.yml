@@ -23,7 +23,7 @@ services:
     restart: always
     container_name: app_name_devtools
     volumes:
-      - ./app_name:/app/app_name
+      - ./app_name_vue:/app/app_name_vue
       - statics-volume:/static
     command: npx webpack --watch --mode=development
     stdin_open: true
