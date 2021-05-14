@@ -38,6 +38,8 @@ Vue.use(VueMq, {
   }
 });
 
+Vue.config.devtools = process.env.VUE_DEVTOOLS === "True";
+
 export const dataBus = new Vue();
 
 // vue app will be rendered inside of #main div found in index.html using webpack_loader
