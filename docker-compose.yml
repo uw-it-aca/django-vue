@@ -23,7 +23,7 @@ services:
     restart: always
     container_name: app_name_devtools
     ports:
-      - "8888:8888" # Required when environment.BUNDLE_ANALYZER is true
+      - "${BUNDLE_ANALYZER_PORT:-8888}:8888" # Required when environment.BUNDLE_ANALYZER is true
     environment:
       VUE_DEVTOOLS: "True"
       BUNDLE_ANALYZER: "True"
