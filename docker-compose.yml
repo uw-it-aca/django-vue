@@ -22,6 +22,11 @@ services:
       target: wpack
     restart: always
     container_name: app_name_devtools
+    ports:
+      - "8888:8888" # Required when environment.BUNDLE_ANALYZER is true
+    environment:
+      VUE_DEVTOOLS: "True"
+      BUNDLE_ANALYZER: "True"
     volumes:
       - ./app_name_vue:/app/app_name_vue
       - statics-volume:/static
