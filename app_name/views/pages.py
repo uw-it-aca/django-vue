@@ -13,6 +13,5 @@ class PageView(TemplateView):
         return context
 
     def render_to_response(self, context, **response_kwargs):
-        response = super(PageView, self).render_to_response(
-            context, **response_kwargs)
+        response = super(PageView, self).render_to_response(context, **response_kwargs)
         return response
