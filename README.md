@@ -19,7 +19,7 @@ This is a template repository used for creating Django-Vue applications. Use thi
 
 Clone this template repo as a new repo (command line)
 
-        $ git clone https://github.com/charlon/axdd-django-vue <new-repo>
+        $ git clone https://github.com/uw-it-aca/axdd-django-vue <new-repo>
 
 OR.. using the Gihub interface, click on the "Use this template" button. Github will automatically clone this repo and setup everything for you.
 
