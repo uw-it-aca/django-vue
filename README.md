@@ -11,15 +11,15 @@ This is a template repository used for creating Django-Vue applications. Use thi
 ## Development Stack
 
 - Django (2.1 - 2.3)
-- Vue (2.x)
+- Vue (3.x)
 - Webpack (5.x)
-- Bootstrap (4.5.x)
+- Bootstrap (5.x)
 
 ## Cloning
 
 Clone this template repo as a new repo (command line)
 
-        $ git clone https://github.com/charlon/axdd-django-vue <new-repo>
+        $ git clone git@github.com:uw-it-aca/axdd-django-vue.git <new-repo>
 
 OR.. using the Gihub interface, click on the "Use this template" button. Github will automatically clone this repo and setup everything for you.
 

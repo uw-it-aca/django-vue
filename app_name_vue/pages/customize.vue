@@ -47,20 +47,7 @@
           <hello-world />
         </div>
         <div class="col-md-6">
-          <h3 class="h5 text-muted">
-            BootstrapVue
-          </h3>
-          <p>
-            BootstrapVue is the componentized library we use to build our applications. The
-            following 'b-card' component is the default card styled with it's primary variant.
-          </p>
-
-          <b-card bg-variant="primary" text-variant="white">
-            <b-card-text>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget pulvinar est.
-              Sed gravida neque justo, pellentesque finibus velit scelerisque eu.
-            </b-card-text>
-          </b-card>
+          fasdasdf
         </div>
         <div class="col-md-6">
           <h3 class="h5 text-muted">
@@ -74,7 +61,7 @@
 
           <axdd-card>
             <p class="font-weight-lighter">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget pulvinar est.
+              Lasdorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget pulvinar est.
               Sed gravida neque justo, pellentesque finibus velit scelerisque eu.
             </p>
           </axdd-card>
