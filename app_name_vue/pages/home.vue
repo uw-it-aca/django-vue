@@ -25,39 +25,67 @@
             supported development stack.
           </p>
           <ul>
-            <li>Django (2.1 - 2.3)
-            <li>Vue (2.x)</li>
+            <li>Django (2.1 - 2.3)</li>
             <li>Webpack (5.x)</li>
-            <li>Bootstrap (4.6.x)</li>
+            <li>Vue (3.x)</li>
+            <li>Bootstrap (5.x)</li>
           </ul>
         </div>
         <div class="col-md-6">
           <h2>AXDD Libraries</h2>
           <p>
-           The following is a list of specific AXDD libraries used in building applications.
+            The following is a list of specific AXDD libraries used in building applications.
           </p>
           <ul>
-            <li><a href="https://github.com/uw-it-aca/django-container" target="_blank">Django Container</a></li>
-            <li><a href="https://github.com/uw-it-aca/django-webpack-bridge" target="_blank">Django Webpack Bridge</a></li>
-            <li><a href="https://github.com/uw-it-aca/axdd-components" target="_blank">AXDD Components</a></li>
+            <li>
+              <a href="https://github.com/uw-it-aca/django-container" target="_blank"
+                >django-container</a
+              >
+            </li>
+            <li>
+              <a href="https://github.com/uw-it-aca/django-webpack-bridge" target="_blank"
+                >django-webpack-bridge</a
+              >
+            </li>
+            <li>
+              <a href="https://github.com/uw-it-aca/axdd-components" target="_blank"
+                >axdd-components</a
+              >
+            </li>
           </ul>
         </div>
         <div class="col-md-6">
-          <h2>Vue Libraries</h2>
+          <h2>JS Libraries</h2>
           <p>
-           The following is a list of common Vue libraries included in this repository.
+            The following is a list of common JS libraries included in this repository.
           </p>
           <ul>
-            <li><a href="https://bootstrap-vue.org/" target="_blank">BootstraVue</a></li>
-            <li><a href="https://github.com/FortAwesome/vue-fontawesome" target="_blank">Vue FontAwesome</a></li>
-            <li><a href="https://matteo-gabriele.gitbook.io/vue-gtag/" target="_blank">Vue Gtag</a></li>
+            <li>
+              <a href="https://axios-http.com/" target="_blank">axios</a>
+            </li>
+          </ul>
+
+          <h2>Vue Libraries</h2>
+          <p>
+            The following is a list of common Vue libraries included in this repository.
+          </p>
+          <ul>
+            <li>
+              <a href="https://matteo-gabriele.gitbook.io/vue-gtag/v/next/" target="_blank">vue-gtag-next (vue3)</a>
+            </li>
+            <li>
+              <a href="https://github.com/KanHarI/vue3-cookies" target="_blank">vue3-cookies</a>
+            </li>
+            <li>
+              <a href="https://github.com/craigrileyuk/vue3-mq" target="_blank">vue3-mq</a>
+            </li>
           </ul>
         </div>
         <div class="col-md-6">
           <h2>Customization</h2>
           <p>
             Ready to go beyond the starter template and start buidling your application? Read about
-            how to <a href="/customize/">customize</a> your application.
+            how to <a href="/customize">customize</a> your application.
           </p>
         </div>
       </div>

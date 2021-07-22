@@ -2,7 +2,6 @@
   <!-- layout.vue: this is where you override the layout -->
   <div class="col-lg-8 mx-auto p-3 py-md-5" :app-name="appName" :page-title="pageTitle">
     <header class="d-flex align-items-center pb-3 mb-5 h4 border-bottom">
-      <b-icon-front class="mr-2 text-purple"></b-icon-front>
       <a href="/" class="text-reset text-decoration-none">{{ appName }}</a>
     </header>
 

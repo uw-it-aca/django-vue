@@ -1,25 +1,27 @@
-import Vue from 'vue';
-import VueGtag from "vue-gtag";
-import VueMq from 'vue-mq';
-import { BootstrapVue, BootstrapVueIcons } from 'bootstrap-vue';
+import { createApp } from 'vue'
+import App from './app.vue';
+import router from './router';
+import store from './store';
 
-import App from "./app.vue";
-import router from "./router";
-import store from "./store";
+import VueGtag from 'vue-gtag-next';
+import VueMq from 'vue3-mq';
 
-// custom theming and global styles
+// bootstrap js
+import 'bootstrap';
+
+// custom bootstrap theming
 import './css/custom.scss';
-import './css/global.scss';
+
+const app = createApp(App);
 
 // MARK: google analytics data stream measurement_id
 const gaCode = document.body.getAttribute('google-analytics');
 const debugMode = document.body.getAttribute('django-debug');
 
-Vue.use(BootstrapVue);
-Vue.use(BootstrapVueIcons);
+app.config.productionTip = false;
 
 // vue-gtag
-Vue.use(VueGtag, {
+app.use(VueGtag, {
   config: {
     id: gaCode,
     params: {
@@ -29,22 +31,16 @@ Vue.use(VueGtag, {
   enabled: debugMode == 'true',
 });
 
-Vue.use(VueMq, {
+// vue-mq (media queries)
+app.use(VueMq, {
   breakpoints: {
-    // default mobile is 320px - 767px
-    mobile: 767, // tablet begins 768px
-    tablet: 991, // desktop begins 992px
+    // breakpoints == min-widths of next size
+    mobile: 768, // tablet begins 768px
+    tablet: 992, // desktop begins 992px
     desktop: Infinity,
-  }
+  },
 });
+app.use(router);
+app.use(store);
 
-Vue.config.devtools = process.env.VUE_DEVTOOLS === "True";
-
-export const dataBus = new Vue();
-
-// vue app will be rendered inside of #main div found in index.html using webpack_loader
-new Vue({
-  router,
-  store,
-  render: h => h(App)
-}).$mount("#main");
+app.mount("#app");
