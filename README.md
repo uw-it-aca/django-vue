@@ -11,6 +11,7 @@ This is a template repository used for creating Django-Vue applications. Use thi
 ## Development Stack
 
 - Django (2.1 - 2.3)
+- Webpack (5.x)
 - Vue (3.x)
 - Bootstrap (5.x)
 
