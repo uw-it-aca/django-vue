@@ -34,6 +34,12 @@ Find and replace the following instance of the new Django app_name.
         'app_name' with <new_app>
         'app_name_vue' with <new_app_vue>
 
+Copy the sample .env file so that your environment can be run.
+
+        $ cp .env.sample .env
+
+Update any .env variables for local development purposes
+
 ## Update README
 
 Replace the README.md file with the README_sample.md
