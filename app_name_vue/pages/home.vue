@@ -27,7 +27,6 @@
           <ul>
             <li>Django (2.1 - 2.3)</li>
             <li>Vue (3.x)</li>
-            <li>Webpack (5.x)</li>
             <li>Bootstrap (5.x)</li>
           </ul>
         </div>
@@ -74,7 +73,7 @@
           <h2>Customization</h2>
           <p>
             Ready to go beyond the starter template and start buidling your application? Read about
-            how to <a href="/customize/">customize</a> your application.
+            how to <a href="/customize">customize</a> your application.
           </p>
         </div>
       </div>

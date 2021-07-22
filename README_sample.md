@@ -11,15 +11,20 @@ Replace this description for your new application... lorem ipsum dolor sit amet,
 ## Development Stack
 
 - Django (2.1 - 2.3)
-- Vue (2.x)
-- Webpack (4.x)
-- Bootstrap (4.6.x)
+- Vue (3.x)
+- Bootstrap (5.x)
 
 ## Development (using Docker)
 
 Go to your repository
 
         $ cd new-repo
+
+Copy the sample .env file so that your environment can be run.
+
+        $ cp .env.sample .env
+
+Update any .env variables for local development purposes
 
 Docker/Docker Compose is used to containerize your local build environment and deploy it to an 'app' container which is exposed to your localhost so you can view your application. Docker Compose creates a 'devtools' container - which is used for local development. Changes made locally are automatically syncd to the 'app' container.
 

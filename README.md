@@ -12,7 +12,6 @@ This is a template repository used for creating Django-Vue applications. Use thi
 
 - Django (2.1 - 2.3)
 - Vue (3.x)
-- Webpack (5.x)
 - Bootstrap (5.x)
 
 ## Cloning
@@ -33,12 +32,6 @@ Find and replace the following instance of the new Django app_name.
 
         'app_name' with <new_app>
 
-Copy the sample .env file so that your environment can be run.
-
-        $ cp .env.sample .env
-
-Update any .env variables for local development purposes
-
 ## Update README
 
 Replace the README.md file with the README_sample.md
@@ -46,18 +39,4 @@ Replace the README.md file with the README_sample.md
         $ mv README_sample.md README.md
         $ git rm README_sample.md
 
-Make any changes necessary to the new README file.
-
-## Development (using Docker)
-
-Go to your repository
-
-        $ cd new-repo
-
-Docker/Docker Compose is used to containerize your local build environment and deploy it to an 'app' container which is exposed to your localhost so you can view your application. Docker Compose creates a 'devtools' container - which is used for local development. Changes made locally are automatically syncd to the 'app' container.
-
-        $ docker-compose up --build
-
-View your application
-
-        Demo: http://localhost:8000/
+View the new README on your new Github repository page. Your project should be ready to start development after following those additional steps!
