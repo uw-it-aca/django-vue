@@ -31,6 +31,7 @@ After cloning this repo, find and replace the following instances to match your 
 Find and replace the following instance of the new Django app_name.
 
         'app_name' with <new_app>
+        'app_name_vue' with <new_app_vue>
 
 ## Update README
 
