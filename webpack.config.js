@@ -4,6 +4,8 @@ const BundleTracker = require('webpack-bundle-tracker');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserJSPlugin = require('terser-webpack-plugin');
 const { VueLoaderPlugin } = require('vue-loader')
+
+const path = require('path');
 const webpack = require('webpack');
 
 module.exports = (_env, options) => {
