@@ -1,6 +1,6 @@
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const DjangoBridgePlugin = require('django-webpack-bridge');
+const BundleTracker = require('webpack-bundle-tracker');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserJSPlugin = require('terser-webpack-plugin');
 const { VueLoaderPlugin } = require('vue-loader')
@@ -29,7 +29,7 @@ module.exports = (_env, options) => {
     output: {
       path: '/static/app_name/',
       filename: "[name]-[contenthash].js",
-      publicPath: '',
+      publicPath: '/static/app_name/',
     },
 
     plugins: [
@@ -43,7 +43,10 @@ module.exports = (_env, options) => {
       new MiniCssExtractPlugin({
         filename: "[name]-[contenthash].css",
       }),
-      new DjangoBridgePlugin(),
+      new BundleTracker({
+        path: path.resolve('/static/app_name/'),
+        filename: '/static/app_name/webpack-stats.json',
+      }),
     ],
 
     module: {

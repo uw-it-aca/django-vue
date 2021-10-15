@@ -1,5 +1,5 @@
 {% load static %}
-{% load webpack_bridge %}
+{% load render_bundle from webpack_loader %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -9,7 +9,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" href="{% static '/img/favicon.png' %}">
 
-    {% render_webpack_entry 'main' js='defer' %}
+    {% render_bundle 'main' 'js' attrs='defer' %}
+    {% render_bundle 'main' 'css' %}
 
 </head>
 
