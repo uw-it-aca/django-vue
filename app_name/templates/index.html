@@ -8,8 +8,6 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" href="{% static '/img/favicon.png' %}">
-
-    {% render_bundle 'main' 'js' attrs='defer' %}
     {% render_bundle 'main' 'css' %}
 
 </head>
@@ -18,6 +16,7 @@
 
     <!-- vue app will be injected here -->
     <div id="app"></div>
+    {% render_bundle 'main' 'js' attrs='defer' %}
 
 </body>
 
