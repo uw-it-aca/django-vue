@@ -13,7 +13,7 @@ STATICFILES_DIRS = [
 
 WEBPACK_LOADER = {
     'DEFAULT': {
-        'STATS_FILE': os.path.join('/static/app_name/', 'webpack-stats.json')
+        'STATS_FILE': '/static/app_name/webpack-stats.json'
     }
 }
 
