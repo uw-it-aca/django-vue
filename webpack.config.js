@@ -1,11 +1,10 @@
+const path = require('path');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const BundleTracker = require('webpack-bundle-tracker');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserJSPlugin = require('terser-webpack-plugin');
 const { VueLoaderPlugin } = require('vue-loader')
-
-const path = require('path');
 const webpack = require('webpack');
 
 module.exports = (_env, options) => {
@@ -29,9 +28,9 @@ module.exports = (_env, options) => {
     },
 
     output: {
-      path: '/static/app_name/',
+      path: path.resolve('../static/app_name/'), // why .. ?
       filename: "[name]-[contenthash].js",
-      publicPath: '/static/app_name/',
+      publicPath: '/static/app_name/', // leaving empty creates 'webpack_bundles' directory
     },
 
     plugins: [
@@ -45,6 +44,8 @@ module.exports = (_env, options) => {
       new MiniCssExtractPlugin({
         filename: "[name]-[contenthash].css",
       }),
+
+      // bundle tracker config
       new BundleTracker({
         path: path.resolve('/static/app_name/'),
         filename: '/static/app_name/webpack-stats.json',
@@ -85,11 +86,7 @@ module.exports = (_env, options) => {
         },
         {
           test: /\.(png|jpe?g|gif)$/i,
-          use: [
-            {
-              loader: 'file-loader',
-            },
-          ],
+          type: 'asset/resource',
         },
       ]
     },
