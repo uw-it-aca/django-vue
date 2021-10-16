@@ -1,4 +1,4 @@
-FROM gcr.io/uwit-mci-axdd/django-container:1.3.1 as app-prewebpack-container
+FROM gcr.io/uwit-mci-axdd/django-container:1.3.3 as app-prewebpack-container
 
 # Choose one database connector for MCI
 #USER root
@@ -14,6 +14,9 @@ RUN . /app/bin/activate && pip install -r requirements.txt
 # Match db connector to your chosen DB
 #RUN . /app/bin/activate && pip install mysqlclient
 #RUN . /app/bin/activate && pip install psycopg2
+
+#ADD --chown=acait:acait docker/app_start.sh /scripts
+#RUN chmod u+x /scripts/app_start.sh
 
 FROM node:14.6.0-stretch AS wpack
 
@@ -36,7 +39,7 @@ ADD --chown=acait:acait docker/ project/
 
 RUN . /app/bin/activate && python manage.py collectstatic --noinput
 
-FROM gcr.io/uwit-mci-axdd/django-test-container:1.3.1 as app-test-container
+FROM gcr.io/uwit-mci-axdd/django-test-container:1.3.3 as app-test-container
 
 ENV NODE_PATH=/app/lib/node_modules
 COPY --from=app-container /app/ /app/
