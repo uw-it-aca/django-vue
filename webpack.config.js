@@ -31,7 +31,7 @@ module.exports = (_env, options) => {
     output: {
       path: path.resolve('../static/app_name/'),
       filename: "[name]-[contenthash].js",
-      publicPath: '/static/',
+      publicPath: '/static/', // this path is key in getting things working
     },
 
     plugins: [
