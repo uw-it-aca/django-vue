@@ -27,10 +27,11 @@ module.exports = (_env, options) => {
       },
     },
 
+    // TODO: need to figure out this config to understand how this works
     output: {
-      path: path.resolve('../static/app_name/'), // why .. ?
+      path: path.resolve('../static/app_name/'),
       filename: "[name]-[contenthash].js",
-      publicPath: '/static/app_name/', // leaving empty creates 'webpack_bundles' directory
+      publicPath: '/static/',
     },
 
     plugins: [
