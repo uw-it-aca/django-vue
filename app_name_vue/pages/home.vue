@@ -25,13 +25,18 @@
             supported development stack.
           </p>
           <ul>
-            <li>Django (2.1 - 2.3)</li>
+            <li>Django (3.2.8)</li>
             <li>Webpack (5.x)</li>
             <li>Vue (3.x)</li>
-            <li>Bootstrap (5.x)</li>
           </ul>
         </div>
         <div class="col-md-6">
+          <h2>Design Stack</h2>
+          <ul>
+            <li>Bootstrap (5.1.3)</li>
+            <li>Bootstrap Icons (1.6.0)</li>
+          </ul>
+
           <h2>AXDD Libraries</h2>
           <p>
             The following is a list of specific AXDD libraries used in building applications.
@@ -39,12 +44,7 @@
           <ul>
             <li>
               <a href="https://github.com/uw-it-aca/django-container" target="_blank"
-                >django-container</a
-              >
-            </li>
-            <li>
-              <a href="https://github.com/uw-it-aca/django-webpack-bridge" target="_blank"
-                >django-webpack-bridge</a
+                >django-container (1.3.3)</a
               >
             </li>
             <li>
@@ -54,6 +54,9 @@
             </li>
           </ul>
         </div>
+
+        <hr>
+
         <div class="col-md-6">
           <h2>JS Libraries</h2>
           <p>
