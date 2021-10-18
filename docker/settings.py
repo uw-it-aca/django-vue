@@ -4,7 +4,7 @@ ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS += [
     'webpack_loader',
-    'app_name'
+    'app_name.apps.AppNameConfig'
 ]
 
 STATICFILES_DIRS = [
