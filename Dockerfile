@@ -18,7 +18,7 @@ RUN . /app/bin/activate && pip install -r requirements.txt
 #ADD --chown=acait:acait docker/app_start.sh /scripts
 #RUN chmod u+x /scripts/app_start.sh
 
-FROM node:14.6.0-stretch AS wpack
+FROM node:14.18.1-stretch AS wpack
 
 ADD ./package.json /app/
 WORKDIR /app/
