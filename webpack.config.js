@@ -48,8 +48,9 @@ module.exports = (_env, options) => {
 
       // bundle tracker config
       new BundleTracker({
-        path: path.resolve('/static/app_name/'),
-        filename: '/static/app_name/webpack-stats.json',
+        //path: path.resolve('/static/app_name/'),
+        //filename: '/static/app_name/webpack-stats.json',
+        filename: './app_name/webpack-stats.json'
       }),
     ],
 

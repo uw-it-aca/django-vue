@@ -32,7 +32,7 @@ RUN npx webpack --mode=production
 
 FROM app-prewebpack-container as app-container
 
-COPY --chown=acait:acait --from=wpack /static /static
+#COPY --chown=acait:acait --from=wpack /static /static
 
 ADD --chown=acait:acait . /app/
 ADD --chown=acait:acait docker/ project/

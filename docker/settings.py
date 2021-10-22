@@ -7,13 +7,13 @@ INSTALLED_APPS += [
     'app_name.apps.AppNameConfig'
 ]
 
-STATICFILES_DIRS = [
-    '/static/app_name/',
-]
+#STATICFILES_DIRS = [
+#    '/static/app_name/',
+#]
 
 WEBPACK_LOADER = {
     'DEFAULT': {
-        'STATS_FILE': '/static/app_name/webpack-stats.json'
+        'STATS_FILE': 'app_name/webpack-stats.json'
     }
 }
 
