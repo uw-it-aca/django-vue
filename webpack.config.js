@@ -14,7 +14,7 @@ module.exports = (_env, options) => {
 
   const config = {
 
-    //context: __dirname,
+    context: __dirname,
 
     entry: {
       main: './app_name_vue/main.js'
@@ -29,9 +29,9 @@ module.exports = (_env, options) => {
 
     // TODO: need to figure out this config to understand how this works
     output: {
-      path: path.resolve('../static/app_name/'),
+      path: path.resolve('./app_name/static/webpack_bundles/'),
       filename: "[name]-[contenthash].js",
-      publicPath: '/static/', // this path is key in getting things working
+      //publicPath: '/static/', // this path is key in getting things working
     },
 
     plugins: [
