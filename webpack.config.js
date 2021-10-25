@@ -16,6 +16,8 @@ module.exports = (_env, options) => {
 
     context: __dirname,
 
+    // MARK: Specify the 'entry point' js for the vue application. Multiple entry points can be
+    // declared using an object
     entry: {
       main: './app_name_vue/main.js'
     },
@@ -27,11 +29,12 @@ module.exports = (_env, options) => {
       },
     },
 
-    // TODO: need to figure out this config to understand how this works
+    // MARK: Put the 'bundles' in a name-spaced directory in the django app statics
+    // where it be collected when using 'collectstatic'
     output: {
       path: path.resolve('./app_name/static/app_name/bundles/'),
       filename: "[name]-[contenthash].js",
-      publicPath: '/static/app_name/bundles/', // this path is key in getting things working
+      publicPath: '/static/app_name/bundles/',
     },
 
     plugins: [
@@ -46,10 +49,9 @@ module.exports = (_env, options) => {
         filename: "[name]-[contenthash].css",
       }),
 
-      // bundle tracker config
+      // MARK: Put the 'webpack-stats.json' file in the static location directory so that it 
+      // can be accessed during development and production static collection
       new BundleTracker({
-        //path: path.resolve('/static/app_name/'),
-        //filename: '/static/app_name/webpack-stats.json',
         filename: './app_name/static/webpack-stats.json'
       }),
     ],

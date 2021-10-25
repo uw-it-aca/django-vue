@@ -5,6 +5,8 @@ INSTALLED_APPS += [
     'webpack_loader',
 ]
 
+# Location of stats file that can be accessed during local development and 
+# collected from during production build process
 WEBPACK_LOADER = {
     'DEFAULT': {
         'STATS_FILE': os.path.join(BASE_DIR, 'app_name/static/webpack-stats.json'),
@@ -12,7 +14,7 @@ WEBPACK_LOADER = {
 }
 
 # If you have file data, define the path here
-#DATA_ROOT = os.path.join(BASE_DIR, "app_name/data")
+# DATA_ROOT = os.path.join(BASE_DIR, "app_name/data")
 
 GOOGLE_ANALYTICS_KEY = os.getenv("GOOGLE_ANALYTICS_KEY", default=" ")
 
