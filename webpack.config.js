@@ -50,7 +50,7 @@ module.exports = (_env, options) => {
       new BundleTracker({
         //path: path.resolve('/static/app_name/'),
         //filename: '/static/app_name/webpack-stats.json',
-        filename: './app_name/webpack-stats.json'
+        filename: './app_name/static/webpack-stats.json'
       }),
     ],
 

@@ -13,7 +13,7 @@ INSTALLED_APPS += [
 
 WEBPACK_LOADER = {
     'DEFAULT': {
-        'STATS_FILE': 'app_name/webpack-stats.json'
+        'STATS_FILE': os.path.join(BASE_DIR, 'app_name/static/webpack-stats.json'),
     }
 }
 
