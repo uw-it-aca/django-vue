@@ -1,15 +1,9 @@
 from .base_settings import *
 
-ALLOWED_HOSTS = ['*']
-
 INSTALLED_APPS += [
+    'app_name.apps.AppNameConfig',
     'webpack_loader',
-    'app_name.apps.AppNameConfig'
 ]
-
-#STATICFILES_DIRS = [
-#    '/static/app_name/',
-#]
 
 WEBPACK_LOADER = {
     'DEFAULT': {
@@ -17,12 +11,8 @@ WEBPACK_LOADER = {
     }
 }
 
-STATICFILES_FINDERS = (
-    'django.contrib.staticfiles.finders.FileSystemFinder',
-    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-)
-
-DATA_ROOT = os.path.join(BASE_DIR, "app_name/data")
+# If you have file data, define the path here
+#DATA_ROOT = os.path.join(BASE_DIR, "app_name/data")
 
 GOOGLE_ANALYTICS_KEY = os.getenv("GOOGLE_ANALYTICS_KEY", default=" ")
 
