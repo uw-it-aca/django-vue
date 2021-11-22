@@ -44,7 +44,7 @@
           <ul>
             <li>
               <a href="https://github.com/uw-it-aca/django-container" target="_blank"
-                >django-container (1.3.6)</a
+                >django-container (1.3.7)</a
               >
             </li>
             <li>
