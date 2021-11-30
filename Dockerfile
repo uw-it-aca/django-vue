@@ -33,6 +33,7 @@ FROM app-prewebpack-container as app-container
 
 ADD --chown=acait:acait . /app/
 ADD --chown=acait:acait docker/ project/
+COPY --chown=acait:acait --from=wpack /app/app_name/static /static
 
 RUN . /app/bin/activate && python manage.py collectstatic --noinput
 
