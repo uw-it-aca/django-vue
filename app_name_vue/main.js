@@ -22,7 +22,7 @@ app.config.productionTip = false;
 
 // vue-gtag-next
 app.use(VueGtag, {
-  isEnabled: debugMode == 'true',
+  isEnabled: debugMode == 'false',
   property: {
     id: gaCode,
     params: {
