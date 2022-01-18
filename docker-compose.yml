@@ -16,12 +16,12 @@ services:
       - "${RUNSERVER_PORT:-8000}:8000"
     stdin_open: true
     tty: true
-  devtools:
+  node-bundler:
     build:
       context: .
-      target: wpack
+      target: node-bundler
     restart: always
-    container_name: app_name_devtools
+    container_name: app_name_node
     ports:
       - "${BUNDLE_ANALYZER_PORT:-8888}:8888" # Required when environment.BUNDLE_ANALYZER is true
     environment:
