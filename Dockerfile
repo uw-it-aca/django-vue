@@ -17,7 +17,7 @@ RUN . /app/bin/activate && pip install -r requirements.txt
 #ADD --chown=acait:acait docker/app_start.sh /scripts
 #RUN chmod u+x /scripts/app_start.sh
 
-FROM node:14.18.1-stretch AS wpack
+FROM node:14.18.1-stretch AS node-bundler
 
 ADD ./package.json /app/
 WORKDIR /app/
@@ -33,7 +33,7 @@ FROM app-prewebpack-container as app-container
 
 ADD --chown=acait:acait . /app/
 ADD --chown=acait:acait docker/ project/
-COPY --chown=acait:acait --from=wpack /app/app_name/static /static
+COPY --chown=acait:acait --from=node-bundler /app/app_name/static /app/app_name/static
 
 RUN . /app/bin/activate && python manage.py collectstatic --noinput
 
