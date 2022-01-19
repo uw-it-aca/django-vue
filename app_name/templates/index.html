@@ -1,5 +1,5 @@
 {% load static %}
-{% load webpack_bridge %}
+{% load render_bundle from webpack_loader %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -7,9 +7,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="icon" href="{% static '/img/favicon.png' %}">
-
-    {% render_webpack_entry 'main' js='defer' %}
+    <link rel="icon" href="{% static 'app_name/img/favicon.png' %}">
+    {% render_bundle 'main' 'css' %}
 
 </head>
 
@@ -17,6 +16,7 @@
 
     <!-- vue app will be injected here -->
     <div id="app"></div>
+    {% render_bundle 'main' 'js' attrs='defer' %}
 
 </body>
 
