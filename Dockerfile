@@ -1,4 +1,4 @@
-FROM gcr.io/uwit-mci-axdd/django-container:1.3.7 as app-prewebpack-container
+FROM gcr.io/uwit-mci-axdd/django-container:1.3.8 as app-prewebpack-container
 
 #USER root
 #RUN apt-get update && apt-get install libpq-dev -y
@@ -37,7 +37,7 @@ COPY --chown=acait:acait --from=node-bundler /app/app_name/static /app/app_name/
 
 RUN . /app/bin/activate && python manage.py collectstatic --noinput
 
-FROM gcr.io/uwit-mci-axdd/django-test-container:1.3.7 as app-test-container
+FROM gcr.io/uwit-mci-axdd/django-test-container:1.3.8 as app-test-container
 
 ENV NODE_PATH=/app/lib/node_modules
 COPY --from=app-container /app/ /app/
