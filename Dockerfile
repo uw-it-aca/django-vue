@@ -8,8 +8,8 @@ FROM gcr.io/uwit-mci-axdd/django-container:${DJANGO_CONTAINER_VERSION} as app-pr
 USER acait
 
 ADD --chown=acait:acait app_name/VERSION /app/app_name/
-ADD --chown=acait:acait setup.py /app/
 ADD --chown=acait:acait requirements.txt /app/
+ADD --chown=acait:acait setup.py /app/
 
 RUN . /app/bin/activate && pip install -r requirements.txt
 
