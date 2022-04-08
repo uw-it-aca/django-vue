@@ -36,7 +36,6 @@ wheels/
 logs/
 pyvenv.cfg
 pip-selfcheck.json
-get-pip.py
 db.sqlite3
 
 [Bb]in
