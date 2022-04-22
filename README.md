@@ -6,25 +6,32 @@ This is a template repository used for creating Django-Vue applications. Use thi
 
 - Python (3+)
 - Docker
-- Node
+- Node (16.14.x LTS)
 
-## Development Stack
+## Deployment
 
 - Django-Container (1.4.0)
 - Webpack (5.x)
+
+## Development
+
+- Django (3.2.x)
 - Vue (3.x)
 
-## Design Stack
+## Design
 
 - Bootstrap (5.1.3)
 - Bootstrap Icons (1.6.0)
 
-## Testing Stack
+## Testing
 
 - Jest (27.x)
 - Vue-Jest (27.x)
 - Vue Test Utils (2.x)
-- ESLint (7.25.x)
+
+## Linting (code quality)
+- Pycodestyle (2.8.x)
+- ESLint (8.13.x)
 - Stylelint (14.7.x)
 
 ## Cloning
