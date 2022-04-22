@@ -6,7 +6,9 @@
     :page-title="pageTitle"
   >
     <header class="d-flex align-items-center pb-3 mb-5 h4 border-bottom">
-      <a href="/" class="text-reset text-decoration-none">{{ appName }}</a>
+      <a href="/" class="text-reset text-decoration-none"
+        ><i class="bi bi-clipboard-plus-fill"></i> {{ appName }}</a
+      >
     </header>
 
     <h1>
