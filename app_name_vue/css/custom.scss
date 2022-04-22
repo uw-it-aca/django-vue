@@ -1,10 +1,10 @@
 // override variables
 $nav-height: 52px;
 $bar-height: 40px;
-$link-color: #0069d9; //a11y blue
+$link-color: #0069d9; // a11y blue
 
 @use "sass:map";
-@import 'axdd-components/src/assets/css/custom.scss';
+@import 'axdd-components/src/assets/css/custom';
 
 // app_name custom colors
 $custom-colors: (
@@ -14,7 +14,7 @@ $custom-colors: (
 // axdd-components + app_name custom colors
 $theme-colors: map-merge($theme-colors, $custom-colors);
 
-@import "bootstrap/scss/bootstrap.scss";
+@import "bootstrap/scss/bootstrap";
 
 // additional non-bootstrap styles
 
