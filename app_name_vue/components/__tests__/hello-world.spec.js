@@ -1,4 +1,4 @@
-import { mount, test, expect } from "@vue/test-utils";
+import { mount } from "@vue/test-utils";
 import HelloWorld from "../hello-world.vue";
 
 test("displays hello world", () => {
