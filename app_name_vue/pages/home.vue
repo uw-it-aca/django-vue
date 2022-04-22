@@ -30,6 +30,14 @@
             <li>Webpack (5.x)</li>
             <li>Vue (3.x)</li>
           </ul>
+
+          <h2>Testing Stack</h2>
+          <ul>
+            <li>Jest (27.x)</li>
+            <li>Vue Test Utils (2.x)</li>
+            <li>ESLint for JS</li>
+            <li>Stylelint for CSS</li>
+          </ul>
         </div>
         <div class="col-md-6">
           <h2>Design Stack</h2>
@@ -117,6 +125,7 @@
 import Layout from "../layout.vue";
 
 export default {
+  name: "PagesHome",
   components: {
     layout: Layout,
   },

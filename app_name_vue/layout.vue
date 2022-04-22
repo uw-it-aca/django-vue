@@ -29,6 +29,7 @@
 
 <script>
 export default {
+  name: "LayoutComp",
   components: {},
   props: {
     pageTitle: {

@@ -76,6 +76,7 @@ import Layout from "../layout.vue";
 import HelloWorld from "../components/hello-world.vue";
 
 export default {
+  name: "PagesCustomize",
   components: {
     layout: Layout,
     "hello-world": HelloWorld,
