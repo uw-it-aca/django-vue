@@ -49,7 +49,7 @@ module.exports = (_env, options) => {
         filename: "[name]-[contenthash].css",
       }),
 
-      // MARK: Put the 'webpack-stats.json' file in the static location directory so that it 
+      // MARK: Put the 'webpack-stats.json' file in the static location directory so that it
       // can be accessed during development and production static collection
       new BundleTracker({
         filename: './app_name/static/webpack-stats.json'
@@ -63,22 +63,9 @@ module.exports = (_env, options) => {
           loader: 'vue-loader'
         },
         {
-          test: /\.m?js$/,
-          exclude: /(node_modules|bower_components)/,
-          use: {
-            loader: 'babel-loader',
-            options: {
-              presets: [
-                [
-                  '@babel/preset-env',
-                  {
-                    'useBuiltIns': 'entry',
-                    'corejs': 3,
-                  }
-                ],
-              ]
-            }
-          }
+          test: /\.js$/,
+          exclude: /node_modules/,
+          loader: 'babel-loader'
         },
         {
           test: /\.s[ac]ss$/,
@@ -91,7 +78,7 @@ module.exports = (_env, options) => {
         {
           test: /\.(png|jpe?g|gif)$/i,
           type: 'asset/resource',
-        },
+        }
       ]
     },
 
