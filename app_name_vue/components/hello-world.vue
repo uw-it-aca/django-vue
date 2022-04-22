@@ -1,7 +1,7 @@
 // hello-world.vue
 
 <template>
-  <div>hello world</div>
+  <div>Hello world</div>
 </template>
 
 <script>
