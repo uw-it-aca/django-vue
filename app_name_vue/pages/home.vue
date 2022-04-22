@@ -56,14 +56,14 @@
               <a
                 href="https://github.com/uw-it-aca/django-container"
                 target="_blank"
-                >django-container (1.3.7)</a
+                >Django-Container (1.4.0)</a
               >
             </li>
             <li>
               <a
                 href="https://github.com/uw-it-aca/axdd-components"
                 target="_blank"
-                >axdd-components</a
+                >AXDD-Components (1.0.4)</a
               >
             </li>
           </ul>
