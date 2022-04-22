@@ -4,7 +4,7 @@ import router from "./router";
 import store from "./store";
 
 import VueGtag from "vue-gtag-next";
-import VueMq from "vue3-mq";
+import { Vue3Mq } from "vue3-mq";
 
 // bootstrap js
 import "bootstrap";
@@ -32,7 +32,7 @@ app.use(VueGtag, {
 });
 
 // vue-mq (media queries)
-app.use(VueMq, {
+app.use(Vue3Mq, {
   breakpoints: {
     // breakpoints == min-widths of next size
     mobile: 768, // tablet begins 768px

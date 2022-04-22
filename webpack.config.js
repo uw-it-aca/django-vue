@@ -7,7 +7,8 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const TerserJSPlugin = require("terser-webpack-plugin");
 const { VueLoaderPlugin } = require("vue-loader");
 const webpack = require("webpack");
-const StyleLintPlugin = require('stylelint-webpack-plugin');
+const ESLintPlugin = require("eslint-webpack-plugin");
+const StyleLintPlugin = require("stylelint-webpack-plugin");
 
 module.exports = (_env, options) => {
   if (
@@ -59,10 +60,14 @@ module.exports = (_env, options) => {
         filename: "./app_name/static/webpack-stats.json",
       }),
 
-      new StyleLintPlugin({
-        files: ['**/*.{vue,scss,sass}'],
-      })
+      // MARK: Adds ESLint and Stylelint as part of the Webpack loading
+      new ESLintPlugin({
+        files: ["**/*.{js,vue}"],
+      }),
 
+      new StyleLintPlugin({
+        files: ["**/*.{vue,scss,sass}"],
+      }),
     ],
 
     module: {
@@ -75,12 +80,6 @@ module.exports = (_env, options) => {
           test: /\.js$/,
           exclude: /node_modules/,
           loader: "babel-loader",
-        },
-        {
-          enforce: "pre",
-          test: /\.(js|vue)$/,
-          loader: "eslint-loader",
-          exclude: /node_modules/,
         },
         {
           test: /\.s[ac]ss$/,
