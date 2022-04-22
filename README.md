@@ -13,7 +13,6 @@ This is a template repository used for creating Django-Vue applications. Use thi
 - Django-Container (1.4.0)
 - Webpack (5.x)
 - Vue (3.x)
-- Bootstrap (5.x)
 
 ## Design Stack
 
