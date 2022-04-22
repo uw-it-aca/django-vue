@@ -1,31 +1,34 @@
 <template>
-  <!-- layout.vue: this is where you override the layout -->
-  <div
-    class="col-lg-8 mx-auto p-3 py-md-5"
-    :app-name="appName"
-    :page-title="pageTitle"
-  >
-    <header class="d-flex align-items-center pb-3 mb-5 h4 border-bottom">
-      <a href="/" class="text-reset text-decoration-none"
-        ><i class="bi bi-clipboard-plus-fill"></i> {{ appName }}</a
+  <div class="container-xl">
+    <div class="px-3">
+      <header
+        class="d-flex justify-content-between align-items-center pb-3 my-4 border-bottom"
       >
-    </header>
+        <div class="h4 flex-fill">
+          <i class="bi bi-clipboard-fill me-2 text-purple"></i>
+          <a href="/" class="text-reset text-decoration-none">{{ appName }}</a>
+        </div>
+        <div class="me-3">
+          <nav class="nav">nav here</nav>
+        </div>
+      </header>
 
-    <h1>
-      <slot name="title">
-        {{ pageTitle }}
-      </slot>
-    </h1>
+      <main>
+        <h1>
+          <slot name="title">
+            {{ pageTitle }}
+          </slot>
+        </h1>
 
-    <slot name="description" />
+        <slot name="description" />
+        <hr class="mb-5 w-25 d-inline-block" />
+        <slot name="content" />
+      </main>
 
-    <hr class="mb-5 w-25 d-inline-block" />
-
-    <slot name="content" />
-
-    <footer class="pt-5 my-5 text-muted border-top">
-      Copyright &copy; {{ currentYear }} University of Washington
-    </footer>
+      <footer class="pt-2 mt-5 mb-3 text-muted border-top">
+        Copyright &copy; {{ new Date().getFullYear() }} University of Washington
+      </footer>
+    </div>
   </div>
 </template>
 
