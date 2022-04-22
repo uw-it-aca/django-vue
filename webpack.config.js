@@ -7,6 +7,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const TerserJSPlugin = require("terser-webpack-plugin");
 const { VueLoaderPlugin } = require("vue-loader");
 const webpack = require("webpack");
+const StyleLintPlugin = require('stylelint-webpack-plugin');
 
 module.exports = (_env, options) => {
   if (
@@ -57,6 +58,11 @@ module.exports = (_env, options) => {
       new BundleTracker({
         filename: "./app_name/static/webpack-stats.json",
       }),
+
+      new StyleLintPlugin({
+        files: ['**/*.{vue,scss,sass}'],
+      })
+
     ],
 
     module: {
@@ -69,6 +75,12 @@ module.exports = (_env, options) => {
           test: /\.js$/,
           exclude: /node_modules/,
           loader: "babel-loader",
+        },
+        {
+          enforce: "pre",
+          test: /\.(js|vue)$/,
+          loader: "eslint-loader",
+          exclude: /node_modules/,
         },
         {
           test: /\.s[ac]ss$/,
