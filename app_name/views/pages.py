@@ -15,3 +15,6 @@ class PageView(TemplateView):
     def render_to_response(self, context, **response_kwargs):
         response = super(PageView, self).render_to_response(context, **response_kwargs)
         return response
+
+class DefaultPageView(PageView):
+    template_name = "index.html"
