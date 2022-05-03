@@ -31,7 +31,7 @@ services:
       - ./app_name:/app/app_name # expose main django app so webpack-loader can output bundles here
       - ./app_name_vue:/app/app_name_vue
       - statics-volume:/static
-    command: npx webpack --watch --mode=development
+    command: npm run build
     stdin_open: true
     tty: true
 volumes:
