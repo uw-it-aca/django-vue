@@ -45,16 +45,17 @@ TEMPLATES = [
 ]
 
 # Vite App Dir: point it to the folder your vite app is in.
-VITE_APP_DIR =  os.path.join(BASE_DIR, '/app_name_vue')
+# VITE_APP_DIR =  os.path.join(BASE_DIR, '/app_name_vue')
 
 # You may change these, but it's important that the dist folder is includedself.
 # If it's not, collectstatic won't copy your bundle to production.
 
-STATIC_URL = "/static/"
-STATICFILES_DIRS = [
+# STATIC_URL = "/static/"
+# STATICFILES_DIRS = [
     # os.path.join(VITE_APP_DIR, "dist"),
     # "/app_name/static/app_name/",
-]
+    # "/static/app_name/"
+#]
 
 # STATIC_ROOT = os.path.join(BASE_DIR, '/staticfiles')
 
