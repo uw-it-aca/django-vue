@@ -147,7 +147,6 @@ webpack-stats.json
 # vite bundle
 assets/
 manifest.json
-*/static/app_name/index.html
 
 # cypress image snapshots diffs
 screenshots/
