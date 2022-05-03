@@ -4,6 +4,7 @@
   "description": "app_name some description text",
   "main": "webpack.config.js",
   "scripts": {
+    "build": "vite build",
     "test": "jest",
     "eslint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --ignore-path .gitignore",
     "stylelint": "stylelint '**/*.{vue,scss}'"
@@ -35,6 +36,7 @@
     "@babel/eslint-parser": "^7.13.14",
     "@babel/preset-env": "^7.14.0",
     "@rushstack/eslint-patch": "^1.1.3",
+    "@vitejs/plugin-vue": "^2.3.1",
     "@vue/compiler-sfc": "^3.1.4",
     "@vue/eslint-config-prettier": "^7.0.0",
     "@vue/test-utils": "^2.0.0-rc.18",
@@ -64,6 +66,7 @@
     "stylelint-config-standard-scss": "^3.0.0",
     "stylelint-webpack-plugin": "^3.2.0",
     "terser-webpack-plugin": "^5.1.1",
+    "vite": "^2.9.7",
     "vue-gtag-next": "^1.14.0",
     "vue3-cookies": "^1.0.1",
     "webpack": "^5.45.1",
