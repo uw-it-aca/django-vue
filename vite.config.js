@@ -7,10 +7,18 @@ import Vue from "@vitejs/plugin-vue";
 export default defineConfig({
   build: {
     manifest: true,
-    outDir: '../app_name/static/app_name/'
+    rollupOptions: {
+      input: [
+        // list all entry points
+        './app_name_vue/main.js',
+      ]
+    },
+    outDir: './app_name/static/app_name/',
+    // assetsDir: 'bundles', // default is 'assets'
+    //emptyOutDir: true
   },
   base: "/static/app_name/",
-  root: "./app_name_vue",
+  // root: "./app_name_vue",
   plugins: [Vue(),],
   resolve: {
     alias: {
