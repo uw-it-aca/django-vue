@@ -15,7 +15,7 @@ export default defineConfig({
     },
     outDir: './app_name/static/app_name/',
     // assetsDir: 'bundles', // default is 'assets'
-    //emptyOutDir: true
+    // emptyOutDir: true
   },
   base: "/static/app_name/",
   // root: "./app_name_vue",

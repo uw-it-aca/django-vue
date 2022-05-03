@@ -18,8 +18,8 @@ DEV_SERVER_ROOT = "app_name"
 
 
 def vite_manifest(entries_names):
-    app_name = 'app_name'
-    manifest_filepath = path.join(app_name, '/static/app_name/manifest.json')
+    # app_name = 'app_name'
+    manifest_filepath = '/static/app_name/manifest.json'
 
     if DEV:
         scripts = [
