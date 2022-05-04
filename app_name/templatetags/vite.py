@@ -19,7 +19,10 @@ DEV_SERVER_ROOT = "app_name"
 
 def vite_manifest(entries_names):
     # app_name = 'app_name'
-    manifest_filepath = '/static/app_name/manifest.json'
+    # manifest_filepath = '/static/manifest.json'
+
+    app_name = 'app_name'
+    manifest_filepath = path.join(app_name, 'static/manifest.json')
 
     if DEV:
         scripts = [
@@ -76,7 +79,7 @@ def vite_styles(*entries_names):
         </head>
     """
     _, styles = vite_manifest(entries_names)
-    styles = map(lambda href: href if is_absolute_url(href) else '/static/app_name/' + href, styles)
+    styles = map(lambda href: href if is_absolute_url(href) else static(href), styles)
     as_link_tag = lambda href: f'<link rel="stylesheet" href="{href}" />'
     return mark_safe("\n".join(map(as_link_tag, styles)))
 
@@ -97,6 +100,6 @@ def vite_scripts(*entries_names):
         </body>
     """
     scripts, _ = vite_manifest(entries_names)
-    scripts = map(lambda src: src if is_absolute_url(src) else '/static/app_name/' + src, scripts)
+    scripts = map(lambda src: src if is_absolute_url(src) else static(src), scripts)
     as_script_tag = lambda src: f'<script type="module" src="{src}"></script>'
     return mark_safe("\n".join(map(as_script_tag, scripts)))
