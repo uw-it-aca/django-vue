@@ -1,5 +1,6 @@
 # PROJECT_ROOT/templatetags/vite.py
 
+from email.mime import application
 from os import path
 import re
 import json
@@ -10,8 +11,6 @@ from django.templatetags.static import static
 
 register = template.Library()
 
-is_absolute_url = lambda url: re.match("^https?://", url)
-
 # DEV = settings.DEBUG
 DEV = False
 DEV_SERVER_ROOT = "app_name"
@@ -20,9 +19,10 @@ DEV_SERVER_ROOT = "app_name"
 def vite_manifest(entries_names):
 
     # this is essentiol for a working bundler
-    app_name = 'app_name'
-    manifest_filepath = path.join(app_name, 'static/manifest.json')
+    application_name = 'app_name'
+    manifest_filepath = path.join(application_name, 'static/manifest.json')
 
+    # MARK: DEV not used
     if DEV:
         scripts = [
             f"{DEV_SERVER_ROOT}/static/app_name/",
@@ -78,7 +78,7 @@ def vite_styles(*entries_names):
         </head>
     """
     _, styles = vite_manifest(entries_names)
-    styles = map(lambda href: href if is_absolute_url(href) else static(href), styles)
+    styles = map(lambda href: static(href), styles)
     as_link_tag = lambda href: f'<link rel="stylesheet" href="{href}" />'
     return mark_safe("\n".join(map(as_link_tag, styles)))
 
@@ -99,6 +99,6 @@ def vite_scripts(*entries_names):
         </body>
     """
     scripts, _ = vite_manifest(entries_names)
-    scripts = map(lambda src: src if is_absolute_url(src) else static(src), scripts)
+    scripts = map(lambda src: static(src), scripts)
     as_script_tag = lambda src: f'<script type="module" src="{src}"></script>'
     return mark_safe("\n".join(map(as_script_tag, scripts)))

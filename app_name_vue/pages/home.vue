@@ -9,11 +9,11 @@
 
     <template #description>
       <p class="p-0 col-md-8 lead">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget
-        pulvinar est. Sed gravida neque justo, pellentesque finibus velit
-        scelerisque eu. Curabitur et dolor luctus, convallis magna at, mollis
-        purus. Nunc tincidunt risus quis nisl bibendum volutpat. Praesent ut
-        tincidunt ex.
+        Hello World... Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Maecenas eget pulvinar est. Sed gravida neque justo, pellentesque
+        finibus velit scelerisque eu. Curabitur et dolor luctus, convallis magna
+        at, mollis purus. Nunc tincidunt risus quis nisl bibendum volutpat.
+        Praesent ut tincidunt ex.
       </p>
     </template>
 
