@@ -18,9 +18,8 @@ DEV_SERVER_ROOT = "app_name"
 
 
 def vite_manifest(entries_names):
-    # app_name = 'app_name'
-    # manifest_filepath = '/static/manifest.json'
 
+    # this is essentiol for a working bundler
     app_name = 'app_name'
     manifest_filepath = path.join(app_name, 'static/manifest.json')
 
