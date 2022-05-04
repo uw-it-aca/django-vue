@@ -29,7 +29,7 @@
                 >Django-Container (1.4.0)</a
               >
             </li>
-            <li>Webpack (5.x)</li>
+            <li>Vite (2.9.x)</li>
           </ul>
 
           <h2>Development</h2>
