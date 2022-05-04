@@ -13,11 +13,11 @@ export default defineConfig({
         './app_name_vue/main.js',
       ]
     },
-    outDir: './app_name/static/app_name/',
-    // assetsDir: 'bundles', // default is 'assets'
+    outDir: './app_name/static/',
+    assetsDir: 'app_name', // default is 'assets'
     // emptyOutDir: true
   },
-  base: "/static/app_name/",
+  base: "/static/",
   // root: "./app_name_vue",
   plugins: [Vue(),],
   resolve: {
