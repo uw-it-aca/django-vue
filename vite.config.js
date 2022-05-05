@@ -1,10 +1,12 @@
-import { defineConfig } from "vite";
 import { fileURLToPath, URL } from "url";
-import Vue from "@vitejs/plugin-vue";
 
+import { defineConfig } from "vite";
+import vue from "@vitejs/plugin-vue";
 
 // https://vitejs.dev/config/
 export default defineConfig({
+
+  // MARK: start vite build config
   build: {
     manifest: true,
     rollupOptions: {
@@ -19,7 +21,9 @@ export default defineConfig({
   },
   base: "/static/", // MARK: allows for proper css url path creation
   // root: "./app_name_vue",
-  plugins: [Vue(),],
+
+  // MARK: standard vite/vue plugin and resolver
+  plugins: [vue(),],
   resolve: {
     alias: {
       "@": fileURLToPath(new URL("./app_name_vue", import.meta.url)),
