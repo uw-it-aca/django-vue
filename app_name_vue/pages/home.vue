@@ -9,7 +9,7 @@
 
     <template #description>
       <p class="p-0 col-md-8 lead">
-        Hello World... Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Hello World...Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         Maecenas eget pulvinar est. Sed gravida neque justo, pellentesque
         finibus velit scelerisque eu. Curabitur et dolor luctus, convallis magna
         at, mollis purus. Nunc tincidunt risus quis nisl bibendum volutpat.
@@ -51,8 +51,7 @@
         <div class="col-md-6">
           <h2>Testing</h2>
           <ul>
-            <li>Jest (27.x)</li>
-            <li>Vue-Jest (27.x)</li>
+            <li>Vitest (0.10.x)</li>
             <li>Vue Test Utils (2.x)</li>
           </ul>
 
