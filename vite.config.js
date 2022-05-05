@@ -16,7 +16,7 @@ export default defineConfig({
       ]
     },
     outDir: './app_name/static/', // NOTE: '/static/'
-    assetsDir: 'app_name', // NOTE: '/static/app_name/xxxx.js'
+    assetsDir: 'app_name/assets', // NOTE: '/static/app_name/assets/xxxx.js'
     emptyOutDir: false,
   },
   base: "/static/", // MARK: allows for proper css url path creation
