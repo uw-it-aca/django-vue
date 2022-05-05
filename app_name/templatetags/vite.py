@@ -1,8 +1,6 @@
 # PROJECT_ROOT/templatetags/vite.py
 
-from email.mime import application
 from os import path
-import re
 import json
 from django import template
 from django.conf import settings
@@ -11,55 +9,39 @@ from django.templatetags.static import static
 
 register = template.Library()
 
-# DEV = settings.DEBUG
-DEV = False
-DEV_SERVER_ROOT = "app_name"
-
 
 def vite_manifest(entries_names):
 
-    # this is essentiol for a working bundler
+    # this is essential for a working bundler
     application_name = 'app_name'
     manifest_filepath = path.join(application_name, 'static/manifest.json')
 
-    # MARK: DEV not used
-    if DEV:
-        scripts = [
-            f"{DEV_SERVER_ROOT}/static/app_name/",
-        ]
+    with open(manifest_filepath) as fp:
+        manifest = json.load(fp)
+    _processed = set()
 
-        for name in entries_names:
-            scripts.append(f'{DEV_SERVER_ROOT}/{name}')
-
+    def _process_entries(names):
+        scripts = []
         styles = []
+
+        for name in names:
+            if name in _processed:
+                continue
+
+            chunk = manifest[name]
+
+            import_scripts, import_styles = _process_entries(chunk.get('imports', []))
+            scripts += import_scripts
+            styles += import_styles
+
+            scripts += [chunk['file']]
+            styles += [css for css in chunk.get('css', [])]
+
+            _processed.add(name)
+
         return scripts, styles
-    else:
-        with open(manifest_filepath) as fp:
-            manifest = json.load(fp)
-        _processed = set()
 
-        def _process_entries(names):
-            scripts = []
-            styles = []
-
-            for name in names:
-                if name in _processed:
-                    continue
-
-                chunk = manifest[name]
-
-                import_scripts, import_styles = _process_entries(chunk.get('imports', []))
-                scripts += import_scripts
-                styles += import_styles
-
-                scripts += [chunk['file']]
-                styles += [css for css in chunk.get('css', [])]
-
-                _processed.add(name)
-
-            return scripts, styles
-
-        return _process_entries(entries_names)
+    return _process_entries(entries_names)
 
 
 @register.simple_tag(name="vite_styles")
