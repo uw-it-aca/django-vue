@@ -11,7 +11,7 @@ This is a template repository used for creating Django-Vue applications. Use thi
 ## Deployment
 
 - Django-Container (1.4.0)
-- Webpack (5.x)
+- Vite (2.9.x)
 
 ## Development
 
@@ -25,8 +25,7 @@ This is a template repository used for creating Django-Vue applications. Use thi
 
 ## Testing
 
-- Jest (27.x)
-- Vue-Jest (27.x)
+- Vitest (0.10.x)
 - Vue Test Utils (2.x)
 
 ## Linting (code quality)
