@@ -139,11 +139,6 @@ constring.txt
 node_modules/
 package-lock.json
 
-# webpack bundle
-bundles/
-webpack_bundles/
-webpack-stats.json
-
 # vite bundle
 assets/
 manifest.json
