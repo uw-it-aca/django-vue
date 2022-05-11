@@ -6,7 +6,7 @@
     "esbenp.prettier-vscode",
     "ms-python.vscode-pylance",
     "ms-python.python",
-    "Vue.volar",
-    "Vue.vscode-typescript-vue-plugin"
+    "vue.volar",
+    "vue.vscode-typescript-vue-plugin"
   ]
 }
