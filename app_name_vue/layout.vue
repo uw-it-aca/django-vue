@@ -2,7 +2,14 @@
   <div class="container-xl">
     <div class="px-3">
       <header
-        class="d-flex justify-content-between align-items-center pb-3 my-4 border-bottom"
+        class="
+          d-flex
+          justify-content-between
+          align-items-center
+          pb-3
+          my-4
+          border-bottom
+        "
       >
         <div class="h4 flex-fill">
           <i class="bi bi-clipboard-fill me-2 text-purple"></i>
