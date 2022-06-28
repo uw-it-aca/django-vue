@@ -21,7 +21,7 @@
       </header>
 
       <main>
-        <h1 class="bg-danger">
+        <h1 class="">
           <slot name="title">
             {{ pageTitle }}
           </slot>
