@@ -12,7 +12,7 @@
         "
       >
         <div class="h4 flex-fill">
-          <i class="bi bi-clipboard-fill me-2 text-purple"></i>
+          <i class="bi bi-box me-2 text-purple"></i>
           <a href="/" class="text-reset text-decoration-none">{{ appName }}</a>
         </div>
         <div class="me-3">
@@ -21,7 +21,7 @@
       </header>
 
       <main>
-        <h1>
+        <h1 class="bg-danger">
           <slot name="title">
             {{ pageTitle }}
           </slot>
