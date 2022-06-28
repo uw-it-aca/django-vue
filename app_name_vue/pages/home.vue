@@ -8,13 +8,16 @@
     </template>
 
     <template #description>
-      <p class="p-0 col-md-8 lead">
-        Hello World... Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Maecenas eget pulvinar est. Sed gravida neque justo, pellentesque
-        finibus velit scelerisque eu. Curabitur et dolor luctus, convallis magna
-        at, mollis purus. Nunc tincidunt risus quis nisl bibendum volutpat.
-        Praesent ut tincidunt ex.
-      </p>
+      <div class="p-0 col-md-8 lead">
+        <HelloWorld />
+        <p>
+          ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget
+          pulvinar est. Sed gravida neque justo, pellentesque finibus velit
+          scelerisque eu. Curabitur et dolor luctus, convallis magna at, mollis
+          purus. Nunc tincidunt risus quis nisl bibendum volutpat. Praesent ut
+          tincidunt ex.
+        </p>
+      </div>
     </template>
 
     <template #content>
@@ -139,11 +142,13 @@
 
 <script>
 import Layout from "../layout.vue";
+import HelloWorld from "../components/hello-world.vue";
 
 export default {
   name: "PagesHome",
   components: {
     layout: Layout,
+    HelloWorld,
   },
   data() {
     return {
