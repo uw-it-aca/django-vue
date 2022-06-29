@@ -17,7 +17,7 @@ export default defineConfig({
     },
     outDir: './app_name/static/', // NOTE: '/static/'
     assetsDir: 'app_name/assets', // NOTE: '/static/app_name/assets/xxxx.js'
-    emptyOutDir: true,
+    emptyOutDir: false,
   },
   base: "/static/", // MARK: allows for proper css url path creation
   // root: "./app_name_vue",
