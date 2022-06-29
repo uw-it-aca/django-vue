@@ -1,12 +1,4 @@
 @use "sass:map";
-@import "node_modules/bootstrap/scss/functions";
-@import "node_modules/bootstrap/scss/variables";
-@import "node_modules/bootstrap/scss/mixins";
-@import "node_modules/bootstrap/scss/utilities";
-@import "node_modules/bootstrap/scss/root";
-@import "node_modules/bootstrap/scss/utilities/api";
-
-// import axdd-components
 @import "axdd-components/src/assets/css/custom";
 
 // https://getbootstrap.com/docs/5.1/customize/options/
@@ -20,21 +12,13 @@ $custom-colors: (
   "bar": lime,
 );
 
-// TODO: import the following block from axdd-components
-
-// bootstrap + axdd-components + app custom colors merging
+// bootstrap theme + utility merging
 $theme-colors: map-merge($theme-colors, $custom-colors);
 $theme-colors-rgb: map-loop($theme-colors, to-rgb, "$value");
 $utilities-colors: map-merge($utilities-colors, $theme-colors-rgb);
-$utilities-text-colors: map-loop(
-  $utilities-colors,
-  rgba-css-var,
-  "$key",
-  "text"
-);
+$utilities-text-colors: map-loop($utilities-colors, rgba-css-var, "$key", "text");
 $utilities-bg-colors: map-loop($utilities-colors, rgba-css-var, "$key", "bg");
 
-// bootstrap: add bg hover utility class
 $utilities: (
   // MARK: bg-color-hover (changes bg-color on hover)
   "background-color":
