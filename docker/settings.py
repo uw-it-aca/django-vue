@@ -1,7 +1,7 @@
 from .base_settings import *
 
 INSTALLED_APPS += [
-    'app_name.apps.AppNameConfig',
+    "app_name.apps.AppNameConfig",
 ]
 
 # If you have file data, define the path here
@@ -11,19 +11,19 @@ GOOGLE_ANALYTICS_KEY = os.getenv("GOOGLE_ANALYTICS_KEY", default=" ")
 
 TEMPLATES = [
     {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'APP_DIRS': True,
-        'OPTIONS': {
-            'debug':  True,
-            'context_processors': [
-                'django.template.context_processors.debug',
-                'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
-                'app_name.context_processors.google_analytics',
-                'app_name.context_processors.django_debug',
+        "BACKEND": "django.template.backends.django.DjangoTemplates",
+        "APP_DIRS": True,
+        "OPTIONS": {
+            "debug": True,
+            "context_processors": [
+                "django.template.context_processors.debug",
+                "django.template.context_processors.request",
+                "django.contrib.auth.context_processors.auth",
+                "django.contrib.messages.context_processors.messages",
+                "app_name.context_processors.google_analytics",
+                "app_name.context_processors.django_debug",
             ],
-        }
+        },
     }
 ]
 
