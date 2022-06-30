@@ -13,7 +13,7 @@ register = template.Library()
 def vite_manifest(entries_names):
 
     # path to the manifest.json (relative if localdev, /static if not)
-    manifest_filepath = settings.VITE_MANIFEST_PATH
+    manifest_filepath = getattr(settings, 'VITE_MANIFEST_PATH', '/static/manifest.json')
 
     with open(manifest_filepath) as fp:
         manifest = json.load(fp)
