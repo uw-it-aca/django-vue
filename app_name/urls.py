@@ -16,16 +16,18 @@ if settings.DEBUG:
         re_path(
             r"^500$",
             TemplateView.as_view(template_name="500.html"),
-            name="500_response"),
-        re_path(r"^404$",
-                TemplateView.as_view(template_name="404.html"),
-                name="404_response")
+            name="500_response",
+        ),
+        re_path(
+            r"^404$",
+            TemplateView.as_view(template_name="404.html"),
+            name="404_response",
+        ),
     ]
 
 urlpatterns += [
     # add api endpoints here
-
     # add default Vue page routes here
-    re_path(r'^(customize|page2|page3)$', DefaultPageView.as_view()),
-    re_path(r'^$', DefaultPageView.as_view()),
+    re_path(r"^(customize|page2|page3)$", DefaultPageView.as_view()),
+    re_path(r"^$", DefaultPageView.as_view()),
 ]
