@@ -30,3 +30,8 @@ TEMPLATES = [
 
 if os.getenv("ENV") == "localdev":
     DEBUG = True
+
+if os.getenv("ENV") == "localdev":
+    VITE_MANIFEST_PATH = os.path.join(BASE_DIR, 'app_name', 'static', 'manifest.json')
+else:
+    VITE_MANIFEST_PATH = os.path.join('/static', 'manifest.json')
