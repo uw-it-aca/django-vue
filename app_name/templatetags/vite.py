@@ -1,6 +1,6 @@
 # PROJECT_ROOT/templatetags/vite.py
 
-from os import path
+import os
 import json
 from django import template
 from django.conf import settings
@@ -14,7 +14,9 @@ def vite_manifest(entries_names):
 
     # path to the manifest.json (relative if localdev, /static if not)
     manifest_filepath = getattr(
-        settings, "VITE_MANIFEST_PATH", "/static/manifest.json"
+        settings,
+        "VITE_MANIFEST_PATH",
+        os.path.join(os.sep, "static", "manifest.json"),
     )
 
     with open(manifest_filepath) as fp:
