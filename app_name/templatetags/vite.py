@@ -12,9 +12,8 @@ register = template.Library()
 
 def vite_manifest(entries_names):
 
-    # this is essential for a working bundler
-    application_name = 'app_name'
-    manifest_filepath = path.join(application_name, 'static/manifest.json')
+    # relative path to the manifest.json
+    manifest_filepath = "./app_name/static/manifest.json"
 
     with open(manifest_filepath) as fp:
         manifest = json.load(fp)
@@ -30,12 +29,13 @@ def vite_manifest(entries_names):
 
             chunk = manifest[name]
 
-            import_scripts, import_styles = _process_entries(chunk.get('imports', []))
+            import_scripts, import_styles = _process_entries(
+                chunk.get("imports", []))
             scripts += import_scripts
             styles += import_styles
 
-            scripts += [chunk['file']]
-            styles += [css for css in chunk.get('css', [])]
+            scripts += [chunk["file"]]
+            styles += [css for css in chunk.get("css", [])]
 
             _processed.add(name)
 
