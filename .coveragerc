@@ -4,5 +4,5 @@ parallel = True
 
 [paths]
 source =
-  compass/
-  /app/compass/
+  app_name/
+  /app/app_name/
