@@ -29,10 +29,10 @@
               <a
                 href="https://github.com/uw-it-aca/django-container"
                 target="_blank"
-                >Django-Container (1.4.0)</a
+                >Django-Container (1.4.1)</a
               >
             </li>
-            <li>Vite (2.9.x)</li>
+            <li>Vite (3.0.9)</li>
           </ul>
 
           <h2>Development</h2>
@@ -42,19 +42,19 @@
           </p>
           <ul>
             <li>Django (3.2.8)</li>
-            <li>Vue (3.x)</li>
+            <li>Vue (3.2.x)</li>
           </ul>
 
           <h2>Design</h2>
           <ul>
-            <li>Bootstrap (5.1.3)</li>
-            <li>Bootstrap Icons (1.6.0)</li>
+            <li>Bootstrap (5.2.0)</li>
+            <li>Bootstrap Icons (1.9.0)</li>
           </ul>
         </div>
         <div class="col-md-6">
           <h2>Testing</h2>
           <ul>
-            <li>Vitest (0.10.x)</li>
+            <li>Vitest (0.23.x)</li>
             <li>Vue Test Utils (2.x)</li>
           </ul>
 
@@ -75,7 +75,7 @@
               <a
                 href="https://github.com/uw-it-aca/django-container"
                 target="_blank"
-                >Django-Container (1.4.0)</a
+                >Django-Container (1.4.1)</a
               >
             </li>
             <li>
