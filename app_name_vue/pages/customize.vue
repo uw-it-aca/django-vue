@@ -58,11 +58,13 @@
           </p>
 
           <axdd-card>
-            <p class="font-weight-lighter">
-              Lasdorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Maecenas eget pulvinar est. Sed gravida neque justo, pellentesque
-              finibus velit scelerisque eu.
-            </p>
+            <template #body>
+              <p class="font-weight-lighter">
+                Lasdorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Maecenas eget pulvinar est. Sed gravida neque justo,
+                pellentesque finibus velit scelerisque eu.
+              </p>
+            </template>
           </axdd-card>
         </div>
       </div>
