@@ -33,3 +33,9 @@ Docker/Docker Compose is used to containerize your local build environment and d
 View your application using your specified port number in the .env file
 
         Demo: http://localhost:8000/
+
+## Running Tests
+
+Django unit tests:
+
+        $ docker-compose run --rm app bin/python manage.py test
