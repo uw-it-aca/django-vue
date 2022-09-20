@@ -73,7 +73,7 @@ Run unittest
 
 ## Authors
 
-- [Academic Experience Design & Delivery](https://github.com/uw-it-aca)
+[Academic Experience Design & Delivery](https://github.com/uw-it-aca)
 
 ## License
 
