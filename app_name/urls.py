@@ -5,7 +5,7 @@ from django.conf import settings
 from django.urls import re_path
 from django.views.generic import TemplateView
 from app_name.views.pages import DefaultPageView
-from app_name.views.pages import PageView
+
 
 # start with an empty url array
 urlpatterns = []
