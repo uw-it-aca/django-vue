@@ -66,6 +66,9 @@
               </p>
             </template>
           </axdd-card>
+
+          <h3 class="h5 text-muted">Vue3 MQ (Bootstrap5 preset)</h3>
+          <div>{{ mq }}</div>
         </div>
       </div>
     </template>
@@ -79,6 +82,7 @@ import HelloWorld from "../components/hello-world.vue";
 
 export default {
   name: "PagesCustomize",
+  inject: ["mq"],
   components: {
     layout: Layout,
     "hello-world": HelloWorld,
