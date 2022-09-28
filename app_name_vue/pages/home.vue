@@ -110,9 +110,9 @@
           <ul>
             <li>
               <a
-                href="https://matteo-gabriele.gitbook.io/vue-gtag/v/next/"
+                href="https://matteo-gabriele.gitbook.io/vue-gtag/"
                 target="_blank"
-                >vue-gtag-next (vue3)</a
+                >vue-gtag</a
               >
             </li>
             <li>
