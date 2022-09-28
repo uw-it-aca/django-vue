@@ -32,7 +32,9 @@
                 >Django-Container (1.4.1)</a
               >
             </li>
-            <li>Vite (3.0.9)</li>
+            <li>
+              <a href="https://vitejs.dev/" target="_blank">Vite (3.1.3)</a>
+            </li>
           </ul>
 
           <h2>Development</h2>
@@ -54,8 +56,14 @@
         <div class="col-md-6">
           <h2>Testing</h2>
           <ul>
-            <li>Vitest (0.23.x)</li>
-            <li>Vue Test Utils (2.x)</li>
+            <li>
+              <a href="https://vitest.dev/" target="_blank">Vitest (0.23.2)</a>
+            </li>
+            <li>
+              <a href="https://test-utils.vuejs.org/" target="_blank"
+                >Vue Test Utils (2.0.2)</a
+              >
+            </li>
           </ul>
 
           <h2>Linting (code quality)</h2>
