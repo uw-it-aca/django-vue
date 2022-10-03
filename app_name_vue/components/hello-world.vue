@@ -1,14 +1,18 @@
 // hello-world.vue
 
 <template>
-  <div>Hello world</div>
+  <p>{{ helloStore.message }}</p>
 </template>
 
 <script>
+import { useHelloStore } from "../stores/hello";
+
 export default {
   name: "HelloWorld",
   data() {
-    return {};
+    return {
+      helloStore: useHelloStore(),
+    };
   },
   methods: {},
 };
