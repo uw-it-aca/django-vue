@@ -117,6 +117,11 @@
           </p>
           <ul>
             <li>
+              <a href="https://pinia.vuejs.org/" target="_blank"
+                >pinia (vuex)</a
+              >
+            </li>
+            <li>
               <a
                 href="https://matteo-gabriele.gitbook.io/vue-gtag/"
                 target="_blank"

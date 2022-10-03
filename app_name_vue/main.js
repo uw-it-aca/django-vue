@@ -1,10 +1,10 @@
 import { createApp } from "vue";
+import { createPinia } from "pinia";
+import { Vue3Mq, MqResponsive } from "vue3-mq";
+
 import App from "./app.vue";
 import router from "./router";
-// import { pinia } from "./stores";
-
 import VueGtag from "vue-gtag";
-import { Vue3Mq, MqResponsive } from "vue3-mq";
 
 // bootstrap js
 import "bootstrap";
@@ -12,6 +12,7 @@ import "bootstrap";
 // custom bootstrap theming
 import "./css/custom.scss";
 
+const pinia = createPinia();
 const app = createApp(App);
 
 // MARK: google analytics data stream measurement_id
@@ -44,7 +45,7 @@ app.use(Vue3Mq, {
 });
 app.component("mq-responsive", MqResponsive);
 
-// pinia (vuex) state management
-// app.use(pinia);
+// pinia (fk. vuex) state management
+app.use(pinia);
 
 app.mount("#app");
