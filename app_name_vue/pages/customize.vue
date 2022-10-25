@@ -76,7 +76,7 @@
 </template>
 
 <script>
-import { Card } from "axdd-components";
+//import { Card } from "axdd-components";
 import Layout from "../layout.vue";
 import HelloWorld from "../components/hello-world.vue";
 
@@ -86,7 +86,7 @@ export default {
   components: {
     layout: Layout,
     "hello-world": HelloWorld,
-    "axdd-card": Card,
+    //"axdd-card": Card,
   },
   data() {
     return {
