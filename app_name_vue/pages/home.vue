@@ -123,9 +123,9 @@
             </li>
             <li>
               <a
-                href="https://matteo-gabriele.gitbook.io/vue-gtag/"
+                href="https://matteo-gabriele.gitbook.io/vue-gtag/v/next/"
                 target="_blank"
-                >vue-gtag</a
+                >vue-gtag-next</a
               >
             </li>
             <li>
