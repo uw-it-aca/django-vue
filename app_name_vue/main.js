@@ -10,8 +10,14 @@ import router from "./router";
 // bootstrap js
 import "bootstrap";
 
-// custom bootstrap theming
+// import bootstrap icons
+import "bootstrap-icons/font/bootstrap-icons.css";
+
+// custom axdd bootstrap
 import "./css/custom.scss";
+
+// import axdd-components styles
+import "axdd-components/dist/style.css";
 
 const pinia = createPinia();
 const app = createApp(App);

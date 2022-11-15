@@ -90,7 +90,7 @@
               <a
                 href="https://github.com/uw-it-aca/axdd-components"
                 target="_blank"
-                >AXDD-Components (1.0.4)</a
+                >AXDD-Components (1.0.6)</a
               >
             </li>
           </ul>
