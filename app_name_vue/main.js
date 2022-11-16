@@ -7,17 +7,16 @@ import AxddComponents from "axdd-components";
 import App from "./app.vue";
 import router from "./router";
 
-// bootstrap js
+// bootstrap js + bootstrap-icons
 import "bootstrap";
-
-// import bootstrap icons
 import "bootstrap-icons/font/bootstrap-icons.css";
 
-// custom axdd bootstrap
-import "./css/custom.scss";
+// bootstrap (basic)
+import "./css/basic.scss";
 
-// import axdd-components styles
-import "axdd-components/dist/style.css";
+// bootstrap (axdd) and axdd-components
+// import "./css/custom.scss";
+// import "axdd-components/dist/style.css";
 
 const pinia = createPinia();
 const app = createApp(App);
