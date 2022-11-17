@@ -103,34 +103,37 @@
         <div class="col-md-6">
           <h2>Libraries</h2>
           <p>
-            The following is a list of common JS and Vue libraries included in this
-            repository.
+            The following is a list of common JS and Vue libraries included in
+            this repository.
           </p>
           <ul>
             <li>
-              <a href="https://axios-http.com/" target="_blank">axios</a>  (data fetching)
+              <a href="https://axios-http.com/" target="_blank">axios</a> (data
+              fetching)
             </li>
             <li>
-              <a href="https://pinia.vuejs.org/" target="_blank"
-                >pinia</a
-              > (state management, formerly vuex)
+              <a href="https://pinia.vuejs.org/" target="_blank">pinia</a>
+              (state management, formerly vuex)
             </li>
             <li>
               <a
                 href="https://matteo-gabriele.gitbook.io/vue-gtag/v/next/"
                 target="_blank"
                 >vue-gtag-next</a
-              > (google analytics)
+              >
+              (google analytics)
             </li>
             <li>
               <a href="https://github.com/KanHarI/vue3-cookies" target="_blank"
                 >vue3-cookies</a
-              > (cookies)
+              >
+              (cookies)
             </li>
             <li>
               <a href="https://github.com/craigrileyuk/vue3-mq" target="_blank"
                 >vue3-mq</a
-              > (css media queries)
+              >
+              (css media queries)
             </li>
           </ul>
         </div>

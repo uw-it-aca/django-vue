@@ -45,8 +45,8 @@
             Single-file components in Vue make up the building blocks of all
             applications. These components are located in the
             <code>/components</code>
-            directory. The following <code>hello-world.vue</code> file is an example of a
-            very simple component.
+            directory. The following <code>hello-world.vue</code> file is an
+            example of a very simple component.
           </p>
           <hello-world />
         </div>

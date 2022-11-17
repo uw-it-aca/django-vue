@@ -49,11 +49,9 @@ app.use(Vue3Mq, {
 });
 app.component("mq-responsive", MqResponsive);
 
-
 // pinia (vuex) state management
 const pinia = createPinia();
 app.use(pinia);
-
 
 // axdd-components
 app.use(AxddComponents);
