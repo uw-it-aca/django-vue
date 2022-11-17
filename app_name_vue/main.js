@@ -1,7 +1,9 @@
 import { createApp } from "vue";
 import { createPinia } from "pinia";
-import VueGtag from "vue-gtag-next";
+// import VueGtag from "vue-gtag-next";
 import { Vue3Mq, MqResponsive } from "vue3-mq";
+
+// import axdd-components
 import AxddComponents from "axdd-components";
 
 import App from "./app.vue";
@@ -12,22 +14,23 @@ import "bootstrap";
 import "bootstrap-icons/font/bootstrap-icons.css";
 
 // bootstrap (basic)
-import "./css/basic.scss";
+// import "./css/basic.scss";
 
 // bootstrap (axdd) and axdd-components
-// import "./css/custom.scss";
-// import "axdd-components/dist/style.css";
+import "./css/custom.scss";
+import "axdd-components/dist/style.css";
 
-const pinia = createPinia();
 const app = createApp(App);
-
-// MARK: google analytics data stream measurement_id
-const gaCode = document.body.getAttribute("data-google-analytics");
-const debugMode = document.body.getAttribute("data-django-debug");
-
 app.config.productionTip = false;
 
 // vue-gtag-next
+// TODO: un-commment to use Google Analytics for you app. also
+// configure trackRouter located in the router/index.js file
+
+/*
+const gaCode = document.body.getAttribute("data-google-analytics");
+const debugMode = document.body.getAttribute("data-django-debug");
+
 app.use(VueGtag, {
   isEnabled: debugMode == "false",
   property: {
@@ -38,6 +41,7 @@ app.use(VueGtag, {
     },
   },
 });
+*/
 
 // vue-mq (media queries)
 app.use(Vue3Mq, {
@@ -45,8 +49,11 @@ app.use(Vue3Mq, {
 });
 app.component("mq-responsive", MqResponsive);
 
+
 // pinia (vuex) state management
+const pinia = createPinia();
 app.use(pinia);
+
 
 // axdd-components
 app.use(AxddComponents);
