@@ -9,14 +9,16 @@
 
     <template #description>
       <div class="p-0 col-md-8 lead">
-        <HelloWorld />
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget
-          pulvinar est. Sed gravida neque justo, pellentesque finibus velit
-          scelerisque eu. Curabitur et dolor luctus, convallis magna at, mollis
-          purus. Nunc tincidunt risus quis nisl bibendum volutpat. Praesent ut
-          tincidunt ex.
+          <a href="https://github.com/uw-it-aca/axdd-django-vue"
+            >AXDD-Django-Vue</a
+          >
+          is a high-opinionated template repository created and used by AXDD to
+          make our build processes consistent and repeatable through established
+          patterns across our CICD architecture.
         </p>
+
+        <HelloWorld />
       </div>
     </template>
 
@@ -90,7 +92,7 @@
               <a
                 href="https://github.com/uw-it-aca/axdd-components"
                 target="_blank"
-                >AXDD-Components (1.0.4)</a
+                >AXDD-Components (1.0.6)</a
               >
             </li>
           </ul>
@@ -99,27 +101,19 @@
         <hr />
 
         <div class="col-md-6">
-          <h2>JS Libraries</h2>
+          <h2>Libraries</h2>
           <p>
-            The following is a list of common JS libraries included in this
-            repository.
+            The following is a list of common JS and Vue libraries included in
+            this repository.
           </p>
           <ul>
             <li>
-              <a href="https://axios-http.com/" target="_blank">axios</a>
+              <a href="https://axios-http.com/" target="_blank">axios</a> (data
+              fetching)
             </li>
-          </ul>
-
-          <h2>Vue Libraries</h2>
-          <p>
-            The following is a list of common Vue libraries included in this
-            repository.
-          </p>
-          <ul>
             <li>
-              <a href="https://pinia.vuejs.org/" target="_blank"
-                >pinia (vuex)</a
-              >
+              <a href="https://pinia.vuejs.org/" target="_blank">pinia</a>
+              (state management, formerly vuex)
             </li>
             <li>
               <a
@@ -127,26 +121,21 @@
                 target="_blank"
                 >vue-gtag-next</a
               >
+              (google analytics)
             </li>
             <li>
               <a href="https://github.com/KanHarI/vue3-cookies" target="_blank"
                 >vue3-cookies</a
               >
+              (cookies)
             </li>
             <li>
               <a href="https://github.com/craigrileyuk/vue3-mq" target="_blank"
                 >vue3-mq</a
               >
+              (css media queries)
             </li>
           </ul>
-        </div>
-        <div class="col-md-6">
-          <h2>Customization</h2>
-          <p>
-            Ready to go beyond the starter template and start buidling your
-            application? Read about how to
-            <a href="/customize">customize</a> your application.
-          </p>
         </div>
       </div>
     </template>
@@ -155,13 +144,13 @@
 
 <script>
 import Layout from "../layout.vue";
-import HelloWorld from "../components/hello-world.vue";
+//import HelloWorld from "../components/hello-world.vue";
 
 export default {
   name: "PagesHome",
   components: {
     layout: Layout,
-    HelloWorld,
+    //HelloWorld,
   },
   data() {
     return {

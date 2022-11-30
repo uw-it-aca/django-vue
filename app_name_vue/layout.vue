@@ -5,11 +5,8 @@
         class="d-flex justify-content-between align-items-center pb-3 my-4 border-bottom"
       >
         <div class="h4 flex-fill">
-          <i class="bi bi-box me-2 text-purple"></i>
+          <i class="bi bi-box-fill me-2 text-purple"></i>
           <a href="/" class="text-reset text-decoration-none">{{ appName }}</a>
-        </div>
-        <div class="me-3">
-          <nav class="nav">nav here</nav>
         </div>
       </header>
 
