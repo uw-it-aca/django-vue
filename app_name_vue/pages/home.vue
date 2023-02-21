@@ -35,7 +35,7 @@
               >
             </li>
             <li>
-              <a href="https://vitejs.dev/" target="_blank">Vite (3.1.3)</a>
+              <a href="https://vitejs.dev/" target="_blank">Vite (4.1.4)</a>
             </li>
           </ul>
 
@@ -59,11 +59,11 @@
           <h2>Testing</h2>
           <ul>
             <li>
-              <a href="https://vitest.dev/" target="_blank">Vitest (0.23.2)</a>
+              <a href="https://vitest.dev/" target="_blank">Vitest (0.28.5)</a>
             </li>
             <li>
               <a href="https://test-utils.vuejs.org/" target="_blank"
-                >Vue Test Utils (2.0.2)</a
+                >Vue Test Utils (2.3.0)</a
               >
             </li>
           </ul>

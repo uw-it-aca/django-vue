@@ -9,16 +9,18 @@ import AxddComponents from "axdd-components";
 import App from "./app.vue";
 import router from "./router";
 
-// bootstrap js + bootstrap-icons
-import "bootstrap";
+// bootstrap-icons
 import "bootstrap-icons/font/bootstrap-icons.css";
 
-// bootstrap (basic)
+// bootstrap (all default bs styles)
 // import "./css/basic.scss";
 
 // bootstrap (axdd) and axdd-components
 import "./css/custom.scss";
 import "axdd-components/dist/style.css";
+
+// bootstrap js (all)
+import "bootstrap";
 
 const app = createApp(App);
 app.config.productionTip = false;
