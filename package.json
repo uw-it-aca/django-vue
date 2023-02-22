@@ -22,11 +22,12 @@
   "homepage": "https://github.com/uw-it-aca/app_name#readme",
   "dependencies": {
     "@popperjs/core": "^2.9.2",
-    "axdd-components": "github:uw-it-aca/axdd-components#1.0.6",
+    "axdd-components": "git+https://github.com/uw-it-aca/axdd-components.git#1.0.6",
     "axios": "^0.27.2",
     "bootstrap": "^5.2.2",
     "bootstrap-icons": "^1.10.1",
     "jquery": "^3.6.0",
+    "package.json": "^2.0.1",
     "pinia": "^2.0.21",
     "vue": "^3.2.47",
     "vue-gtag-next": "^1.14.0",
