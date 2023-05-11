@@ -34,9 +34,6 @@
                 >Django-Container (1.4.1)</a
               >
             </li>
-            <li>
-              <a href="https://vitejs.dev/" target="_blank">Vite (4.1.4)</a>
-            </li>
           </ul>
 
           <h2>Development</h2>
@@ -46,7 +43,8 @@
           </p>
           <ul>
             <li>Django (3.2.8)</li>
-            <li>Vue (3.2.x)</li>
+            <li>Vue (3.3.1)</li>
+            <li>Vite (4.3.5)</li>
           </ul>
 
           <h2>Design</h2>
