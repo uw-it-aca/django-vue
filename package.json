@@ -22,7 +22,7 @@
   "homepage": "https://github.com/uw-it-aca/app_name#readme",
   "dependencies": {
     "@popperjs/core": "^2.9.2",
-    "axdd-components": "git+https://github.com/uw-it-aca/axdd-components.git#1.0.6",
+    "axdd-components": "github:uw-it-aca/axdd-components#1.0.6",
     "axios": "^0.27.2",
     "bootstrap": "^5.2.2",
     "bootstrap-icons": "^1.10.1",
