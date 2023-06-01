@@ -25,17 +25,20 @@
     <template #content>
       <div class="row">
         <div class="col-md-6">
-          <h2>Deployment</h2>
+          <h2>Requirements</h2>
+          <p>Download the following:</p>
           <ul>
             <li>
               <a
-                href="https://github.com/uw-it-aca/django-container"
+                href="https://www.docker.com/products/docker-desktop/"
                 target="_blank"
-                >Django-Container (1.4.1)</a
-              >
+                >Docker Desktop
+              </a>
+              (4.18.0)
             </li>
             <li>
-              <a href="https://vitejs.dev/" target="_blank">Vite (4.1.4)</a>
+              <a href="https://nodejs.org/en" target="_blank">NodeJS</a>
+              (18.16.0 LTS)
             </li>
           </ul>
 
@@ -46,7 +49,8 @@
           </p>
           <ul>
             <li>Django (3.2.8)</li>
-            <li>Vue (3.2.x)</li>
+            <li>Vue (3.3.1)</li>
+            <li>Vite (4.3.5)</li>
           </ul>
 
           <h2>Design</h2>
