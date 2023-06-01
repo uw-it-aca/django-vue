@@ -9,30 +9,37 @@
 
     <template #description>
       <div class="p-0 col-md-8 lead">
-        <HelloWorld />
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget
-          pulvinar est. Sed gravida neque justo, pellentesque finibus velit
-          scelerisque eu. Curabitur et dolor luctus, convallis magna at, mollis
-          purus. Nunc tincidunt risus quis nisl bibendum volutpat. Praesent ut
-          tincidunt ex.
+          <a href="https://github.com/uw-it-aca/axdd-django-vue"
+            >AXDD-Django-Vue</a
+          >
+          is a high-opinionated template repository created and used by AXDD to
+          make our build processes consistent and repeatable through established
+          patterns across our CICD architecture.
         </p>
+
+        <HelloWorld />
       </div>
     </template>
 
     <template #content>
       <div class="row">
         <div class="col-md-6">
-          <h2>Deployment</h2>
+          <h2>Requirements</h2>
+          <p>Download the following:</p>
           <ul>
             <li>
               <a
-                href="https://github.com/uw-it-aca/django-container"
+                href="https://www.docker.com/products/docker-desktop/"
                 target="_blank"
-                >Django-Container (1.4.1)</a
-              >
+                >Docker Desktop
+              </a>
+              (4.18.0)
             </li>
-            <li>Vite (3.0.9)</li>
+            <li>
+              <a href="https://nodejs.org/en" target="_blank">NodeJS</a>
+              (18.16.0 LTS)
+            </li>
           </ul>
 
           <h2>Development</h2>
@@ -42,7 +49,8 @@
           </p>
           <ul>
             <li>Django (3.2.8)</li>
-            <li>Vue (3.2.x)</li>
+            <li>Vue (3.3.1)</li>
+            <li>Vite (4.3.5)</li>
           </ul>
 
           <h2>Design</h2>
@@ -54,8 +62,14 @@
         <div class="col-md-6">
           <h2>Testing</h2>
           <ul>
-            <li>Vitest (0.23.x)</li>
-            <li>Vue Test Utils (2.x)</li>
+            <li>
+              <a href="https://vitest.dev/" target="_blank">Vitest (0.28.5)</a>
+            </li>
+            <li>
+              <a href="https://test-utils.vuejs.org/" target="_blank"
+                >Vue Test Utils (2.3.0)</a
+              >
+            </li>
           </ul>
 
           <h2>Linting (code quality)</h2>
@@ -82,7 +96,7 @@
               <a
                 href="https://github.com/uw-it-aca/axdd-components"
                 target="_blank"
-                >AXDD-Components (1.0.4)</a
+                >AXDD-Components (1.0.6)</a
               >
             </li>
           </ul>
@@ -91,49 +105,41 @@
         <hr />
 
         <div class="col-md-6">
-          <h2>JS Libraries</h2>
+          <h2>Libraries</h2>
           <p>
-            The following is a list of common JS libraries included in this
-            repository.
+            The following is a list of common JS and Vue libraries included in
+            this repository.
           </p>
           <ul>
             <li>
-              <a href="https://axios-http.com/" target="_blank">axios</a>
+              <a href="https://axios-http.com/" target="_blank">axios</a> (data
+              fetching)
             </li>
-          </ul>
-
-          <h2>Vue Libraries</h2>
-          <p>
-            The following is a list of common Vue libraries included in this
-            repository.
-          </p>
-          <ul>
+            <li>
+              <a href="https://pinia.vuejs.org/" target="_blank">pinia</a>
+              (state management, formerly vuex)
+            </li>
             <li>
               <a
                 href="https://matteo-gabriele.gitbook.io/vue-gtag/v/next/"
                 target="_blank"
-                >vue-gtag-next (vue3)</a
+                >vue-gtag-next</a
               >
+              (google analytics)
             </li>
             <li>
               <a href="https://github.com/KanHarI/vue3-cookies" target="_blank"
                 >vue3-cookies</a
               >
+              (cookies)
             </li>
             <li>
               <a href="https://github.com/craigrileyuk/vue3-mq" target="_blank"
                 >vue3-mq</a
               >
+              (css media queries)
             </li>
           </ul>
-        </div>
-        <div class="col-md-6">
-          <h2>Customization</h2>
-          <p>
-            Ready to go beyond the starter template and start buidling your
-            application? Read about how to
-            <a href="/customize">customize</a> your application.
-          </p>
         </div>
       </div>
     </template>
@@ -142,13 +148,13 @@
 
 <script>
 import Layout from "../layout.vue";
-import HelloWorld from "../components/hello-world.vue";
+//import HelloWorld from "../components/hello-world.vue";
 
 export default {
   name: "PagesHome",
   components: {
     layout: Layout,
-    HelloWorld,
+    //HelloWorld,
   },
   data() {
     return {

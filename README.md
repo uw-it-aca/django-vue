@@ -1,32 +1,36 @@
 # app_name
 
+[![Build Status](https://github.com/uw-it-aca/axdd-django-vue/workflows/Build%2C%20Test%20and%20Deploy/badge.svg?branch=main)](https://github.com/uw-it-aca/axdd-django-vue/actions)
+[![Coverage Status](https://coveralls.io/repos/github/uw-it-aca/axdd-django-vue/badge.svg?branch=main)](https://coveralls.io/github/uw-it-aca/axdd-django-vue?branch=main)
+
 This is a template repository used for creating Django-Vue applications. Use this template to create a new project repository.
 
 ## System Requirements
 
 - Python (3+)
-- Docker
-- Node (16.14.x LTS)
+- Docker Desktop (4.12.0)
+- Node (16.17.0 LTS)
+- Npm (8.15.0)
 
 ## Deployment
 
-- Django-Container (1.4.0)
-- Vite (2.9.x)
+- Django-Container (1.4.1)
+- Vite (3.1.3)
 
 ## Development
 
-- Django (3.2.x)
-- Vue (3.x)
+- Django (3.2.15)
+- Vue (3.2.28)
 
 ## Design
 
-- Bootstrap (5.1.3)
-- Bootstrap Icons (1.6.0)
+- Bootstrap (5.2)
+- Bootstrap Icons (1.9.1)
 
 ## Testing
 
-- Vitest (0.10.x)
-- Vue Test Utils (2.x)
+- Vitest (0.23.2)
+- Vue Test Utils (2.0.2)
 
 ## Linting (code quality)
 - Pycodestyle (2.8.x)

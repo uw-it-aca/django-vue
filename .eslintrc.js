@@ -8,9 +8,11 @@ module.exports = {
     "eslint:recommended",
     "@vue/eslint-config-prettier",
   ],
+  parserOptions: {
+    ecmaVersion: "latest",
+  },
   env: {
     "vue/setup-compiler-macros": true,
     node: true,
-    //jest: true,
   },
 };

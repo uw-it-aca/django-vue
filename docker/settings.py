@@ -22,6 +22,7 @@ TEMPLATES = [
                 "django.contrib.messages.context_processors.messages",
                 "app_name.context_processors.google_analytics",
                 "app_name.context_processors.django_debug",
+                # "app_name.context_processors.auth_user",
             ],
         },
     }

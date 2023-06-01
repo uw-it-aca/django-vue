@@ -22,15 +22,16 @@
         <div class="col-md-6">
           <h2>Layout</h2>
           <p>
-            Start with the 'layout.vue' component to start customizing your
-            application boilerplate (i.e. header and footer).
+            Start with the <code>/layout.vue</code> component to start
+            customizing your application boilerplate (i.e. header and footer).
           </p>
         </div>
         <div class="col-md-6">
           <h2>Pages</h2>
           <p>
-            Page components are located in the 'pages' directory and are mapped
-            to router configuration.
+            Page components are located in the <code>/pages</code> directory and
+            are mapped to router configuration located in
+            <code>/router/index.js</code>.
           </p>
         </div>
       </div>
@@ -42,9 +43,10 @@
           <h2>Components</h2>
           <p>
             Single-file components in Vue make up the building blocks of all
-            applications. These components are located in the 'components'
-            directory. The following 'hello-world.vue' file is an example of a
-            very simple component.
+            applications. These components are located in the
+            <code>/components</code>
+            directory. The following <code>hello-world.vue</code> file is an
+            example of a very simple component.
           </p>
           <hello-world />
         </div>
@@ -53,8 +55,8 @@
           <h3 class="h5 text-muted">AXDD Components</h3>
           <p>
             These are published and maintained components intended to be used
-            across our applications. The following 'axdd-card' component is an
-            abstraction of 'b-card' component.
+            across AXDD applications. The following
+            <code>axdd-card</code> component is a standard content container.
           </p>
 
           <axdd-card>
@@ -66,6 +68,9 @@
               </p>
             </template>
           </axdd-card>
+
+          <h3 class="h5 text-muted">Vue3 MQ (Bootstrap5 preset)</h3>
+          <div>{{ mq }}</div>
         </div>
       </div>
     </template>
@@ -73,16 +78,15 @@
 </template>
 
 <script>
-import { Card } from "axdd-components";
 import Layout from "../layout.vue";
 import HelloWorld from "../components/hello-world.vue";
 
 export default {
   name: "PagesCustomize",
+  inject: ["mq"],
   components: {
     layout: Layout,
-    "hello-world": HelloWorld,
-    "axdd-card": Card,
+    HelloWorld,
   },
   data() {
     return {
