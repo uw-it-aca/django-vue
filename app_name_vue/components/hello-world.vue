@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import { useHelloStore } from "../stores/hello";
+import { useHelloStore } from "@/stores/hello";
 
 export default {
   name: "HelloWorld",

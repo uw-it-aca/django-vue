@@ -24,7 +24,7 @@ setup(
     author_email="aca-it@uw.edu",
     include_package_data=True,
     install_requires=[
-        'django~=3.2',
+        'django~=4.2',
     ],
     license="Apache License, Version 2.0",
     description="A tool for visually displaying UW course prerequisites",
