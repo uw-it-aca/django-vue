@@ -147,8 +147,8 @@
 </template>
 
 <script>
-import Layout from "../layout.vue";
-//import HelloWorld from "../components/hello-world.vue";
+import Layout from "@/layout.vue";
+//import HelloWorld from "@/components/hello-world.vue";
 
 export default {
   name: "PagesHome",
