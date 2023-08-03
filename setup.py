@@ -24,10 +24,10 @@ setup(
     author_email="aca-it@uw.edu",
     include_package_data=True,
     install_requires=[
-        'django~=4.2',
+        "django~=4.2",
     ],
     license="Apache License, Version 2.0",
-    description="A tool for visually displaying UW course prerequisites",
+    description="",
     long_description=README,
     url=url,
     classifiers=[
@@ -35,6 +35,6 @@ setup(
         "License :: OSI Approved :: Apache Software License",
         "Operating System :: OS Independent",
         "Programming Language :: Python",
-        "Programming Language :: Python :: 2.7",
+        "Framework :: Django",
     ],
 )

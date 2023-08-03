@@ -35,7 +35,7 @@ COPY --chown=acait:acait --from=node-bundler /app/app_name/static /app/app_name/
 
 RUN /app/bin/python manage.py collectstatic --noinput
 
-FROM gcr.io/uwit-mci-axdd/django-test-container:${DJANGO_CONTAINER_VERSION} as app-test-container
+FROM us-docker.pkg.dev/uwit-mci-axdd/containers/django-container:${DJANGO_CONTAINER_VERSION} as app-test-container
 
 ENV NODE_PATH=/app/lib/node_modules
 COPY --from=app-container /app/ /app/
