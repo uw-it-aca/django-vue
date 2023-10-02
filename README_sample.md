@@ -13,7 +13,7 @@ Replace this description for your new application... lorem ipsum dolor sit amet,
 
 ## Development Stack
 
-- Django (3.2)
+- Django (4.2)
 - Vue (3.2)
 - Vite (2.9)
 - Vitest (0.10.2)

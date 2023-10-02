@@ -20,7 +20,7 @@ setup(
     name="app_name",
     version=VERSION,
     packages=["app_name"],
-    author="UW-IT AXDD",
+    author="UW-IT",
     author_email="aca-it@uw.edu",
     include_package_data=True,
     install_requires=[
