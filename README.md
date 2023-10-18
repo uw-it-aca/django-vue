@@ -7,7 +7,7 @@ This is a template repository used for creating Django-Vue applications. Use thi
 
 ## System Requirements
 
-- Python (3+)
+- Python (3.10)
 - Docker Desktop (4.12.0)
 - Node (16.17.0 LTS)
 - Npm (8.15.0)
@@ -19,7 +19,7 @@ This is a template repository used for creating Django-Vue applications. Use thi
 
 ## Development
 
-- Django (3.2.15)
+- Django (4.2)
 - Vue (3.2.28)
 
 ## Design

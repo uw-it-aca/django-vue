@@ -129,13 +129,3 @@ $utilities: (
   font-family: "Encode Sans Condensed", sans-serif !important;
 }
 
-// https://getbootstrap.com/docs/5.3/components/alerts/#sass-loop
-// Generate contextual modifier classes for colorizing the alert
-@each $state in map-keys($theme-colors) {
-  .alert-#{$state} {
-    --#{$prefix}alert-color: var(--#{$prefix}#{$state}-text-emphasis);
-    --#{$prefix}alert-bg: var(--#{$prefix}#{$state}-bg-subtle);
-    --#{$prefix}alert-border-color: var(--#{$prefix}#{$state}-border-subtle);
-    --#{$prefix}alert-link-color: var(--#{$prefix}#{$state}-text-emphasis);
-  }
-}
