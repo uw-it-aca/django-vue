@@ -1,4 +1,3 @@
-@use 'sass:math';
 // 1. import bootstrap functions first
 @import "node_modules/bootstrap/scss/functions";
 
@@ -121,7 +120,7 @@ $utilities: (
 
 // 8. continue... add global app overrides and custom mixins
 
-// global axdd-component styles
+// global solstice-vue component styles
 .axdd-font-open-sans {
   font-family: "Open Sans", sans-serif !important;
 }
@@ -130,36 +129,3 @@ $utilities: (
   font-family: "Encode Sans Condensed", sans-serif !important;
 }
 
-// MARK: adds alert-theme-color support
-// https://getbootstrap.com/docs/5.2/components/alerts/#sass-mixin
-@mixin alert-variant($background, $border, $color) {
-  --#{$prefix}alert-color: #{$color};
-  --#{$prefix}alert-bg: #{$background};
-  --#{$prefix}alert-border-color: #{$border};
-
-  @if $enable-gradients {
-    background-image: var(--#{$prefix}gradient);
-  }
-
-  .alert-link {
-    color: shade-color($color, 20%);
-  }
-}
-
-// https://getbootstrap.com/docs/5.2/components/alerts/#sass-loop
-@each $state, $value in $theme-colors {
-  $alert-background: shift-color($value, $alert-bg-scale);
-  $alert-border: shift-color($value, $alert-border-scale);
-  $alert-color: shift-color($value, $alert-color-scale);
-
-  @if contrast-ratio($alert-background, $alert-color) < $min-contrast-ratio {
-    $alert-color: mix(
-      $value,
-      color-contrast($alert-background),
-      math.abs($alert-color-scale)
-    );
-  }
-  .alert-#{$state} {
-    @include alert-variant($alert-background, $alert-border, $alert-color);
-  }
-}
