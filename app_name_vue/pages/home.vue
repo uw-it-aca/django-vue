@@ -11,11 +11,11 @@
       <div class="p-0 col-md-8 lead">
         <p>
           <a href="https://github.com/uw-it-aca/axdd-django-vue"
-            >AXDD-Django-Vue</a
+            >django-vue</a
           >
-          is a high-opinionated template repository created and used by AXDD to
+          is a high-opinionated template repository created and used by Service Coordination and T&amp;LS  to
           make our build processes consistent and repeatable through established
-          patterns across our CICD architecture.
+          patterns across a containerized CICD architecture.
         </p>
 
         <HelloWorld />
@@ -45,7 +45,7 @@
           <h2>Development</h2>
           <p>
             What's included? This template repository is intended to start you
-            off with AXDD's supported development stack.
+            off with the Service Coordination and T&amp;LS supported development stack.
           </p>
           <ul>
             <li>Django (3.2.8)</li>
@@ -79,7 +79,7 @@
             <li>Stylelint for CSS</li>
           </ul>
 
-          <h2>AXDD Libraries</h2>
+          <h2>UW-IT Libraries</h2>
           <p>
             The following is a list of specific AXDD libraries used in building
             applications.
@@ -89,14 +89,14 @@
               <a
                 href="https://github.com/uw-it-aca/django-container"
                 target="_blank"
-                >Django-Container (1.4.1)</a
+                >django-container (1.4.1)</a
               >
             </li>
             <li>
               <a
-                href="https://github.com/uw-it-aca/axdd-components"
+                href="https://github.com/uw-it-aca/solstice-vue"
                 target="_blank"
-                >AXDD-Components (1.0.6)</a
+                >solstice-vue (1.0.6)</a
               >
             </li>
           </ul>
