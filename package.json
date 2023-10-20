@@ -21,23 +21,23 @@
   },
   "homepage": "https://github.com/uw-it-aca/app_name#readme",
   "dependencies": {
-    "@popperjs/core": "^2.9.2",
-    "solstice-vue": "git+https://github.com/uw-it-aca/solstice-vue.git#1.0.6",
+    "@popperjs/core": "^2.11.6",
     "axios": "^0.27.2",
-    "bootstrap": "^5.3.1",
-    "bootstrap-icons": "^1.10.5",
+    "bootstrap": "^5.3.2",
+    "bootstrap-icons": "^1.11.1",
     "jquery": "^3.6.0",
     "pinia": "^2.0.21",
+    "solstice-vue": "github:uw-it-aca/solstice-vue#1.0.6",
     "vue": "^3.3.4",
     "vue-gtag-next": "^1.14.0",
-    "vue-router": "^4.2.4",
+    "vue-router": "^4.2.5",
     "vue3-cookies": "^1.0.6",
     "vue3-mq": "^3.1.3"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.3.2",
     "@vitejs/plugin-vue": "^4.2.3",
-    "@vitest/coverage-c8": "^0.33.0",
+    "@vitest/coverage-v8": "^0.34.6",
     "@vue/eslint-config-prettier": "^7.1.0",
     "@vue/test-utils": "^2.4.1",
     "eslint": "^8.46.0",
@@ -52,6 +52,6 @@
     "stylelint-config-recommended-vue": "^1.5.0",
     "stylelint-config-standard-scss": "^3.0.0",
     "vite": "^4.4.8",
-    "vitest": "^0.34.3"
+    "vitest": "^0.34.6"
   }
 }
