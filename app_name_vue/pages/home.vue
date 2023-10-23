@@ -10,12 +10,11 @@
     <template #description>
       <div class="p-0 col-md-8 lead">
         <p>
-          <a href="https://github.com/uw-it-aca/axdd-django-vue"
-            >django-vue</a
-          >
-          is a high-opinionated template repository created and used by Service Coordination and T&amp;LS  to
-          make our build processes consistent and repeatable through established
-          patterns across a containerized CICD architecture.
+          <a href="https://github.com/uw-it-aca/axdd-django-vue">django-vue</a>
+          is a highly-opinionated template repository created and used by
+          Service Coordination and T&amp;LS to make our build processes
+          consistent and repeatable through established patterns across a
+          containerized CICD architecture.
         </p>
 
         <HelloWorld />
@@ -34,40 +33,39 @@
                 target="_blank"
                 >Docker Desktop
               </a>
-              (4.18.0)
             </li>
             <li>
-              <a href="https://nodejs.org/en" target="_blank">NodeJS</a>
-              (18.16.0 LTS)
+              <a href="https://nodejs.org/en" target="_blank">Node</a>
             </li>
           </ul>
 
           <h2>Development</h2>
           <p>
             What's included? This template repository is intended to start you
-            off with the Service Coordination and T&amp;LS supported development stack.
+            off with the Service Coordination and T&amp;LS supported development
+            stack.
           </p>
           <ul>
-            <li>Django (3.2.8)</li>
-            <li>Vue (3.3.1)</li>
-            <li>Vite (4.3.5)</li>
+            <li>Django</li>
+            <li>Vue</li>
+            <li>Vite</li>
           </ul>
 
           <h2>Design</h2>
           <ul>
-            <li>Bootstrap (5.2.0)</li>
-            <li>Bootstrap Icons (1.9.0)</li>
+            <li>Bootstrap</li>
+            <li>Bootstrap Icons</li>
           </ul>
         </div>
         <div class="col-md-6">
           <h2>Testing</h2>
           <ul>
             <li>
-              <a href="https://vitest.dev/" target="_blank">Vitest (0.28.5)</a>
+              <a href="https://vitest.dev/" target="_blank">Vitest</a>
             </li>
             <li>
               <a href="https://test-utils.vuejs.org/" target="_blank"
-                >Vue Test Utils (2.3.0)</a
+                >Vue Test Utils</a
               >
             </li>
           </ul>
@@ -89,14 +87,14 @@
               <a
                 href="https://github.com/uw-it-aca/django-container"
                 target="_blank"
-                >django-container (1.4.1)</a
+                >django-container</a
               >
             </li>
             <li>
               <a
                 href="https://github.com/uw-it-aca/solstice-vue"
                 target="_blank"
-                >solstice-vue (1.0.6)</a
+                >solstice-vue</a
               >
             </li>
           </ul>
