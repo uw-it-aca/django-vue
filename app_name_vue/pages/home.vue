@@ -118,10 +118,6 @@
               (state management, formerly vuex)
             </li>
             <li>
-              <a href="https://vueuse.org/" target="_blank">vueuse</a>
-              (composables/utilities)
-            </li>
-            <li>
               <a
                 href="https://matteo-gabriele.gitbook.io/vue-gtag/v/next/"
                 target="_blank"
