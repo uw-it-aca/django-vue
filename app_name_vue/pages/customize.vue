@@ -1,7 +1,7 @@
 // about.vue
 
 <template>
-  <layout :page-title="pageTitle">
+  <DefaultLayout :page-title="pageTitle">
     <!-- page content -->
     <template #title>
       {{ pageTitle }}
@@ -74,18 +74,18 @@
         </div>
       </div>
     </template>
-  </layout>
+  </DefaultLayout>
 </template>
 
 <script>
-import Layout from "@/layout.vue";
+import DefaultLayout from "@/layouts/default.vue";
 import HelloWorld from "@/components/hello-world.vue";
 
 export default {
   name: "PagesCustomize",
   inject: ["mq"],
   components: {
-    layout: Layout,
+    DefaultLayout,
     HelloWorld,
   },
   data() {

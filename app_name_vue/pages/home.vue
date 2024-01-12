@@ -1,7 +1,7 @@
 // home.vue
 
 <template>
-  <layout :page-title="pageTitle">
+  <DefaultLayout :page-title="pageTitle">
     <!-- page content -->
     <template #title>
       {{ pageTitle }}
@@ -118,6 +118,10 @@
               (state management, formerly vuex)
             </li>
             <li>
+              <a href="https://vueuse.org/" target="_blank">vueuse</a>
+              (composables/utilities)
+            </li>
+            <li>
               <a
                 href="https://matteo-gabriele.gitbook.io/vue-gtag/v/next/"
                 target="_blank"
@@ -141,18 +145,18 @@
         </div>
       </div>
     </template>
-  </layout>
+  </DefaultLayout>
 </template>
 
 <script>
-import Layout from "@/layout.vue";
-//import HelloWorld from "@/components/hello-world.vue";
+import DefaultLayout from "@/layouts/default.vue";
+// import HelloWorld from "@/components/hello-world.vue";
 
 export default {
   name: "PagesHome",
   components: {
-    layout: Layout,
-    //HelloWorld,
+    DefaultLayout,
+    // HelloWorld,
   },
   data() {
     return {
