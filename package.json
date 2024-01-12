@@ -22,6 +22,7 @@
   "homepage": "https://github.com/uw-it-aca/app_name#readme",
   "dependencies": {
     "@popperjs/core": "^2.11.6",
+    "@vueuse/core": "^10.7.1",
     "axios": "^0.27.2",
     "bootstrap": "^5.3.2",
     "bootstrap-icons": "^1.11.1",
