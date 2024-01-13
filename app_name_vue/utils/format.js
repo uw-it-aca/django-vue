@@ -1,4 +1,8 @@
-// example utility function
+// utility functions are simple functions that don't utilize Vue specific
+// functionality (i.e. reative state, or lifecycle hooks).
+// these should be limited to simple helper functions
+
+// format.js
 
 function formatPhoneNumber(phoneNumber) {
   var phoneNumberString = Math.floor(parseFloat(phoneNumber)).toString();
@@ -10,4 +14,5 @@ function formatPhoneNumber(phoneNumber) {
   return null;
 }
 
+// expose the callable method as return value
 export { formatPhoneNumber };

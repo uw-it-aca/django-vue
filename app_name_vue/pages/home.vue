@@ -52,6 +52,11 @@
           </ul>
 
           <h2>Design</h2>
+          <p>
+            We use the
+            <a href="https://test.solstice.uw.edu">Solstice Design System</a> as
+            the basis of our design.
+          </p>
           <ul>
             <li>Bootstrap</li>
             <li>Bootstrap Icons</li>
@@ -138,6 +143,16 @@
               (css media queries)
             </li>
           </ul>
+        </div>
+
+        <hr />
+
+        <div class="col-md-8">
+          <h2>Get Started</h2>
+          <p>
+            View the <a href="/customize">customizing your app</a> page to learn
+            how to get started.
+          </p>
         </div>
       </div>
     </template>
