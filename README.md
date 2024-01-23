@@ -8,9 +8,9 @@ This is a template repository used for creating Django-Vue applications. Use thi
 ## System Requirements
 
 - Python (3.10)
-- Docker Desktop (4.12.0)
-- Node (16.17.0 LTS)
-- Npm (8.15.0)
+- Rancher Desktop (1.12.1)
+- Node (20.11.0 LTS)
+- Npm (10.2.4)
 
 ## Deployment
 
