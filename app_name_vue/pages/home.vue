@@ -16,8 +16,6 @@
           consistent and repeatable through established patterns across a
           containerized CICD architecture.
         </p>
-
-        <HelloWorld />
       </div>
     </template>
 
@@ -161,13 +159,11 @@
 
 <script>
 import DefaultLayout from "@/layouts/default.vue";
-// import HelloWorld from "@/components/hello-world.vue";
 
 export default {
   name: "PagesHome",
   components: {
     DefaultLayout,
-    // HelloWorld,
   },
   data() {
     return {
