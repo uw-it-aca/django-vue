@@ -1,7 +1,7 @@
 // home.vue
 
 <template>
-  <layout :page-title="pageTitle">
+  <DefaultLayout :page-title="pageTitle">
     <!-- page content -->
     <template #title>
       {{ pageTitle }}
@@ -16,8 +16,6 @@
           consistent and repeatable through established patterns across a
           containerized CICD architecture.
         </p>
-
-        <HelloWorld />
       </div>
     </template>
 
@@ -52,6 +50,11 @@
           </ul>
 
           <h2>Design</h2>
+          <p>
+            We use the
+            <a href="https://test.solstice.uw.edu">Solstice Design System</a> as
+            the basis of our design.
+          </p>
           <ul>
             <li>Bootstrap</li>
             <li>Bootstrap Icons</li>
@@ -139,20 +142,28 @@
             </li>
           </ul>
         </div>
+
+        <hr />
+
+        <div class="col-md-8">
+          <h2>Get Started</h2>
+          <p>
+            View the <a href="/customize">customizing your app</a> page to learn
+            how to get started.
+          </p>
+        </div>
       </div>
     </template>
-  </layout>
+  </DefaultLayout>
 </template>
 
 <script>
-import Layout from "@/layout.vue";
-//import HelloWorld from "@/components/hello-world.vue";
+import DefaultLayout from "@/layouts/default.vue";
 
 export default {
   name: "PagesHome",
   components: {
-    layout: Layout,
-    //HelloWorld,
+    DefaultLayout,
   },
   data() {
     return {

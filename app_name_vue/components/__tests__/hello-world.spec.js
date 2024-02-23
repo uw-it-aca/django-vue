@@ -12,6 +12,6 @@ describe("HelloWorld", () => {
       },
     });
     // Assert the rendered text of the component
-    expect(wrapper.text()).toContain("Hello world, from Pinia");
+    expect(wrapper.text()).toContain("Hello world, from the Pinia store!");
   });
 });
