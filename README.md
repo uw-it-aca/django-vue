@@ -1,7 +1,7 @@
 # app_name
 
 [![Build Status](https://github.com/uw-it-aca/django-vue/workflows/Build%2C%20Test%20and%20Deploy/badge.svg?branch=main)](https://github.com/uw-it-aca/django-vue/actions)
-[![Coverage Status](https://coveralls.io/repos/github/uw-it-aca/axdd-django-vue/badge.svg?branch=main)](https://coveralls.io/github/uw-it-aca/axdd-django-vue?branch=main)
+[![Coverage Status](https://coveralls.io/repos/github/uw-it-aca/django-vue/badge.svg?branch=main)](https://coveralls.io/github/uw-it-aca/django-vue?branch=main)
 
 This is a template repository used for creating Django-Vue applications. Use this template to create a new project repository.
 
@@ -14,7 +14,7 @@ This is a template repository used for creating Django-Vue applications. Use thi
 
 ## Deployment
 
-- Django-Container (1.4.1)
+- Django-Container (2.0.1)
 - Vite (3.1.3)
 
 ## Development
@@ -41,7 +41,7 @@ This is a template repository used for creating Django-Vue applications. Use thi
 
 Clone this template repo as a new repo (command line)
 
-        $ git clone git@github.com:uw-it-aca/axdd-django-vue.git <new-repo>
+        $ git clone git@github.com:uw-it-aca/django-vue.git <new-repo>
 
 OR.. using the Gihub interface, click on the "Use this template" button. Github will automatically clone this repo and setup everything for you.
 
@@ -49,7 +49,7 @@ OR.. using the Gihub interface, click on the "Use this template" button. Github 
 
 After cloning this repo, find and replace the following instances to match your new repo name.
 
-        'axdd-django-vue' with <new-repo>
+        'django-vue' with <new-repo>
 
 Find and replace the following instance of the new Django app_name.
 
