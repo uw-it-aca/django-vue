@@ -6,7 +6,6 @@
     "batisteo.vscode-django",
     "esbenp.prettier-vscode",
     "vue.volar",
-    "vue.vscode-typescript-vue-plugin",
     "dbaeumer.vscode-eslint",
     "stylelint.vscode-stylelint"
   ]
