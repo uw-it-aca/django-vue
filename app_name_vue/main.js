@@ -1,10 +1,10 @@
 import { createApp } from "vue";
 import { createPinia } from "pinia";
 // import VueGtag from "vue-gtag-next";
-import { Vue3Mq, MqResponsive } from "vue3-mq";
+import { Vue3Mq } from "vue3-mq";
 
 // import solstice-vue
-import SolsticeVue from "solstice-vue";
+//import SolsticeVue from "solstice-vue";
 
 import App from "@/app.vue";
 import router from "@/router";
@@ -13,12 +13,13 @@ import router from "@/router";
 import "bootstrap";
 import "bootstrap-icons/font/bootstrap-icons.css";
 
-// bootstrap (all default bs styles)
-// import "./css/basic.scss";
-
-// bootstrap + solstice-vue
-import "@/css/custom.scss";
+// solstice-vue (1.1.0)
 import "solstice-vue/dist/style.css";
+import "solstice-vue/dist/solstice.scss";
+
+// bootstrap-vue-next
+// import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap-vue-next/dist/bootstrap-vue-next.css";
 
 const app = createApp(App);
 app.config.productionTip = false;
@@ -47,14 +48,13 @@ app.use(VueGtag, {
 app.use(Vue3Mq, {
   preset: "bootstrap5",
 });
-app.component("mq-responsive", MqResponsive);
 
 // pinia (vuex) state management
 const pinia = createPinia();
 app.use(pinia);
 
 // solstice-vue
-app.use(SolsticeVue);
+//app.use(SolsticeVue);
 
 // vue-router
 app.use(router);
