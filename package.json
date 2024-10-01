@@ -24,23 +24,20 @@
   "dependencies": {
     "@popperjs/core": "^2.11.8",
     "@vueuse/core": "^11.1.0",
-    "@vueuse/integrations": "^10.11.1",
+    "@vueuse/integrations": "^11.1.0",
     "axios": "^1.7.7",
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
     "bootstrap-vue-next": "^0.24.23",
-    "i": "^0.3.7",
-    "npm": "^10.8.3",
     "pinia": "^2.2.3",
     "solstice-vue": "github:uw-it-aca/solstice-vue#1.1.0",
     "vue": "^3.5.10",
     "vue-gtag-next": "^1.14.0",
     "vue-router": "^4.4.5",
     "vue3-cookies": "^1.0.6",
-    "vue3-mq": "^3.2.0"
+    "vue3-mq": "^4.0.0"
   },
   "devDependencies": {
-    "@rushstack/eslint-patch": "^1.10.4",
     "@vitejs/plugin-vue": "^5.1.4",
     "@vitest/coverage-v8": "^2.1.1",
     "@vue/test-utils": "^2.4.6",
