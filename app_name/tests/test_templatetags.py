@@ -18,6 +18,7 @@ class ViteTestClass(TestCase):
         pass
 
     def test_manifest_exists(self):
+        print(settings.VITE_MANIFEST_PATH)
         self.assertTrue(os.path.exists(settings.VITE_MANIFEST_PATH))
 
     def test_vite_styles(self):
