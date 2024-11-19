@@ -1,7 +1,9 @@
 # Copyright 2024 UW-IT, University of Washington
 # SPDX-License-Identifier: Apache-2.0
 
+import os
 import re
+from django.conf import settings
 from django.test import TestCase
 from app_name.templatetags.vite import vite_styles, vite_scripts
 
@@ -14,6 +16,9 @@ class ViteTestClass(TestCase):
     def tearDown(self):
         # Clean up run after every test method.
         pass
+
+    def test_manifest_exists(self):
+        self.assertTrue(os.path.exists(settings.VITE_MANIFEST_PATH))
 
     def test_vite_styles(self):
         entries = ("app_name_vue/main.js",)
