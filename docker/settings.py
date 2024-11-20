@@ -7,7 +7,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     "app_name.apps.AppNameConfig",
-    "app_name.apps.MyStaticFilesConfig",
+    "app_name.apps.ViteStaticFilesConfig",
 ]
 
 # If you have file data, define the path here

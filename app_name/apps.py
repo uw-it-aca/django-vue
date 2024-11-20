@@ -5,7 +5,7 @@ from django.apps import AppConfig
 from django.contrib.staticfiles.apps import StaticFilesConfig
 
 
-class MyStaticFilesConfig(StaticFilesConfig):
+class ViteStaticFilesConfig(StaticFilesConfig):
     ignore_patterns = ['CVS', '*~']
 
 class AppNameConfig(AppConfig):
