@@ -1,7 +1,13 @@
 from .base_settings import *
 
-INSTALLED_APPS += [
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
     "app_name.apps.AppNameConfig",
+    "app_name.apps.MyStaticFilesConfig",
 ]
 
 # If you have file data, define the path here
