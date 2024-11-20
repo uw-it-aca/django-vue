@@ -1,14 +1,11 @@
 from .base_settings import *
 
-INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
+INSTALLED_APPS += [
     "app_name.apps.AppNameConfig",
     "app_name.apps.ViteStaticFilesConfig",
 ]
+
+INSTALLED_APPS.remove('django.contrib.staticfiles')
 
 # If you have file data, define the path here
 # DATA_ROOT = os.path.join(BASE_DIR, "app_name/data")
