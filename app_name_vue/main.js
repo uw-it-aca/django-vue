@@ -1,10 +1,8 @@
 import { createApp } from "vue";
+import { createBootstrap } from "bootstrap-vue-next";
 import { createPinia } from "pinia";
 // import VueGtag from "vue-gtag-next";
 import { Vue3Mq } from "vue3-mq";
-
-// import solstice-vue
-//import SolsticeVue from "solstice-vue";
 
 import App from "@/app.vue";
 import router from "@/router";
@@ -13,12 +11,13 @@ import router from "@/router";
 import "bootstrap";
 import "bootstrap-icons/font/bootstrap-icons.css";
 
-// solstice-vue (1.1.0)
-import "solstice-vue/dist/style.css";
-import "solstice-vue/dist/solstice.scss";
+// solstice bootstrap theme
+import "solstice-theme/dist/solstice.scss";
 
-// bootstrap-vue-next
-// import "bootstrap/dist/css/bootstrap.css";
+// solstice-vue comps
+import "solstice-vue/dist/style.css";
+
+// bootstrap-vue-next css
 import "bootstrap-vue-next/dist/bootstrap-vue-next.css";
 
 const app = createApp(App);
@@ -53,8 +52,8 @@ app.use(Vue3Mq, {
 const pinia = createPinia();
 app.use(pinia);
 
-// solstice-vue
-//app.use(SolsticeVue);
+// bootstrap-vue-next
+app.use(createBootstrap());
 
 // vue-router
 app.use(router);
