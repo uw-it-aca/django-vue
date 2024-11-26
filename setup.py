@@ -25,6 +25,7 @@ setup(
     include_package_data=True,
     install_requires=[
         "django~=4.2",
+        "uw_saml",  # I don't really want this here, testing something
     ],
     license="Apache License, Version 2.0",
     description="",
