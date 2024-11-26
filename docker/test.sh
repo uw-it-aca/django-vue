@@ -22,6 +22,7 @@ function run_test {
 #    run_test "jshint ${DJANGO_APP}/static/js --verbose"
 #fi
 
+python -m pip install --upgrade pip coverage coveralls==3.3.1
 run_test "python -Wd -m coverage run --source=${DJANGO_APP} '--omit=*/migrations/*' manage.py test ${DJANGO_APP}"
 
 # put generated coverage result where it will get processed
