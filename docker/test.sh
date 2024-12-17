@@ -14,7 +14,7 @@ function run_test {
 }
 
 # Moving to github action - remove this when successful
-#run_test "pycodestyle ${DJANGO_APP}/ --exclude=migrations,static"
+run_test "pycodestyle ${DJANGO_APP}/ --exclude=migrations,static"
 #
 #if [ -d ${DJANGO_APP}/static/${DJANGO_APP}/js ]; then
 #    run_test "jshint ${DJANGO_APP}/static/${DJANGO_APP}/js --verbose"
