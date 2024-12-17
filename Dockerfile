@@ -11,11 +11,11 @@ USER acait
 ADD --chown=acait:acait . /app/
 ADD --chown=acait:acait docker/ /app/project/
 
-# ADD --chown=acait:acait docker/app_start.sh /scripts
-# RUN chmod u+x /scripts/app_start.sh
-
 RUN /app/bin/pip install -r requirements.txt
 RUN /app/bin/pip install psycopg2
+
+ADD --chown=acait:acait docker/app_start.sh /scripts
+RUN chmod u+x /scripts/app_start.sh
 
 # latest node + ubuntu
 FROM node:20 AS node-base
