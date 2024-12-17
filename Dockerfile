@@ -1,4 +1,4 @@
-ARG DJANGO_CONTAINER_VERSION=2.0.1
+ARG DJANGO_CONTAINER_VERSION=2.0.2
 
 FROM us-docker.pkg.dev/uwit-mci-axdd/containers/django-container:${DJANGO_CONTAINER_VERSION} as app-prebundler-container
 
@@ -14,8 +14,8 @@ ADD --chown=acait:acait docker/ /app/project/
 RUN /app/bin/pip install -r requirements.txt
 RUN /app/bin/pip install psycopg2
 
-ADD --chown=acait:acait docker/app_start.sh /scripts
-RUN chmod u+x /scripts/app_start.sh
+# ADD --chown=acait:acait docker/app_start.sh /scripts
+# RUN chmod u+x /scripts/app_start.sh
 
 # latest node + ubuntu
 FROM node:20 AS node-base
