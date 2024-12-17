@@ -4,7 +4,7 @@ FROM us-docker.pkg.dev/uwit-mci-axdd/containers/django-container:${DJANGO_CONTAI
 
 USER root
 
-RUN apt-get update && apt-get install -y libpq-dev
+RUN apt-get update && apt-get install libpq-dev -y
 
 USER acait
 
@@ -18,8 +18,8 @@ RUN /app/bin/pip install psycopg2
 # RUN chmod u+x /scripts/app_start.sh
 
 # latest node + ubuntu
-FROM node:20 AS node-base
-FROM ubuntu:22.04 AS node-bundler
+FROM node:lts AS node-base
+FROM ubuntu:latest AS node-bundler
 COPY --from=node-base / /
 
 ADD ./package.json /app/
@@ -36,7 +36,7 @@ FROM app-prebundler-container as app-container
 
 COPY --chown=acait:acait --from=node-bundler /app/app_name/static /app/app_name/static
 
-RUN /app/bin/python manage.py collectstatic --noinput
+RUN . /app/bin/activate && python manage.py collectstatic --noinput
 
 FROM us-docker.pkg.dev/uwit-mci-axdd/containers/django-container:${DJANGO_CONTAINER_VERSION} as app-test-container
 
