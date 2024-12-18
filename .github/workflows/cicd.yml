@@ -32,7 +32,7 @@
 name: Build, Test and Deploy
 
 env:
-  RELEASE_NAME: app_name
+  RELEASE_NAME: django-vue
   DJANGO_APP: app_name
 
 # Be sure that branches defined here have corresponding steps

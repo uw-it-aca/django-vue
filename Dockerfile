@@ -11,11 +11,11 @@ USER acait
 ADD --chown=acait:acait . /app/
 ADD --chown=acait:acait docker/ /app/project/
 
+ADD --chown=acait:acait docker/app_start.sh /scripts
+RUN chmod u+x /scripts/app_start.sh
+
 RUN /app/bin/pip install -r requirements.txt
 RUN /app/bin/pip install psycopg2
-
-# ADD --chown=acait:acait docker/app_start.sh /scripts
-# RUN chmod u+x /scripts/app_start.sh
 
 # latest node + ubuntu
 FROM node:lts AS node-base
@@ -36,7 +36,7 @@ FROM app-prebundler-container as app-container
 
 COPY --chown=acait:acait --from=node-bundler /app/app_name/static /app/app_name/static
 
-RUN . /app/bin/activate && python manage.py collectstatic --noinput
+RUN /app/bin/python manage.py collectstatic --noinput
 
 FROM us-docker.pkg.dev/uwit-mci-axdd/containers/django-container:${DJANGO_CONTAINER_VERSION} as app-test-container
 
