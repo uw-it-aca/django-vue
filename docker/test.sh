@@ -7,9 +7,6 @@ trap 'exit 1' ERR
 # start virtualenv
 source bin/activate
 
-# force install coverage in virtualenv
-pip install coverage
-
 function run_test {
     echo "##########################"
     echo "TEST: $1"
