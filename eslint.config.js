@@ -1,5 +1,5 @@
 import pluginVue from "eslint-plugin-vue";
-import eslintConfigPrettier from "eslint-config-prettier";
+import eslintConfigPrettier from "@vue/eslint-config-prettier";
 
 export default [
   // add more generic rulesets here, such as:
