@@ -18,7 +18,7 @@
         </h1>
 
         <slot name="description" />
-        <hr class="mb-5 w-25 d-inline-block" />
+        <hr class="my-5 w-25 d-inline-block" />
         <slot name="content" />
       </main>
 
