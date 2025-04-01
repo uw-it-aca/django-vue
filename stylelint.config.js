@@ -1,23 +1,23 @@
 /** @type {import('stylelint').Config} */
 export default {
   extends: [
-    'stylelint-config-standard-scss',
-    'stylelint-config-standard-vue/scss',
+    "stylelint-config-standard-scss",
+    "stylelint-config-standard-vue/scss",
   ],
-  customSyntax: 'postcss-html',
+  customSyntax: "postcss-html",
   overrides: [
     {
-      files: ['*.vue', '**/*.vue'],
+      files: ["*.vue", "**/*.vue"],
       rules: {
-        'scss/no-global-function-names': null,
-        'no-invalid-position-at-import-rule': null,
-        'scss/at-import-partial-extension': [
-          'never',
+        "scss/no-global-function-names": null,
+        "no-invalid-position-at-import-rule": null,
+        "scss/at-import-partial-extension": [
+          "never",
           {
-            severity: 'warning',
+            severity: "warning",
           },
         ],
       },
     },
   ],
-}
+};
