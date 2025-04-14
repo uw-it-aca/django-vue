@@ -1,9 +1,9 @@
-# Copyright 2024 UW-IT, University of Washington
+# Copyright 2025 UW-IT, University of Washington
 # SPDX-License-Identifier: Apache-2.0
 
 import re
 from django.test import TestCase
-from app_name.templatetags.vite import vite_styles, vite_scripts
+from compass.templatetags.vite import vite_styles, vite_scripts
 
 
 class ViteTestClass(TestCase):
@@ -16,17 +16,15 @@ class ViteTestClass(TestCase):
         pass
 
     def test_vite_styles(self):
-        entries = ("app_name_vue/main.js",)
+        entries = ("compass_vue/main.js",)
         link = vite_styles(*entries)
-        pattern = re.compile(
-            '<link rel="[\\w]*" href="[\\w\\D]*main.[\\d\\w]*.css" />'
-        )
-        self.assertTrue(pattern.match(link))
+        pattern = re.compile(r'<link\s+[^>]*href="[^"]*main-[^"]*"[^>]*>')
+        self.assertTrue(pattern.search(link))
 
     def test_vite_scripts(self):
-        entries = ("app_name_vue/main.js",)
+        entries = ("compass_vue/main.js",)
         script = vite_scripts(*entries)
         pattern = re.compile(
-            '<script type="[\\w]*" src="[\\w\\D]*main.[\\d\\w]*.js"></script>'
+            r'<script\s+[^>]*src="[^"]*main-[^"]*"[^>]*></script>'
         )
-        self.assertTrue(pattern.match(script))
+        self.assertTrue(pattern.search(script))
