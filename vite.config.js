@@ -1,5 +1,4 @@
 import { fileURLToPath, URL } from "url";
-
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 
@@ -9,7 +8,7 @@ export default defineConfig({
 
   // vite creates a manifest and assets during the build process (local and prod)
   // django collectstatics will put assets in '/static/app_name/assets'
-  // django will put the manifest in '/static/manifest.json'
+  // django will put the manifest in '/static/.vite/manifest.json'
   // vite manifest prefaces all files with the path 'app_name/assets/xxxx'
   build: {
     manifest: true,

@@ -18,15 +18,13 @@ class ViteTestClass(TestCase):
     def test_vite_styles(self):
         entries = ("app_name_vue/main.js",)
         link = vite_styles(*entries)
-        pattern = re.compile(
-            '<link rel="[\\w]*" href="[\\w\\D]*main.[\\d\\w]*.css" />'
-        )
-        self.assertTrue(pattern.match(link))
+        pattern = re.compile(r'<link\s+[^>]*href="[^"]*main-[^"]*"[^>]*>')
+        self.assertTrue(pattern.search(link))
 
     def test_vite_scripts(self):
         entries = ("app_name_vue/main.js",)
         script = vite_scripts(*entries)
         pattern = re.compile(
-            '<script type="[\\w]*" src="[\\w\\D]*main.[\\d\\w]*.js"></script>'
+            r'<script\s+[^>]*src="[^"]*main-[^"]*"[^>]*></script>'
         )
-        self.assertTrue(pattern.match(script))
+        self.assertTrue(pattern.search(script))
