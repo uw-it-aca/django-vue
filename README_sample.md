@@ -66,7 +66,13 @@ Run ESLint for JS linting
 
 Run Stylelint for CSS linting
 
-         $ npm run stylelint
+        $ npm run stylelint
+
+### Accessibility (Lighthouse)
+
+Run Lighthouse CI for accessibility auditing
+
+        $ npm run lighthouse
 
 ### Python Testing (using Django)
 
