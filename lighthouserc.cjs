@@ -1,24 +1,26 @@
 // lighthouserc.cjs
-
 require("dotenv").config();
 const port = process.env.RUNSERVER_PORT;
 
 module.exports = {
   ci: {
     collect: {
-      numberOfRuns: 1,
       settings: {
-        //set which categories you want to run here.
+        //set which categories you want to run
         onlyCategories: ["accessibility"],
       },
       url: [
+        // add URLs to be tested (usually matches /pages structure)
         `http://localhost:${port}/`,
         `http://localhost:${port}/customize`,
-
-        // Add more URLs as needed
       ],
-      // You can also specify other options like numberOfRuns, staticDistDir, etc.
+      // specify other options like numberOfRuns, staticDistDir, etc.
+      numberOfRuns: 1,
     },
-    // Add assert, upload, and other configuration as required
+    // add assert, upload, and other configuration as required
+    assert: {},
+    upload: {},
+    server: {},
+    wizard: {},
   },
 };
