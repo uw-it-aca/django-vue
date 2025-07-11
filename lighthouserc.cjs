@@ -1,4 +1,8 @@
-// lighthouserc.js
+// lighthouserc.cjs
+
+require("dotenv").config();
+const port = process.env.RUNSERVER_PORT;
+
 module.exports = {
   ci: {
     collect: {
@@ -8,8 +12,9 @@ module.exports = {
         onlyCategories: ["accessibility"],
       },
       url: [
-        "http://localhost:8020/",
-        "http://localhost:8020/customize",
+        `http://localhost:${port}/`,
+        `http://localhost:${port}/customize`,
+
         // Add more URLs as needed
       ],
       // You can also specify other options like numberOfRuns, staticDistDir, etc.
