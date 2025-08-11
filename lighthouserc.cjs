@@ -8,6 +8,8 @@ module.exports = {
       settings: {
         //set which categories you want to run
         onlyCategories: ["accessibility"],
+        preset: "desktop",
+        extraHeaders: '{"Sec-CH-Prefers-Color-Scheme": "light"}',
       },
       url: [
         // add URLs to be tested (usually matches /pages structure)
