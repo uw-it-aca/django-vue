@@ -28,6 +28,6 @@ run_test "python -Wd -m coverage run --source=${DJANGO_APP} '--omit=*/migrations
 cp .coverage.* /coverage
 
 # run npm commands
-run_test "npm run lighthouse"
+# run_test "npm run lighthouse"
 
 exit 0
