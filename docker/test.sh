@@ -27,4 +27,7 @@ run_test "python -Wd -m coverage run --source=${DJANGO_APP} '--omit=*/migrations
 # put generated coverage result where it will get processed
 cp .coverage.* /coverage
 
+# run npm commands
+run_test "npm run hello"
+
 exit 0

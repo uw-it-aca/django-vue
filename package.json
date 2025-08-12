@@ -10,7 +10,8 @@
     "coverage": "vitest run --coverage",
     "eslint": "eslint 'app_name_vue/**/*.{js,vue}'",
     "stylelint": "stylelint 'app_name_vue/**/*.{vue,scss}'",
-    "lighthouse": "lhci collect"
+    "lighthouse": "lhci collect",
+    "hello": "echo 'Hello from an npm script!'"
   },
   "repository": {
     "type": "git",
