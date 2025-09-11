@@ -10,7 +10,7 @@
     <template #description>
       <div class="p-0 col-md-8 lead">
         <p>
-          <a href="https://github.com/uw-it-aca/axdd-django-vue">django-vue</a>
+          <a href="https://github.com/uw-it-aca/django-vue">django-vue</a>
           is a highly-opinionated template repository created and used by
           Coordination &amp; Design (DC) and Student &amp; Educational
           Technology Services (SETS) to make our build processes consistent and
@@ -63,7 +63,7 @@
           <ul>
             <li>
               <a
-                href="https://docs.djangoproject.com/en/5.0/topics/testing/tools/#testing-tools"
+                href="https://docs.djangoproject.com/en/5.2/topics/testing/tools/#testing-tools"
                 target="_blank"
                 >Django Test Client</a
               >
