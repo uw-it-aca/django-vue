@@ -10,11 +10,12 @@
     <template #description>
       <div class="p-0 col-md-8 lead">
         <p>
-          <a href="https://github.com/uw-it-aca/axdd-django-vue">django-vue</a>
+          <a href="https://github.com/uw-it-aca/django-vue">django-vue</a>
           is a highly-opinionated template repository created and used by
-          Service Coordination and T&amp;LS to make our build processes
-          consistent and repeatable through established patterns across a
-          containerized CICD architecture.
+          Coordination &amp; Design (DC) and Student &amp; Educational
+          Technology Services (SETS) to make our build processes consistent and
+          repeatable through established patterns across a containerized CICD
+          infrastructure.
         </p>
       </div>
     </template>
@@ -26,11 +27,7 @@
           <p>Download the following:</p>
           <ul>
             <li>
-              <a
-                href="https://www.docker.com/products/docker-desktop/"
-                target="_blank"
-                >Docker Desktop
-              </a>
+              <a href="https://www.docker.com" target="_blank">Docker </a>
             </li>
             <li>
               <a href="https://nodejs.org/en" target="_blank">Node</a>
@@ -40,13 +37,18 @@
           <h2>Development</h2>
           <p>
             What's included? This template repository is intended to start you
-            off with the Service Coordination and T&amp;LS supported development
-            stack.
+            off with a supported development stack.
           </p>
           <ul>
-            <li>Django</li>
-            <li>Vue</li>
-            <li>Vite</li>
+            <li>
+              <a href="https://www.djangoproject.com/" target="_blank"
+                >Django</a
+              >
+              (back-end)
+            </li>
+            <li>
+              <a href="https://vuejs.org/" target="_blank">Vue</a> (front-end)
+            </li>
           </ul>
 
           <h2>Design</h2>
@@ -55,97 +57,63 @@
             <a href="https://test.solstice.uw.edu">Solstice Design System</a> as
             the basis of our design.
           </p>
-          <ul>
-            <li>Bootstrap</li>
-            <li>Bootstrap Icons</li>
-          </ul>
         </div>
         <div class="col-md-6">
           <h2>Testing</h2>
           <ul>
             <li>
-              <a href="https://vitest.dev/" target="_blank">Vitest</a>
+              <a
+                href="https://docs.djangoproject.com/en/5.2/topics/testing/tools/#testing-tools"
+                target="_blank"
+                >Django Test Client</a
+              >
             </li>
             <li>
               <a href="https://test-utils.vuejs.org/" target="_blank"
                 >Vue Test Utils</a
               >
+              with
+              <a href="https://vitest.dev/" target="_blank">Vitest</a> (test
+              runner)
             </li>
           </ul>
 
           <h2>Linting (code quality)</h2>
           <ul>
-            <li>Pycodestyle for Python</li>
-            <li>ESLint for JS</li>
-            <li>Stylelint for CSS</li>
-          </ul>
-
-          <h2>UW-IT Libraries</h2>
-          <p>
-            The following is a list of specific AXDD libraries used in building
-            applications.
-          </p>
-          <ul>
             <li>
               <a
-                href="https://github.com/uw-it-aca/django-container"
+                href="https://pycodestyle.pycqa.org/en/latest/index.html"
                 target="_blank"
-                >django-container</a
+                >Pycodestyle</a
               >
-            </li>
-            <li>
+              or
               <a
-                href="https://github.com/uw-it-aca/solstice-vue"
+                href="https://black.readthedocs.io/en/stable/index.html"
                 target="_blank"
-                >solstice-vue</a
+                >Black</a
               >
-            </li>
-          </ul>
-        </div>
-
-        <hr />
-
-        <div class="col-md-6">
-          <h2>Libraries</h2>
-          <p>
-            The following is a list of common JS and Vue libraries included in
-            this repository.
-          </p>
-          <ul>
-            <li>
-              <a href="https://axios-http.com/" target="_blank">axios</a> (data
-              fetching)
+              (Python)
             </li>
             <li>
-              <a href="https://pinia.vuejs.org/" target="_blank">pinia</a>
-              (state management, formerly vuex)
+              <a href="https://eslint.vuejs.org/" target="_blank"
+                >eslint-plugin-vue</a
+              >
+              (Javascript)
             </li>
             <li>
               <a
-                href="https://matteo-gabriele.gitbook.io/vue-gtag/v/next/"
+                href="https://github.com/ota-meshi/stylelint-config-recommended-vue"
                 target="_blank"
-                >vue-gtag-next</a
+                >stylelint-config-recommended-vue</a
               >
-              (google analytics)
-            </li>
-            <li>
-              <a href="https://github.com/KanHarI/vue3-cookies" target="_blank"
-                >vue3-cookies</a
-              >
-              (cookies)
-            </li>
-            <li>
-              <a href="https://github.com/craigrileyuk/vue3-mq" target="_blank"
-                >vue3-mq</a
-              >
-              (css media queries)
+              (CSS)
             </li>
           </ul>
         </div>
-
-        <hr />
 
         <div class="col-md-8">
+          <hr class="my-5 w-50" />
+
           <h2>Get Started</h2>
           <p>
             View the <a href="/customize">customizing your app</a> page to learn
@@ -162,13 +130,9 @@ import DefaultLayout from "@/layouts/default.vue";
 
 export default {
   name: "PagesHome",
-  components: {
-    DefaultLayout,
-  },
+  components: { DefaultLayout },
   data() {
-    return {
-      pageTitle: "Getting started",
-    };
+    return { pageTitle: "Getting started" };
   },
   methods: {},
 };
