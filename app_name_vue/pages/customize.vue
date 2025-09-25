@@ -46,6 +46,10 @@
           <p>
             <strong>EXAMPLE:</strong> Mouse position is at: {{ x }}, {{ y }}
           </p>
+          <strong>EXAMPLE customFetch:</strong>
+          <pre>
+            {{ coffeeData }}
+          </pre>
         </div>
         <div class="col-6">
           <h3>Utils</h3>
@@ -121,27 +125,41 @@
 import DefaultLayout from "@/layouts/default.vue";
 import HelloWorld from "@/components/hello-world.vue";
 
+import { ref, onMounted } from "vue";
 import { useMouse } from "@/composables/mouse";
+import { useCustomFetch } from "@/composables/customFetch";
 import { formatPhoneNumber } from "@/utils/format";
 
 export default {
   name: "PagesCustomize",
-
   components: {
     DefaultLayout,
     HelloWorld,
   },
   inject: ["mq"],
-  // setup() is needed for Composition API
   setup() {
-    // instantiate composable
     const { x, y } = useMouse();
 
-    // return all imported functions to be used in the component
+    const coffeeData = ref(null);  // reactive ref for coffee data
+    const fetchError = ref(null);  // optional error tracking
+
+    onMounted(async () => {
+      try {
+        coffeeData.value = await useCustomFetch(
+          "https://api.sampleapis.com/coffee/hot"
+        );
+      } catch (err) {
+        fetchError.value = err;
+        console.error("Failed to fetch coffee data:", err);
+      }
+    });
+
     return {
       x,
       y,
       formatPhoneNumber,
+      coffeeData,
+      fetchError,
     };
   },
   data() {
