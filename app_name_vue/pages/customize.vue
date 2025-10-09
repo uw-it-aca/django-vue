@@ -48,7 +48,7 @@
           </p>
           <strong>EXAMPLE customFetch:</strong>
           <pre>
-            {{ coffeeData }}
+            {{ sampleData }}
           </pre>
         </div>
         <div class="col-6">
@@ -140,17 +140,17 @@ export default {
   setup() {
     const { x, y } = useMouse();
 
-    const coffeeData = ref(null);  // reactive ref for coffee data
+    const sampleData = ref(null);  // reactive ref for sample data
     const fetchError = ref(null);  // optional error tracking
 
     onMounted(async () => {
       try {
-        coffeeData.value = await useCustomFetch(
-          "https://api.sampleapis.com/coffee/hot"
+        sampleData.value = await useCustomFetch(
+          "/api/v0/sample"
         );
       } catch (err) {
         fetchError.value = err;
-        console.error("Failed to fetch coffee data:", err);
+        console.error("Failed to fetch sample data:", err);
       }
     });
 
@@ -158,7 +158,7 @@ export default {
       x,
       y,
       formatPhoneNumber,
-      coffeeData,
+      sampleData,
       fetchError,
     };
   },
