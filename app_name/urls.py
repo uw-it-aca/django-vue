@@ -4,6 +4,7 @@
 from django.conf import settings
 from django.urls import re_path
 from django.views.generic import TemplateView
+from app_name.views.api.sample import SampleAPI
 from app_name.views.pages import DefaultPageView
 
 
@@ -13,6 +14,11 @@ urlpatterns = []
 # add debug routes for developing error pages
 if settings.DEBUG:
     urlpatterns += [
+        re_path(
+            r"^api/v0/sample$",
+            SampleAPI.as_view(),
+            name="sampleapi",
+        ),
         re_path(
             r"^500$",
             TemplateView.as_view(template_name="500.html"),
