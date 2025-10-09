@@ -121,13 +121,13 @@
 </template>
 
 <script>
+import { ref, onMounted } from "vue";
 import DefaultLayout from "@/layouts/default.vue";
 import HelloWorld from "@/components/hello-world.vue";
 
-import { ref, onMounted } from "vue";
 import { useMouse } from "@/composables/mouse";
-import { useCustomFetch } from "@/composables/customFetch";
 import { formatPhoneNumber } from "@/utils/format";
+import { getSample } from "@/utils/data";
 
 export default {
   name: "PagesCustomize",
@@ -136,29 +136,41 @@ export default {
     HelloWorld,
   },
   inject: ["mq"],
+  // setup() is needed for Composition API
   setup() {
+    // instatiate composable
     const { x, y } = useMouse();
 
+    // instatiate customFetch composable example
     const sampleData = ref(null);  // reactive ref for sample data
     const fetchError = ref(null);  // optional error tracking
+    const isLoading = ref(true);
 
-    onMounted(async () => {
+    async function loadSample() {
+      isLoading.value = true;
       try {
-        sampleData.value = await useCustomFetch(
-          "/api/v0/sample"
-        );
-      } catch (err) {
-        fetchError.value = err;
-        console.error("Failed to fetch sample data:", err);
+        sampleData.value = await getSample();
+        fetchError.value = null;
+      } catch (error) {
+        fetchError.value = error;
+        sampleData.value = null;
+      }finally {
+        isLoading.value = false;
       }
+    }
+
+    onMounted(() => {
+      loadSample();
     });
 
+    //return all imported functions to be used in the component
     return {
       x,
       y,
       formatPhoneNumber,
       sampleData,
       fetchError,
+      isLoading,
     };
   },
   data() {
@@ -166,6 +178,7 @@ export default {
       pageTitle: "Customizing your app",
     };
   },
-  methods: {},
+  methods: {
+  },
 };
 </script>
