@@ -47,8 +47,7 @@
             <strong>EXAMPLE:</strong> Mouse position is at: {{ x }}, {{ y }}
           </p>
           <strong>EXAMPLE customFetch:</strong>
-          <pre>
-            {{ sampleData }}
+          <pre>{{ sampleData }}
           </pre>
         </div>
         <div class="col-6">
