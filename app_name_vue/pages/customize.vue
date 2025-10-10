@@ -154,7 +154,7 @@ export default {
       } catch (error) {
         fetchError.value = error;
         sampleData.value = null;
-      }finally {
+      } finally {
         isLoading.value = false;
       }
     }
