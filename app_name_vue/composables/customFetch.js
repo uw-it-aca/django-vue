@@ -44,7 +44,7 @@ export async function useCustomFetch(url, options = {}) {
           const json = text.length ? JSON.parse(text) : {};
           return json;
         } catch (error) {
-          throw new Error(`Failed to parse response as JSON:, ${error}`);
+          throw new Error(`Failed to parse response as JSON: ${error}`);
         }
       });
     } else {
