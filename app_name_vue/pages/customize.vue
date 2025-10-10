@@ -138,7 +138,7 @@ export default {
   inject: ["mq"],
   // setup() is needed for Composition API
   setup() {
-    // instatiate composable
+    // instantiate composable
     const { x, y } = useMouse();
 
     // instatiate customFetch composable example
