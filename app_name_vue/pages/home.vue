@@ -3,9 +3,7 @@
 <template>
   <DefaultLayout :page-title="pageTitle">
     <!-- page content -->
-    <template #title>
-      {{ pageTitle }}
-    </template>
+    <template #title>{{ pageTitle }}</template>
 
     <template #description>
       <div class="p-0 col-md-8 lead">
@@ -47,14 +45,14 @@
               (back-end)
             </li>
             <li>
-              <a href="https://vuejs.org/" target="_blank">Vue</a> (front-end)
+              <a href="https://vuejs.org/" target="_blank">Vue</a>(front-end)
             </li>
           </ul>
 
           <h2>Design</h2>
           <p>
             We use the
-            <a href="https://test.solstice.uw.edu">Solstice Design System</a> as
+            <a href="https://test.solstice.uw.edu">Solstice Design System</a>as
             the basis of our design.
           </p>
         </div>
@@ -73,7 +71,7 @@
                 >Vue Test Utils</a
               >
               with
-              <a href="https://vitest.dev/" target="_blank">Vitest</a> (test
+              <a href="https://vitest.dev/" target="_blank">Vitest</a>(test
               runner)
             </li>
           </ul>
@@ -112,11 +110,11 @@
         </div>
 
         <div class="col-md-8">
-          <hr class="my-5 w-50" />
+          <hr class="my-5 w-50">
 
           <h2>Get Started</h2>
           <p>
-            View the <a href="/customize">customizing your app</a> page to learn
+            View the <a href="/customize">customizing your app</a>page to learn
             how to get started.
           </p>
         </div>
@@ -126,14 +124,14 @@
 </template>
 
 <script>
-import DefaultLayout from "@/layouts/default.vue";
+  import DefaultLayout from "@/layouts/default.vue";
 
-export default {
-  name: "PagesHome",
-  components: { DefaultLayout },
-  data() {
-    return { pageTitle: "Getting started" };
-  },
-  methods: {},
-};
+  export default {
+    name: "PagesHome",
+    components: { DefaultLayout },
+    data() {
+      return { pageTitle: "Getting started" };
+    },
+    methods: {},
+  };
 </script>
