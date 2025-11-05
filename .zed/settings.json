@@ -1,0 +1,57 @@
+{
+  // ignore eslint
+  "language_servers": ["!eslint"],
+  "lsp": {
+    "ruff": {
+      "initialization_options": {
+        "settings": {
+          // ruff server settings goes here
+          "lineLength": 79,
+          "lint": {
+            "select": ["E", "W"], // pycodestyle rules only
+            "ignore": ["F"] // ignore pyflakes
+          },
+          "organizeImports": true
+        }
+      }
+    }
+  },
+  // ... other settings
+  "languages": {
+    "Vue.js": {
+      "formatter": {
+        "external": {
+          // use biome
+          "command": "./node_modules/.bin/biome",
+          "arguments": ["format", "--write", "--stdin-file-path={buffer_path}"]
+        }
+      },
+      "format_on_save": "on"
+      // set line length more than default 80
+      // "preferred_line_length": 100
+    },
+    "JavaScript": {
+      "formatter": { "language_server": { "name": "biome" } },
+      "code_actions_on_format": {
+        "source.fixAll.biome": true,
+        "source.organizeImports.biome": true
+      }
+    },
+    "TypeScript": {
+      "formatter": { "language_server": { "name": "biome" } },
+      "code_actions_on_format": {
+        "source.fixAll.biome": true,
+        "source.organizeImports.biome": true
+      }
+    },
+    "Python": {
+      "formatter": { "language_server": { "name": "ruff" } },
+      "language_servers": [
+        // Disable basedpyright and enable pylsp
+        //"pylsp",
+        //"!basedpyright",
+        "ruff"
+      ]
+    }
+  }
+}
