@@ -11,8 +11,8 @@
     "eslint": "eslint 'app_name_vue/**/*.{js,vue}'",
     "stylelint": "stylelint 'app_name_vue/**/*.{vue,scss}'",
     "lighthouse": "lhci collect",
-    "biome:format": "biome format --write .",
-    "biome:lint": "biome lint ."
+    "biome:format": "biome format --write ./app_name_vue",
+    "biome:lint": "biome lint ./app_name_vue"
   },
   "repository": {
     "type": "git",

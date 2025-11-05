@@ -12,44 +12,43 @@
 
       <main>
         <h1 class="">
-          <slot name="title">
-            {{ pageTitle }}
-          </slot>
+          <slot name="title">{{ pageTitle }}</slot>
         </h1>
 
-        <slot name="description" />
-        <hr class="my-5 w-25 d-inline-block" />
-        <slot name="content" />
+        <slot name="description"/>
+        <hr class="my-5 w-25 d-inline-block">
+        <slot name="content"/>
       </main>
 
       <footer class="pt-2 mt-5 mb-3 text-muted border-top">
-        Copyright &copy; {{ new Date().getFullYear() }} University of Washington
+        Copyright &copy; {{ new Date().getFullYear() }}University of Washington
       </footer>
     </div>
   </div>
 </template>
 
 <script>
-export default {
-  name: "DefaultLayout",
-  components: {},
-  props: {
-    pageTitle: {
-      type: String,
-      required: true,
+  export default {
+    name: "DefaultLayout",
+    components: {},
+    props: {
+      pageTitle: {
+        type: String,
+        required: true,
+      },
     },
-  },
-  data() {
-    return {
-      // minimum application setup overrides
-      appName: "Django+Vue",
-      // automatically set year
-      currentYear: new Date().getFullYear(),
-    };
-  },
-  created: function () {
-    // constructs page title in the following format "Page Title - AppName"
-    document.title = this.pageTitle + " - " + this.appName;
-  },
-};
+    data() {
+      return {
+        // minimum application setup overrides
+        appName: "Django+Vue",
+        // automatically set year
+        currentYear: new Date().getFullYear(),
+      };
+    },
+    created: function () {
+      // constructs page title in the following format "Page Title - AppName"
+      // document.title = this.pageTitle + " - " + this.appName;
+      document.title = `${this.pageTitle} - ${this.appName}`;
+    },
+  };
 </script>
