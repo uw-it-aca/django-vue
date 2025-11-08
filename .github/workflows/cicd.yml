@@ -92,6 +92,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-buildx-
 
+        # Build App Image
       - name: Build App Image
         uses: docker/build-push-action@v6
         with:
@@ -103,54 +104,71 @@ jobs:
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache
 
+      # Build Test Image
       - name: Build Test Image
         uses: docker/build-push-action@v6
         with:
+          context: .
           target: app-test-container
-          tags: app-test-container
+          tags: app-test-container:latest
           push: false
           load: true
+          cache-from: type=local,src=/tmp/.buildx-cache
+          cache-to: type=local,dest=/tmp/.buildx-cache
 
+      # Run Python Tests
       - name: Run Tests in Image
         id: tests
         shell: bash
-        run: >-
-          docker run -u root -t
-          -v ${PWD}:/coverage
-          -e DJANGO_APP="$DJANGO_APP"
-          -e "ENV=localdev"
-          app-test-container
-          bash -c ". ./docker/test.sh"
+        run: |
+          docker run --rm -u root -t \
+            -v "${PWD}:/coverage" \
+            -e "DJANGO_APP=${DJANGO_APP}" \
+            -e "ENV=localdev" \
+            app-test-container:latest \
+            bash -c ". ./docker/test.sh"
 
+      # Set up Node.js for Vue
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: "20"
 
+      # Install Vue Dependencies
       - name: Install npm dependencies
         run: npm install
 
+      # Run Vue Coverage
       - name: Run Vue Coverage
         run: npm run coverage
 
+      # Upload Vue Coverage to Coveralls
       - name: Upload Vue Coverage
         uses: coverallsapp/github-action@v2
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           COVERALLS_PARALLEL: true
+          COVERALLS_SERVICE_NAME: app_name_vue
 
+      # Install Python Coverage Tools
       - name: Install Coverage and Coveralls
         run: |
-          python -m pip install --upgrade pip coverage coveralls==3.3.1
+          python -m pip install --upgrade pip
+          pip install coverage coveralls==3.3.1
 
+      # Combine Python Coverage Reports
       - name: Combine Coverage Reports
         run: coverage combine
 
-      - name: Upload Python Coverage to Coveralls
+      # Upload Python Coverage to Coveralls
+      - name: Upload Python Coverage
         uses: coverallsapp/github-action@v2
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
+          COVERALLS_PARALLEL: true
+          COVERALLS_SERVICE_NAME: app_name
 
+      # Finalize Coveralls Parallel Build
       - name: Finish Coveralls Build
         uses: coverallsapp/github-action@v2
         with:
