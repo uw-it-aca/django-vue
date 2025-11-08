@@ -133,7 +133,12 @@ jobs:
       - name: Run Vue Coverage
         run: npm run coverage
 
-      - name: Upload Python Coverage
+      - name: Post Vue coverage data to Coveralls
+        uses: coverallsapp/github-action@v2
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload Python Coverage to Coveralls
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           COVERALLS_PARALLEL: true
@@ -142,18 +147,6 @@ jobs:
           python -m pip install --upgrade pip coverage coveralls==3.3.1
           coverage combine
           coveralls
-
-      - name: Upload Vue Coverage
-        env:
-          COVERALLS_REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          COVERALLS_PARALLEL: true
-        run: npm run coveralls
-
-      - name: Finish Coveralls Build
-        env:
-          COVERALLS_REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          curl https://coveralls.io/webhook?repo_token=${{ secrets.GITHUB_TOKEN }} -d "payload[build_num]=${{ github.run_id }}&payload[status]=done"
 
 #      - name: Push Image to Repository
 #        if: github.event_name == 'push'
