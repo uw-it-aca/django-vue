@@ -12,7 +12,8 @@
     "stylelint": "stylelint 'app_name_vue/**/*.{vue,scss}'",
     "lighthouse": "lhci collect",
     "biome:format": "biome format --write ./app_name_vue",
-    "biome:lint": "biome lint ./app_name_vue"
+    "biome:lint": "biome lint ./app_name_vue",
+    "coveralls": "coveralls < coverage/lcov.info"
   },
   "repository": {
     "type": "git",
@@ -47,6 +48,7 @@
     "@vitest/coverage-v8": "^3.2.4",
     "@vue/eslint-config-prettier": "^10.2.0",
     "@vue/test-utils": "^2.4.6",
+    "coveralls": "^3.1.1",
     "dotenv": "^17.2.3",
     "eslint": "^9.36.0",
     "eslint-plugin-vue": "^10.5.0",
