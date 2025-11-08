@@ -133,14 +133,16 @@ jobs:
       - name: Run Vue Coverage
         run: npm run coverage
 
-      - name: Post Vue coverage data to Coveralls
+      - name: Upload Vue Coverage
         uses: coverallsapp/github-action@v2
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
+          COVERALLS_PARALLEL: true
 
-      - name: Upload Python Coverage to Coveralls
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Upload Python Coverage
+        uses: coverallsapp/github-action@v2
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
           COVERALLS_PARALLEL: true
         shell: bash
         run: |
@@ -148,6 +150,11 @@ jobs:
           coverage combine
           coveralls
 
+      - name: Finish Coveralls Build
+        uses: coverallsapp/github-action@v2
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          parallel-finished: true
 #      - name: Push Image to Repository
 #        if: github.event_name == 'push'
 #        uses: uw-it-aca/actions/gcr-push@main
