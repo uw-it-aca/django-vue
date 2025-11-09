@@ -128,15 +128,33 @@ jobs:
             app-test-container:latest \
             bash -c ". ./docker/test.sh"
 
-      # Record python test results
-      - name: Record Test Results
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        shell: bash
+      # Install Python Coverage Tools
+      - name: Install Coverage and Coveralls
         run: |
-          python -m pip install --upgrade pip coverage coveralls==3.3.1
-          coverage combine
-          coveralls
+          python -m pip install --upgrade pip
+          pip install coverage coveralls==3.3.1
+
+      # Combine Python Coverage Reports
+      - name: Combine Coverage Reports
+        run: coverage combine coveralls
+
+      # Upload Python Coverage to Coveralls
+      - name: Upload Python Coverage
+        uses: coverallsapp/github-action@v2
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          flag-name: app_name
+          parallel: true
+
+      # Record python test results
+      #- name: Record Test Results
+      #  env:
+      #    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #  shell: bash
+      #  run: |
+      #    python -m pip install --upgrade pip coverage coveralls==3.3.1
+      #    coverage combine
+      #    coveralls
 
       # Set up Node.js for Vue
       - name: Set up Node.js
