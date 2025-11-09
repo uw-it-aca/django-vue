@@ -136,7 +136,7 @@ jobs:
 
       # Combine Python Coverage Reports
       - name: Combine Coverage Reports
-        run: coverage combine coveralls
+        run: coverage combine
 
       # Upload Python Coverage to Coveralls
       - name: Upload Python Coverage
