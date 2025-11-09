@@ -128,6 +128,20 @@ jobs:
             app-test-container:latest \
             bash -c ". ./docker/test.sh"
 
+      # Install Python Coverage Tools
+      - name: Install Coverage and Coveralls
+        run: |
+          python -m pip install --upgrade pip
+          pip install coverage coveralls==3.3.1
+
+      # Upload Python Coverage to Coveralls
+      - name: Upload Python Coverage
+        uses: coverallsapp/github-action@v2
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          flag-name: app_name
+          parallel: true
+
       # Set up Node.js for Vue
       - name: Set up Node.js
         uses: actions/setup-node@v4
@@ -147,26 +161,9 @@ jobs:
         uses: coverallsapp/github-action@v2
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          COVERALLS_PARALLEL: true
-          COVERALLS_SERVICE_NAME: app_name_vue
-
-      # Install Python Coverage Tools
-      - name: Install Coverage and Coveralls
-        run: |
-          python -m pip install --upgrade pip
-          pip install coverage coveralls==3.3.1
-
-      # Combine Python Coverage Reports
-      - name: Combine Coverage Reports
-        run: coverage combine
-
-      # Upload Python Coverage to Coveralls
-      - name: Upload Python Coverage
-        uses: coverallsapp/github-action@v2
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          COVERALLS_PARALLEL: true
-          COVERALLS_SERVICE_NAME: app_name
+          path-to-lcov: ./coverage/lcov.info
+          flag-name: app_name_vue
+          parralel: true
 
       # Finalize Coveralls Parallel Build
       - name: Finish Coveralls Build
