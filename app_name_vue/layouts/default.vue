@@ -21,7 +21,7 @@
       </main>
 
       <footer class="pt-2 mt-5 mb-3 text-muted border-top">
-        Copyright &copy; {{ new Date().getFullYear() }}University of Washington
+        Copyright &copy; {{ currentYear }} University of Washington
       </footer>
     </div>
   </div>
