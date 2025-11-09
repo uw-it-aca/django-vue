@@ -44,8 +44,8 @@
     "experimentalFullSupportEnabled": true,
     "formatter": {
       "enabled": true,
-      "indentScriptAndStyle": true,
-      "noIrregularWhitespace": false
+      "indentScriptAndStyle": true
+      // "whitespaceSensitivity": "strict"
     }
   },
   "assist": {

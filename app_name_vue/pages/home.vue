@@ -90,7 +90,7 @@
                 target="_blank"
                 >Black</a
               >
-               (Python)
+              (Python)
             </li>
             <li>
               <a href="https://eslint.vuejs.org/" target="_blank"
@@ -124,14 +124,14 @@
 </template>
 
 <script>
-  import DefaultLayout from "@/layouts/default.vue";
+import DefaultLayout from "@/layouts/default.vue";
 
-  export default {
-    name: "PagesHome",
-    components: { DefaultLayout },
-    data() {
-      return { pageTitle: "Getting started" };
-    },
-    methods: {},
-  };
+export default {
+	name: "PagesHome",
+	components: { DefaultLayout },
+	data() {
+		return { pageTitle: "Getting started" };
+	},
+	methods: {},
+};
 </script>
