@@ -1,6 +1,6 @@
-import { createApp } from "vue";
 import { createBootstrap } from "bootstrap-vue-next";
 import { createPinia } from "pinia";
+import { createApp } from "vue";
 // import VueGtag from "vue-gtag-next";
 import { Vue3Mq } from "vue3-mq";
 

@@ -29,9 +29,9 @@ describe("PagesHome", () => {
     expect(hrefs).toContain(
       "https://black.readthedocs.io/en/stable/index.html",
     );
-    expect(hrefs).toContain("https://eslint.vuejs.org/");
+    expect(hrefs).toContain("https://biomejs.dev/");
     expect(hrefs).toContain(
-      "https://github.com/ota-meshi/stylelint-config-recommended-vue",
+      "https://stylelint.io/",
     );
     expect(hrefs).toContain("/customize");
   });

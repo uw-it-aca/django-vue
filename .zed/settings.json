@@ -25,19 +25,25 @@
   "languages": {
     "Vue.js": {
       "formatter": {
-        "external": {
-          // use biome
-          "command": "./node_modules/.bin/biome",
-          "arguments": ["format", "--write", "--stdin-file-path={buffer_path}"]
+        "language_server": {
+          "name": "biome"
         }
       },
-      "format_on_save": "on"
+      "code_actions_on_format": {
+        "source.fixAll.biome": true,
+        "source.organizeImports.biome": true
+      },
+      "format_on_save": "off"
       // set line length more than default 80
       // "preferred_line_length": 100
       // "language_servers": ["biome"]
     },
     "JavaScript": {
-      "formatter": { "language_server": { "name": "biome" } },
+      "formatter": {
+        "language_server": {
+          "name": "biome"
+        }
+      },
       "code_actions_on_format": {
         "source.fixAll.biome": true,
         "source.organizeImports.biome": true
@@ -45,14 +51,22 @@
       // "language_servers": ["biome"]
     },
     "TypeScript": {
-      "formatter": { "language_server": { "name": "biome" } },
+      "formatter": {
+        "language_server": {
+          "name": "biome"
+        }
+      },
       "code_actions_on_format": {
         "source.fixAll.biome": true,
         "source.organizeImports.biome": true
       }
     },
     "Python": {
-      "formatter": { "language_server": { "name": "ruff" } },
+      "formatter": {
+        "language_server": {
+          "name": "ruff"
+        }
+      },
       "language_servers": [
         // Disable basedpyright and enable pylsp
         //"pylsp",
