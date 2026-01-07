@@ -69,7 +69,7 @@
             <code>hello.js</code> store.
           </p>
           <p>
-            EXAMPLE: <hello-world/>
+            EXAMPLE: <hello-world />
           </p>
         </div>
       </div>
@@ -84,7 +84,7 @@
             <code>hello-world.vue</code> file is an example of a very simple
             component.
           </p>
-          <hello-world/>
+          <hello-world />
         </div>
       </div>
 
@@ -119,37 +119,36 @@
 </template>
 
 <script>
-import DefaultLayout from "@/layouts/default.vue";
-import HelloWorld from "@/components/hello-world.vue";
+  import HelloWorld from "@/components/hello-world.vue";
+  import { useMouse } from "@/composables/mouse";
+  import DefaultLayout from "@/layouts/default.vue";
+  import { formatPhoneNumber } from "@/utils/format";
 
-import { useMouse } from "@/composables/mouse";
-import { formatPhoneNumber } from "@/utils/format";
+  export default {
+    name: "PagesCustomize",
 
-export default {
-	name: "PagesCustomize",
+    components: {
+      DefaultLayout,
+      HelloWorld,
+    },
+    inject: ["mq"],
+    // setup() is needed for Composition API
+    setup() {
+      // instantiate composable
+      const { x, y } = useMouse();
 
-	components: {
-		DefaultLayout,
-		HelloWorld,
-	},
-	inject: ["mq"],
-	// setup() is needed for Composition API
-	setup() {
-		// instantiate composable
-		const { x, y } = useMouse();
-
-		// return all imported functions to be used in the component
-		return {
-			x,
-			y,
-			formatPhoneNumber,
-		};
-	},
-	data() {
-		return {
-			pageTitle: "Customizing your app",
-		};
-	},
-	methods: {},
-};
+      // return all imported functions to be used in the component
+      return {
+        x,
+        y,
+        formatPhoneNumber,
+      };
+    },
+    data() {
+      return {
+        pageTitle: "Customizing your app",
+      };
+    },
+    methods: {},
+  };
 </script>

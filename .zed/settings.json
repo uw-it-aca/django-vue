@@ -4,8 +4,8 @@
   "lsp": {
     "biome": {
       "settings": {
-        "require_config_file": true,
-      },
+        "require_config_file": true
+      }
     },
     "ruff": {
       "initialization_options": {
@@ -14,49 +14,65 @@
           "lineLength": 79,
           "lint": {
             "select": ["E", "W"], // pycodestyle rules only
-            "ignore": ["F"], // ignore pyflakes
+            "ignore": ["F"] // ignore pyflakes
           },
-          "organizeImports": true,
-        },
-      },
-    },
+          "organizeImports": true
+        }
+      }
+    }
   },
   // ... other settings
   "languages": {
     "Vue.js": {
-      "formatter": { "language_server": { "name": "biome" } },
+      "formatter": {
+        "language_server": {
+          "name": "biome"
+        }
+      },
       "code_actions_on_format": {
         "source.fixAll.biome": true,
-        "source.organizeImports.biome": true,
+        "source.organizeImports.biome": true
       },
-      "format_on_save": "off",
+      "format_on_save": "off"
       // set line length more than default 80
       // "preferred_line_length": 100
       // "language_servers": ["biome"]
     },
     "JavaScript": {
-      "formatter": { "language_server": { "name": "biome" } },
+      "formatter": {
+        "language_server": {
+          "name": "biome"
+        }
+      },
       "code_actions_on_format": {
         "source.fixAll.biome": true,
-        "source.organizeImports.biome": true,
-      },
+        "source.organizeImports.biome": true
+      }
       // "language_servers": ["biome"]
     },
     "TypeScript": {
-      "formatter": { "language_server": { "name": "biome" } },
+      "formatter": {
+        "language_server": {
+          "name": "biome"
+        }
+      },
       "code_actions_on_format": {
         "source.fixAll.biome": true,
-        "source.organizeImports.biome": true,
-      },
+        "source.organizeImports.biome": true
+      }
     },
     "Python": {
-      "formatter": { "language_server": { "name": "ruff" } },
+      "formatter": {
+        "language_server": {
+          "name": "ruff"
+        }
+      },
       "language_servers": [
         // Disable basedpyright and enable pylsp
         //"pylsp",
         //"!basedpyright",
-        "ruff",
-      ],
-    },
-  },
+        "ruff"
+      ]
+    }
+  }
 }
