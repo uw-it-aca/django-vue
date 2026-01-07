@@ -153,9 +153,11 @@ jobs:
           # Optional: show a summary in logs
           coverage report || true
 
-          # Produce LCOV file for the Coveralls Action
-          coverage-lcov -o coverage.lcov
+          # Generate LCOV for Coveralls (coverage-lcov writes to stdout)
+          coverage-lcov > coverage.lcov
 
+          # Quick sanity check
+          test -s coverage.lcov && echo "coverage.lcov generated successfully"
 
       # Upload coverage to Coveralls using the GitHub Action
       - name: Upload coverage to Coveralls (GitHub Action v2)
