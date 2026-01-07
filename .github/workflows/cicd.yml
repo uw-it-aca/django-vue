@@ -116,7 +116,7 @@ jobs:
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache
 
-      # Run Python Tests
+      # Run Python Tests (unchanged)
       - name: Run Tests in Image
         id: tests
         shell: bash
@@ -128,15 +128,44 @@ jobs:
             app-test-container:latest \
             bash -c ". ./docker/test.sh"
 
-      # Run Python Coverage and Upload to Coveralls
-      - name: Run Python Coverage and Upload to Coveralls
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # Convert coverage to LCOV on host
+      - name: Combine and Convert Coverage to LCOV
         shell: bash
         run: |
-          python -m pip install --upgrade pip coverage coveralls==3.3.1
-          coverage combine
-          coveralls
+          # Ensure we have the tools locally
+          python -m pip install --upgrade pip
+          python -m pip install coverage coverage-lcov
+
+          # Move into repo root (already the default in GitHub Actions)
+          # Combine any coverage data files written by the container into /coverage
+          # Common patterns: .coverage, .coverage.*, .coverage.*.hostname, etc.
+          # If your test.sh writes to a specific file, you can point to it explicitly.
+          if ls .coverage* 1>/dev/null 2>&1; then
+            echo "Found coverage data in repo root."
+          elif ls coverage/.coverage* 1>/dev/null 2>&1; then
+            echo "Found coverage data under coverage/; copying to root for combine."
+            cp coverage/.coverage* .
+          fi
+
+          # Combine (harmless if there’s only one file)
+          coverage combine || true
+
+          # Optional: show a summary in logs
+          coverage report || true
+
+          # Produce LCOV file for the Coveralls Action
+          coverage-lcov -o coverage.lcov
+
+
+      # Upload coverage to Coveralls using the GitHub Action
+      - name: Upload coverage to Coveralls (GitHub Action v2)
+        uses: coverallsapp/github-action@v2
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path-to-lcov: coverage.lcov
+          # If your coverage paths are absolute or don’t match repository layout,
+          # uncomment base-path to help Coveralls map files correctly:
+          # base-path: ${{ github.workspace }}
 
       # Set up Node.js for Vue
       - name: Set up Node.js
