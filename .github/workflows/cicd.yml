@@ -129,36 +129,35 @@ jobs:
             bash -c ". ./docker/test.sh"
 
       # Convert coverage to LCOV on host
-      - name: Combine and Convert Coverage to LCOV
+      - name: Combine and Export Coverage (JSON → LCOV)
         shell: bash
         run: |
           set -e
 
           python -m pip install --upgrade pip
-          python -m pip install coverage coverage-lcov
+          python -m pip install coverage
 
-          # If container wrote coverage files under ./coverage, copy them up
+          # Copy container-generated coverage files if needed
           if ls coverage/.coverage* 1>/dev/null 2>&1; then
-            echo "Found coverage data under coverage/; copying to repo root."
             cp coverage/.coverage* .
           fi
 
-          echo "Before combine:"
-          ls -la .coverage* || true
-
-          # Ensure we control the output filename
+          # Ensure combined output is deterministic
           COVERAGE_FILE=.coverage coverage combine
 
-          echo "After combine:"
-          ls -la .coverage || true
-
-          # Show coverage but never fail CI here
           coverage report || true
 
-          # Convert to LCOV (writes to stdout)
-          coverage-lcov > coverage.lcov
+          # Export JSON coverage
+          coverage json -o coverage.json
 
-          # Sanity check
+          test -s coverage.json || { echo "ERROR: coverage.json not created"; exit 1; }
+
+      # Convert coverage to LCOV
+      - name: Convert coverage.json to LCOV
+        shell: bash
+        run: |
+          python -m pip install coverage2lcov
+          coverage2lcov coverage.json > coverage.lcov
           test -s coverage.lcov || { echo "ERROR: coverage.lcov not created"; exit 1; }
 
       # Upload coverage to Coveralls using the GitHub Action
