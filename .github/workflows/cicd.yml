@@ -156,8 +156,11 @@ jobs:
           # Generate LCOV for Coveralls (coverage-lcov writes to stdout)
           coverage-lcov > coverage.lcov
 
-          # Quick sanity check
-          test -s coverage.lcov && echo "coverage.lcov generated successfully"
+          # Ensure file exists and is non-empty
+          if [ ! -s coverage.lcov ]; then
+            echo "ERROR: coverage.lcov not created"
+            exit 1
+          fi
 
       # Upload coverage to Coveralls using the GitHub Action
       - name: Upload coverage to Coveralls (GitHub Action v2)
