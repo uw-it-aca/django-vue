@@ -137,36 +137,27 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install coverage coverage-lcov
 
-          # If the container wrote coverage files under ./coverage, copy them up
           if ls coverage/.coverage* 1>/dev/null 2>&1; then
-            echo "Found coverage data under coverage/; copying to repo root."
             cp coverage/.coverage* .
           fi
 
-          echo "Coverage files present in repo root:"
+          echo "Before combine:"
           ls -la .coverage* || true
 
-          # Prevent a custom COVERAGE_FILE from impacting the combined output name
-          unset COVERAGE_FILE
+          # Let combine create a merged file (may inherit a custom name)
+          coverage combine || true
 
-          # Write merged data to the default .coverage filename
-          coverage combine --output-file .coverage
+          echo "After combine:"
+          ls -la .coverage* || true
 
-          # Show a summary but don't fail the CI if a threshold is set
+          # Pick the newest coverage data file and rename it to .coverage
+          COMBINED=$(ls -t .coverage* | head -n1)
+          echo "Using combined data file: $COMBINED"
+          mv -f "$COMBINED" .coverage
+
           coverage report || true
-
-          # Generate LCOV (coverage-lcov writes to stdout)
           coverage-lcov > coverage.lcov
-
-          # Sanity check LCOV file exists and is non-empty
-          if [ ! -s coverage.lcov ]; then
-            echo "ERROR: coverage.lcov not created"
-            echo "Debug: listing current directory"
-            ls -la
-            echo "Debug: listing coverage files"
-            ls -la .coverage* || true
-            exit 1
-          fi
+          test -s coverage.lcov || { echo "ERROR: coverage.lcov not created"; exit 1; }
 
       # Upload coverage to Coveralls using the GitHub Action
       - name: Upload coverage to Coveralls (GitHub Action v2)
