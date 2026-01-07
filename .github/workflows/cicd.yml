@@ -163,6 +163,8 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           path-to-lcov: coverage.lcov
+          flag-name: app_name
+          parallel: true
           # If your coverage paths are absolute or don’t match repository layout,
           # uncomment base-path to help Coveralls map files correctly:
           # base-path: ${{ github.workspace }}
