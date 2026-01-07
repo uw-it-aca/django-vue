@@ -137,26 +137,28 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install coverage coverage-lcov
 
+          # If container wrote coverage files under ./coverage, copy them up
           if ls coverage/.coverage* 1>/dev/null 2>&1; then
+            echo "Found coverage data under coverage/; copying to repo root."
             cp coverage/.coverage* .
           fi
 
           echo "Before combine:"
           ls -la .coverage* || true
 
-          # Let combine create a merged file (may inherit a custom name)
-          coverage combine || true
+          # Ensure we control the output filename
+          COVERAGE_FILE=.coverage coverage combine
 
           echo "After combine:"
-          ls -la .coverage* || true
+          ls -la .coverage || true
 
-          # Pick the newest coverage data file and rename it to .coverage
-          COMBINED=$(ls -t .coverage* | head -n1)
-          echo "Using combined data file: $COMBINED"
-          mv -f "$COMBINED" .coverage
-
+          # Show coverage but never fail CI here
           coverage report || true
+
+          # Convert to LCOV (writes to stdout)
           coverage-lcov > coverage.lcov
+
+          # Sanity check
           test -s coverage.lcov || { echo "ERROR: coverage.lcov not created"; exit 1; }
 
       # Upload coverage to Coveralls using the GitHub Action
