@@ -132,33 +132,39 @@ jobs:
       - name: Combine and Convert Coverage to LCOV
         shell: bash
         run: |
-          # Ensure we have the tools locally
+          set -e
+
           python -m pip install --upgrade pip
           python -m pip install coverage coverage-lcov
 
-          # Move into repo root (already the default in GitHub Actions)
-          # Combine any coverage data files written by the container into /coverage
-          # Common patterns: .coverage, .coverage.*, .coverage.*.hostname, etc.
-          # If your test.sh writes to a specific file, you can point to it explicitly.
-          if ls .coverage* 1>/dev/null 2>&1; then
-            echo "Found coverage data in repo root."
-          elif ls coverage/.coverage* 1>/dev/null 2>&1; then
-            echo "Found coverage data under coverage/; copying to root for combine."
+          # If the container wrote coverage files under ./coverage, copy them up
+          if ls coverage/.coverage* 1>/dev/null 2>&1; then
+            echo "Found coverage data under coverage/; copying to repo root."
             cp coverage/.coverage* .
           fi
 
-          # Combine (harmless if there’s only one file)
-          coverage combine || true
+          echo "Coverage files present in repo root:"
+          ls -la .coverage* || true
 
-          # Optional: show a summary in logs
+          # Prevent a custom COVERAGE_FILE from impacting the combined output name
+          unset COVERAGE_FILE
+
+          # Write merged data to the default .coverage filename
+          coverage combine --output-file .coverage
+
+          # Show a summary but don't fail the CI if a threshold is set
           coverage report || true
 
-          # Generate LCOV for Coveralls (coverage-lcov writes to stdout)
+          # Generate LCOV (coverage-lcov writes to stdout)
           coverage-lcov > coverage.lcov
 
-          # Ensure file exists and is non-empty
+          # Sanity check LCOV file exists and is non-empty
           if [ ! -s coverage.lcov ]; then
             echo "ERROR: coverage.lcov not created"
+            echo "Debug: listing current directory"
+            ls -la
+            echo "Debug: listing coverage files"
+            ls -la .coverage* || true
             exit 1
           fi
 
