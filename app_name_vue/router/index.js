@@ -1,11 +1,11 @@
-import { createWebHistory, createRouter } from "vue-router";
+import { createRouter, createWebHistory } from "vue-router";
 
 // vue-gtag-next track routing
 // import { trackRouter } from "vue-gtag-next";
 
+import Customize from "@/pages/customize.vue";
 // page components
 import Home from "@/pages/home.vue";
-import Customize from "@/pages/customize.vue";
 
 const routes = [
   {

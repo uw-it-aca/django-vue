@@ -3,9 +3,7 @@
 <template>
   <DefaultLayout :page-title="pageTitle">
     <!-- page content -->
-    <template #title>
-      {{ pageTitle }}
-    </template>
+    <template #title>{{ pageTitle }}</template>
 
     <template #description>
       <div class="p-0 col-md-8 lead">
@@ -29,9 +27,7 @@
             <li>
               <a href="https://www.docker.com" target="_blank">Docker </a>
             </li>
-            <li>
-              <a href="https://nodejs.org/en" target="_blank">Node</a>
-            </li>
+            <li><a href="https://nodejs.org/en" target="_blank">Node</a></li>
           </ul>
 
           <h2>Development</h2>
@@ -78,7 +74,7 @@
             </li>
           </ul>
 
-          <h2>Linting (code quality)</h2>
+          <h2>Linting/Formatting (code quality)</h2>
           <ul>
             <li>
               <a
@@ -95,16 +91,16 @@
               (Python)
             </li>
             <li>
-              <a href="https://eslint.vuejs.org/" target="_blank"
-                >eslint-plugin-vue</a
+              <a href="https://biomejs.dev/" target="_blank"
+                >Biome</a
               >
-              (Javascript)
+              (HTML/Javascript)
             </li>
             <li>
               <a
-                href="https://github.com/ota-meshi/stylelint-config-recommended-vue"
+                href="https://stylelint.io/"
                 target="_blank"
-                >stylelint-config-recommended-vue</a
+                >Stylelint</a
               >
               (CSS)
             </li>
@@ -112,7 +108,7 @@
         </div>
 
         <div class="col-md-8">
-          <hr class="my-5 w-50" />
+          <hr class="my-5 w-50">
 
           <h2>Get Started</h2>
           <p>
@@ -126,14 +122,14 @@
 </template>
 
 <script>
-import DefaultLayout from "@/layouts/default.vue";
+  import DefaultLayout from "@/layouts/default.vue";
 
-export default {
-  name: "PagesHome",
-  components: { DefaultLayout },
-  data() {
-    return { pageTitle: "Getting started" };
-  },
-  methods: {},
-};
+  export default {
+    name: "PagesHome",
+    components: { DefaultLayout },
+    data() {
+      return { pageTitle: "Getting started" };
+    },
+    methods: {},
+  };
 </script>

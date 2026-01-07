@@ -3,9 +3,7 @@
 <template>
   <DefaultLayout :page-title="pageTitle">
     <!-- page content -->
-    <template #title>
-      {{ pageTitle }}
-    </template>
+    <template #title>{{ pageTitle }}</template>
 
     <template #description>
       <p class="p-0 col-md-8 lead">
@@ -55,6 +53,7 @@
             <code>format.js</code> utility to access the
             <code>formatPhoneNumber()</code> function.
           </p>
+          ``
           <p>
             <strong>EXAMPLE:</strong> 2065559876 formatted to
             {{ formatPhoneNumber("2065559876") }}
@@ -69,7 +68,9 @@
             which prints a message that originates from the
             <code>hello.js</code> store.
           </p>
-          <p>EXAMPLE: <hello-world /></p>
+          <p>
+            EXAMPLE: <hello-world />
+          </p>
         </div>
       </div>
 
@@ -79,9 +80,9 @@
           <p>
             Single-file components in Vue make up the building blocks of all
             applications. These components are located in the
-            <code>/components</code>
-            directory. The following <code>hello-world.vue</code> file is an
-            example of a very simple component.
+            <code>/components</code> directory. The following
+            <code>hello-world.vue</code> file is an example of a very simple
+            component.
           </p>
           <hello-world />
         </div>
@@ -118,37 +119,36 @@
 </template>
 
 <script>
-import DefaultLayout from "@/layouts/default.vue";
-import HelloWorld from "@/components/hello-world.vue";
+  import HelloWorld from "@/components/hello-world.vue";
+  import { useMouse } from "@/composables/mouse";
+  import DefaultLayout from "@/layouts/default.vue";
+  import { formatPhoneNumber } from "@/utils/format";
 
-import { useMouse } from "@/composables/mouse";
-import { formatPhoneNumber } from "@/utils/format";
+  export default {
+    name: "PagesCustomize",
 
-export default {
-  name: "PagesCustomize",
+    components: {
+      DefaultLayout,
+      HelloWorld,
+    },
+    inject: ["mq"],
+    // setup() is needed for Composition API
+    setup() {
+      // instantiate composable
+      const { x, y } = useMouse();
 
-  components: {
-    DefaultLayout,
-    HelloWorld,
-  },
-  inject: ["mq"],
-  // setup() is needed for Composition API
-  setup() {
-    // instantiate composable
-    const { x, y } = useMouse();
-
-    // return all imported functions to be used in the component
-    return {
-      x,
-      y,
-      formatPhoneNumber,
-    };
-  },
-  data() {
-    return {
-      pageTitle: "Customizing your app",
-    };
-  },
-  methods: {},
-};
+      // return all imported functions to be used in the component
+      return {
+        x,
+        y,
+        formatPhoneNumber,
+      };
+    },
+    data() {
+      return {
+        pageTitle: "Customizing your app",
+      };
+    },
+    methods: {},
+  };
 </script>

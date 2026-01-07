@@ -7,34 +7,34 @@ This is a template repository used for creating Django-Vue applications. Use thi
 
 ## System Requirements
 
+- Docker (via Docker Desktop or Orbstack)
 - Python (3.10)
-- Rancher Desktop (1.12.1)
 - Node (20.11.0 LTS)
-- Npm (10.2.4)
+- NPM (10.2.4)
 
 ## Deployment
 
 - Django-Container (2.0.1)
-- Vite (3.1.3)
+- Vite (7.3.x)
 
 ## Development
 
-- Django (4.2)
-- Vue (3.2.28)
+- Django (5.x)
+- Vue (3.5.x)
 
 ## Design
 
-- Bootstrap (5.2)
+- Bootstrap (5.3.x)
 - Bootstrap Icons (1.9.1)
 
 ## Testing
 
-- Vitest (0.23.2)
-- Vue Test Utils (2.0.2)
+- Vitest (4.0.x)
+- Vue Test Utils (2.4.x)
 
-## Linting (code quality)
+## Linting/Formatting (code quality)
 - Pycodestyle (2.8.x)
-- ESLint (8.13.x)
+- Biome (2.3.x)
 - Stylelint (14.7.x)
 
 ## Cloning

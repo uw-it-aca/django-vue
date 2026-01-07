@@ -5,15 +5,15 @@
 </template>
 
 <script>
-import { useHelloStore } from "@/stores/hello";
+  import { useHelloStore } from "@/stores/hello";
 
-export default {
-  name: "HelloWorld",
-  data() {
-    return {
-      helloStore: useHelloStore(),
-    };
-  },
-  methods: {},
-};
+  export default {
+    name: "HelloWorld",
+    data() {
+      return {
+        helloStore: useHelloStore(),
+      };
+    },
+    methods: {},
+  };
 </script>
