@@ -6,6 +6,6 @@
     "batisteo.vscode-django",
     "vue.volar",
     "stylelint.vscode-stylelint",
-    "biomejs.biome"
-  ]
+    "oxc.oxc-vscode",
+  ],
 }

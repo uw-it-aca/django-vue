@@ -91,8 +91,8 @@
               (Python)
             </li>
             <li>
-              <a href="https://biomejs.dev/" target="_blank"
-                >Biome</a
+              <a href="https://oxc.rs/" target="_blank"
+                >OXC</a
               >
               (HTML/Javascript)
             </li>
