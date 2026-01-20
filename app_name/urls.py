@@ -4,8 +4,8 @@
 from django.conf import settings
 from django.urls import re_path
 from django.views.generic import TemplateView
-from app_name.views.pages import DefaultPageView
 
+from app_name.views.pages import DefaultPageView
 
 # start with an empty url array
 urlpatterns = []
@@ -29,5 +29,5 @@ urlpatterns += [
     # add api endpoints here
     # add default Vue page routes here
     re_path(r"^(customize|page2|page3)$", DefaultPageView.as_view()),
-    re_path(r"^$", DefaultPageView.as_view()),
+    re_path(r"^$", DefaultPageView.as_view(), name="index"),
 ]
