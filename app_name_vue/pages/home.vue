@@ -6,7 +6,7 @@
     <template #title>{{ pageTitle }}</template>
 
     <template #description>
-      <div class="p-0 col-md-8 lead">
+      <div class="col-md-8 lead p-0">
         <p>
           <a href="https://github.com/uw-it-aca/django-vue">django-vue</a>
           is a highly-opinionated template repository created and used by
@@ -91,24 +91,18 @@
               (Python)
             </li>
             <li>
-              <a href="https://oxc.rs/" target="_blank"
-                >OXC</a
-              >
+              <a href="https://oxc.rs/" target="_blank">OXC</a>
               (HTML/Javascript)
             </li>
             <li>
-              <a
-                href="https://stylelint.io/"
-                target="_blank"
-                >Stylelint</a
-              >
+              <a href="https://stylelint.io/" target="_blank">Stylelint</a>
               (CSS)
             </li>
           </ul>
         </div>
 
         <div class="col-md-8">
-          <hr class="my-5 w-50">
+          <hr class="my-5 w-50" />
 
           <h2>Get Started</h2>
           <p>
