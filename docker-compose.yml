@@ -1,4 +1,4 @@
-version: '3.4'
+version: "3.4"
 
 services:
   app:
@@ -8,7 +8,9 @@ services:
     restart: always
     container_name: app_name_app
     environment:
-      - GOOGLE_ANALYTICS_KEY=${GOOGLE_ANALYTICS_KEY}
+      ENV: localdev
+      GOOGLE_ANALYTICS_KEY: "${GOOGLE_ANALYTICS_KEY}"
+      CLARITY_PROJECT_ID: "${CLARITY_PROJECT_ID}"
     volumes:
       - ./app_name:/app/app_name
       - statics-volume:/static
