@@ -127,3 +127,34 @@
     methods: {},
   };
 </script>
+
+<style lang="scss">
+  // SASS for testing formatters
+  // Define standard variables and values for website
+  $primary-color: #a2b9bc;
+  $font-stack: Helvetica, Arial, sans-serif;
+  $base-size: 18px;
+
+  /* Use the variables */
+  body {
+    background-color: $primary-color;
+    font-family: $font-stack;
+    font-size: $base-size;
+  }
+  nav {
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    li {
+      display: inline-block;
+      a {
+        display: block;
+        padding: 6px 12px;
+        text-decoration: none;
+      }
+    }
+  }
+</style>
