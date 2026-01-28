@@ -1,27 +1,20 @@
 {
-  "black-formatter.args": [
-    "--line-length",
-    "79",
-    "--skip-string-normalization",
-    "true"
-  ],
-  "stylelint.validate": ["vue", "scss"],
   "editor.formatOnSave": false,
-  "editor.defaultFormatter": "biomejs.biome",
-  "editor.codeActionsOnSave": {
-    "source.organizeImports.biome": "explicit"
-  },
-  "[vue]": {
-    "editor.defaultFormatter": "biomejs.biome"
-  },
-  "[javascript]": {
-    "editor.defaultFormatter": "biomejs.biome"
+  "editor.defaultFormatter": "oxc.oxc-vscode",
+
+  "files.associations": {
+    "*.css": "tailwindcss",
   },
 
-  "[jsonc]": {
-    "editor.defaultFormatter": "biomejs.biome"
+  "[vue]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode",
+    "editor.rulers": [80],
   },
-  "[json]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
-  }
+  "[html]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode",
+    "editor.rulers": [120],
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode",
+  },
 }

@@ -6,7 +6,7 @@
     <template #title>{{ pageTitle }}</template>
 
     <template #description>
-      <p class="p-0 col-md-8 lead">
+      <p class="col-md-8 lead p-0">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget
         pulvinar est. Sed gravida neque justo, pellentesque finibus velit
         scelerisque eu. Curabitur et dolor luctus, convallis magna at, mollis
@@ -68,9 +68,7 @@
             which prints a message that originates from the
             <code>hello.js</code> store.
           </p>
-          <p>
-            EXAMPLE: <hello-world />
-          </p>
+          <p>EXAMPLE: <hello-world /></p>
         </div>
       </div>
 

@@ -2,10 +2,10 @@
   <div class="container-xl">
     <div class="px-3">
       <header
-        class="d-flex justify-content-between align-items-center pb-3 my-4 border-bottom"
+        class="d-flex justify-content-between align-items-center border-bottom my-4 pb-3"
       >
         <div class="h4 flex-fill">
-          <i class="bi bi-box-fill me-2 text-purple"></i>
+          <i class="bi bi-box-fill text-purple me-2"></i>
           <a href="/" class="text-reset text-decoration-none">{{ appName }}</a>
         </div>
       </header>
@@ -15,12 +15,12 @@
           <slot name="title">{{ pageTitle }}</slot>
         </h1>
 
-        <slot name="description"/>
-        <hr class="my-5 w-25 d-inline-block">
-        <slot name="content"/>
+        <slot name="description" />
+        <hr class="d-inline-block my-5 w-25" />
+        <slot name="content" />
       </main>
 
-      <footer class="pt-2 mt-5 mb-3 text-muted border-top">
+      <footer class="text-muted border-top mt-5 mb-3 pt-2">
         Copyright &copy; {{ currentYear }} University of Washington
       </footer>
     </div>

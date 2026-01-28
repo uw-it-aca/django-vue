@@ -29,10 +29,8 @@ describe("PagesHome", () => {
     expect(hrefs).toContain(
       "https://black.readthedocs.io/en/stable/index.html",
     );
-    expect(hrefs).toContain("https://biomejs.dev/");
-    expect(hrefs).toContain(
-      "https://stylelint.io/",
-    );
+    expect(hrefs).toContain("https://oxc.rs/");
+    expect(hrefs).toContain("https://stylelint.io/");
     expect(hrefs).toContain("/customize");
   });
 });
