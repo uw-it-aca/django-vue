@@ -137,6 +137,7 @@ jobs:
           python -m pip install --upgrade pip coverage coveralls==4.0.2
           coverage combine
           coveralls --service=github
+        continue-on-error: true
 
       # Set up Node.js for Vue
       - name: Set up Node.js
