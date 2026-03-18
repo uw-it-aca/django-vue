@@ -160,14 +160,14 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           path-to-lcov: ./coverage/lcov.info
           flag-name: app_name_vue
-          parallel: true
+          parallel: false
 
       # Finalize Coveralls Parallel Build
       - name: Finish Coveralls Build
         uses: coverallsapp/github-action@v2
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          parallel-finished: true
+          parallel-finished: false
 #      - name: Push Image to Repository
 #        if: github.event_name == 'push'
 #        uses: uw-it-aca/actions/gcr-push@main
