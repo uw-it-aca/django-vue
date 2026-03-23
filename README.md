@@ -8,13 +8,13 @@ This is a template repository used for creating Django-Vue applications. Use thi
 ## System Requirements
 
 - Docker (via Docker Desktop or Orbstack)
-- Python (3.10)
+- Python (3.12)
 - Node (20.11.0 LTS)
 - NPM (10.2.4)
 
 ## Deployment
 
-- Django-Container (2.0.1)
+- Django-Container (3.0.2)
 - Vite (7.3.x)
 
 ## Development
