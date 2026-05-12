@@ -25,6 +25,7 @@ setup(
     include_package_data=True,
     install_requires=[
         "django~=5.2",
+        'psycopg[c]',
     ],
     license="Apache License, Version 2.0",
     description="",
