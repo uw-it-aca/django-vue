@@ -17,11 +17,23 @@ export default defineConfig({
         // list all entry points
         "./app_name_vue/main.js",
       ],
+      output: {
+        // optimize css asset file names (remove hash) for better Clarity caching
+        assetFileNames: (assetInfo) => {
+          const prefix = "app_name/assets/";
+          const name = assetInfo.names?.[0] ?? "";
+          if (name.endsWith(".css")) {
+            return `${prefix}[name][extname]`;
+          }
+          return `${prefix}[name]-[hash][extname]`;
+        },
+      },
     },
     outDir: "./app_name/static/", // relative path to django's static directory
     assetsDir: "app_name/assets", // default ('assets')... this is the namespaced subdirectory of outDir that vite uses
-    emptyOutDir: false, // set to false to ensure favicon is not overwritten
+    emptyOutDir: true,
   },
+  publicDir: "app_name_vue/public", // Vite will copy contents to outDir
   base: "/static/", // allows for proper css url path creation during the build process
 
   // MARK: standard vite/vue plugin and resolver config

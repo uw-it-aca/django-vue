@@ -57,12 +57,12 @@ def vite_styles(*entries_names):
 
     Usage::
 
-        {% vite_styles 'main.js' 'other-entry.js' %}
+        {% vite_styles 'app_name_vue/main.js' %}
 
     Examples::
         <head>
             ...
-            {% vite_styles 'main.js' 'other-entry.js' %}
+            {% vite_styles 'app_name_vue/main.js' %}
         </head>
     """
     _, styles = vite_manifest(entries_names)
@@ -81,12 +81,12 @@ def vite_scripts(*entries_names):
 
     Usage::
 
-        {% vite_scripts 'main.js' 'other-entry.js' %}
+        {% vite_scripts 'app_name_vue/main.js' %}
 
     Examples::
         <body>
-            <!-- Your HTML -->
-            {% vite_scripts 'main.js' 'other-entry.js' %}
+            ...
+            {% vite_scripts 'app_name_vue/main.js' %}
         </body>
     """
     scripts, _ = vite_manifest(entries_names)

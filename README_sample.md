@@ -80,6 +80,24 @@ Run unittest
 
         $ docker-compose run --rm app bin/python manage.py test
 
+### Python Virtual Environments (venv)
+
+Create environment
+
+        $ python3 -m venv .venv
+
+Activate
+
+        $ source .venv/bin/activate
+
+Intall packages
+
+        $ pip install -r requirements.txt
+
+Deactivate
+
+        $ deactive
+
 ## Authors
 
 [Academic Experience Design & Delivery](https://github.com/uw-it-aca)
