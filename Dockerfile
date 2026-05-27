@@ -24,7 +24,7 @@ COPY . /app/
 ARG VUE_DEVTOOLS
 ENV VUE_DEVTOOLS=$VUE_DEVTOOLS
 ARG ENV
-ARG ENV=$ENV
+ENV ENV=$ENV
 RUN npm run build
 
 FROM app-prebundler-container AS app-container
