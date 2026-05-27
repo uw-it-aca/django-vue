@@ -5,6 +5,8 @@ services:
     build:
       context: .
       target: app-container
+      args:
+        - ENV=localdev
     restart: always
     container_name: app_name_app
     environment:
