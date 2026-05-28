@@ -26,6 +26,8 @@ export default defineConfig(({ mode }) => {
           "./app_name_vue/main.js",
         ],
         output: {
+          // Include source maps in the manifest for local development, but not in production
+          sourcemapExcludeSources: false,
           // optimize css asset file names (remove hash) for better Clarity caching
           assetFileNames: (assetInfo) => {
             const prefix = "app_name/assets/";
