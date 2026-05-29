@@ -129,7 +129,7 @@ jobs:
           docker run -u root -t
           -v ${PWD}:/coverage
           -e DJANGO_APP="$DJANGO_APP"
-          -e "ENV=localdev
+          -e "ENV=localdev"
           app-test-container
           bash -c ". ./docker/test.sh"
 
