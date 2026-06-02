@@ -191,7 +191,6 @@ jobs:
 #          echo "High or critical vulnerabilities found!"
 #          cat ${{ steps.vuln-scan.outputs.results_file }}
 #          exit 1
-#         parallel-finished: true
 
 #      - name: Push Image to Repository
 #        if: github.event_name == 'push'
