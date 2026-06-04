@@ -5,7 +5,6 @@ import { defineConfig, loadEnv } from "vite";
 // https://vitejs.dev/config/
 // FIX 1: Changed to an arrow function so you can declare variables inside
 export default defineConfig(({ mode }) => {
-
   // MARK: start vite build config
   // vite creates a manifest and assets during the build process (local and prod)
   // django collectstatics will put assets in '/static/app_name/assets'
