@@ -66,6 +66,14 @@ jobs:
 
     needs: context
 
+    permissions:
+      contents: read
+      security-events: write
+      # Coveralls may or may not need the following permissions
+      # pull-requests: write    # For PR comments
+      # statuses: write        # For commit status updates
+      # checks: write          # For check runs
+
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v6
@@ -108,25 +116,22 @@ jobs:
       - name: Build Test Image
         uses: docker/build-push-action@v7
         with:
-          context: .
           target: app-test-container
-          tags: app-test-container:latest
+          tags: app-test-container
           push: false
           load: true
-          cache-from: type=local,src=/tmp/.buildx-cache
-          cache-to: type=local,dest=/tmp/.buildx-cache
 
       # Run Python Tests
       - name: Run Tests in Image
         id: tests
         shell: bash
-        run: |
-          docker run --rm -u root -t \
-            -v "${PWD}:/coverage" \
-            -e "DJANGO_APP=${DJANGO_APP}" \
-            -e "ENV=localdev" \
-            app-test-container:latest \
-            bash -c ". ./docker/test.sh"
+        run: >-
+          docker run --rm -u root -t
+          -v "${PWD}:/coverage"
+          -e DJANGO_APP="$DJANGO_APP"
+          -e "ENV=localdev"
+          app-test-container
+          bash -c ". ./docker/test.sh"
 
       # Run Python Coverage and Upload to Coveralls
       - name: Run Python Coverage and Upload to Coveralls
@@ -168,6 +173,25 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           parallel-finished: true
+
+      # Trivy vulnerability scan of built image
+      - name: Run vulnerability scan
+        id: vuln-scan
+        uses: uw-it-aca/actions/container-vuln-scan@main
+        with:
+          image_tag: ${{ needs.context.outputs.image_tag }}
+          severity: 'HIGH,CRITICAL'
+
+      # Fail on vulnerabilities (optional step)
+#      - name: Fail on vulnerabilities (optional step)
+#        # Remove this entire block if you don't want to fail the build
+#        if: steps.vuln-scan.outputs.vulnerabilities_found == 'true'
+#        shell: bash
+#        run: |
+#          echo "High or critical vulnerabilities found!"
+#          cat ${{ steps.vuln-scan.outputs.results_file }}
+#          exit 1
+
 #      - name: Push Image to Repository
 #        if: github.event_name == 'push'
 #        uses: uw-it-aca/actions/gcr-push@main
