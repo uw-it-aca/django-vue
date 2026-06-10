@@ -1,0 +1,2 @@
+# Optional: Django HTML template formatter for VS Code (monosans.djlint extension)
+djlint==1.36.4
