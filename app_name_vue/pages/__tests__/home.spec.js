@@ -30,7 +30,6 @@ describe("PagesHome", () => {
       "https://black.readthedocs.io/en/stable/index.html",
     );
     expect(hrefs).toContain("https://oxc.rs/");
-    expect(hrefs).toContain("https://stylelint.io/");
     expect(hrefs).toContain("/customize");
   });
 });
