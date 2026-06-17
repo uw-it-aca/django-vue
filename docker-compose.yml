@@ -6,35 +6,35 @@ services:
       target: app-container
       args:
         - ENV=localdev
-    restart: always
     container_name: app_name_app
+    volumes:
+      - ./app_name:/app/app_name
     environment:
       ENV: localdev
       GOOGLE_ANALYTICS_KEY: "${GOOGLE_ANALYTICS_KEY}"
       CLARITY_PROJECT_ID: "${CLARITY_PROJECT_ID}"
-    volumes:
-      - ./app_name:/app/app_name
     ports:
       - "${RUNSERVER_PORT:-8000}:8000"
+    restart: always
     stdin_open: true
     tty: true
   node-bundler:
     build:
       context: .
       target: node-bundler
-    restart: always
     container_name: app_name_node
-    ports:
-      - "${BUNDLE_ANALYZER_PORT:-8888}:8888" # Required when environment.BUNDLE_ANALYZER is true
+    volumes:
+      - ./app_name:/app/app_name # expose main django app so vite can output bundles here
+      - ./app_name_vue:/app/app_name_vue
     environment:
       NODE_ENV: development
       ENV: localdev
       VUE_DEVTOOLS: "True"
       BUNDLE_ANALYZER: "True"
-    volumes:
-      - ./app_name:/app/app_name # expose main django app so vite can output bundles here
-      - ./app_name_vue:/app/app_name_vue
+    ports:
+      - "${BUNDLE_ANALYZER_PORT:-8888}:8888" # Required when environment.BUNDLE_ANALYZER is true
     command: npm run watch
+    restart: always
     stdin_open: true
     tty: true
 volumes:
