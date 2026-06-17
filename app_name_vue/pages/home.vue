@@ -25,7 +25,7 @@
           <p>Download the following:</p>
           <ul>
             <li>
-              <a href="https://www.docker.com" target="_blank">Docker </a>
+              <a href="https://www.docker.com" target="_blank">Docker</a>
             </li>
             <li><a href="https://nodejs.org/en" target="_blank">Node</a></li>
           </ul>
@@ -63,25 +63,42 @@
                 target="_blank"
                 >Django Test Client</a
               >
+              (back-end)
             </li>
             <li>
               <a href="https://test-utils.vuejs.org/" target="_blank"
                 >Vue Test Utils</a
               >
-              with
-              <a href="https://vitest.dev/" target="_blank">Vitest</a> (test
-              runner)
+              /
+              <a href="https://vitest.dev/" target="_blank">Vitest</a>
+              (front-end)
             </li>
           </ul>
 
-          <h2>Linting/Formatting (code quality)</h2>
+          <h2>Linting</h2>
           <ul>
             <li>
-              <a
+              <a href="https://docs.astral.sh/ruff/" target="_blank">Ruff</a>
+              or <a
                 href="https://pycodestyle.pycqa.org/en/latest/index.html"
                 target="_blank"
                 >Pycodestyle</a
               >
+              (Python)
+            </li>
+            <li>
+              <a href="https://djlint.com/" target="_blank">djLint</a> (Django)
+            </li>
+            <li>
+              <a href="https://oxc.rs/" target="_blank">Oxlint</a>
+              (Vue/ES6)
+            </li>
+          </ul>
+
+          <h2>Formatting</h2>
+          <ul>
+            <li>
+              <a href="https://docs.astral.sh/ruff/" target="_blank">Ruff</a>
               or
               <a
                 href="https://black.readthedocs.io/en/stable/index.html"
@@ -91,12 +108,15 @@
               (Python)
             </li>
             <li>
-              <a href="https://oxc.rs/" target="_blank">OXC</a>
-              (HTML/Javascript)
+              <a href="https://djlint.com/" target="_blank">djLint</a> (Django)
             </li>
             <li>
-              <a href="https://stylelint.io/" target="_blank">Stylelint</a>
-              (CSS)
+              <a
+                href="https://oxc.rs/docs/guide/usage/formatter.html"
+                target="_blank"
+                >Oxfmt</a
+              >
+              (HTML/CSS/JavaScript)
             </li>
           </ul>
         </div>

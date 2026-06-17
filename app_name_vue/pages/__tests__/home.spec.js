@@ -13,6 +13,7 @@ describe("PagesHome", () => {
     const wrapper = mount(PagesHome);
     const links = wrapper.findAll("a");
     const hrefs = links.map((link) => link.attributes("href"));
+    expect(hrefs).toContain("https://github.com/uw-it-aca/django-vue");
     expect(hrefs).toContain("https://www.docker.com");
     expect(hrefs).toContain("https://nodejs.org/en");
     expect(hrefs).toContain("https://www.djangoproject.com/");
@@ -23,14 +24,18 @@ describe("PagesHome", () => {
     );
     expect(hrefs).toContain("https://test-utils.vuejs.org/");
     expect(hrefs).toContain("https://vitest.dev/");
+    expect(hrefs).toContain("https://docs.astral.sh/ruff/");
     expect(hrefs).toContain(
       "https://pycodestyle.pycqa.org/en/latest/index.html",
     );
+    expect(hrefs).toContain("https://djlint.com/");
+    expect(hrefs).toContain("https://oxc.rs/");
     expect(hrefs).toContain(
       "https://black.readthedocs.io/en/stable/index.html",
     );
-    expect(hrefs).toContain("https://oxc.rs/");
-    expect(hrefs).toContain("https://stylelint.io/");
+    expect(hrefs).toContain(
+      "https://oxc.rs/docs/guide/usage/formatter.html",
+    );
     expect(hrefs).toContain("/customize");
   });
 });

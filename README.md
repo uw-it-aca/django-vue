@@ -14,7 +14,7 @@ This is a template repository used for creating Django-Vue applications. Use thi
 
 ## Deployment
 
-- Django-Container (3.0.2)
+- Django-Container (3.1.1)
 - Vite (7.3.x)
 
 ## Development
