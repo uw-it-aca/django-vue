@@ -5,38 +5,6 @@
 
 This is a template repository used for creating Django-Vue applications. Use this template to create a new project repository.
 
-## System Requirements
-
-- Docker (via Docker Desktop or Orbstack)
-- Python (3.12)
-- Node (20.11.0 LTS)
-- NPM (10.2.4)
-
-## Deployment
-
-- Django-Container (3.1.1)
-- Vite (7.3.x)
-
-## Development
-
-- Django (5.x)
-- Vue (3.5.x)
-
-## Design
-
-- Bootstrap (5.3.x)
-- Bootstrap Icons (1.9.1)
-
-## Testing
-
-- Vitest (4.0.x)
-- Vue Test Utils (2.4.x)
-
-## Linting/Formatting (code quality)
-- Pycodestyle (2.8.x)
-- Biome (2.3.x)
-- Stylelint (14.7.x)
-
 ## Cloning
 
 Clone this template repo as a new repo (command line)
