@@ -1,0 +1,167 @@
+name: Post-Template Initialization
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  initialize-project:
+    if: github.repository != 'uw-it-aca/django-vue'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    env:
+      # ---------------------------------------------------------------
+      # SET YOUR APP NAME HERE before pushing to main.
+      # This value replaces all instances of 'app_name' in the project.
+      # ---------------------------------------------------------------
+      APP_NAME: app_name
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Determine App Name
+        id: app-name
+        run: |
+          NEW_NAME="${{ env.APP_NAME }}"
+          if [ "$NEW_NAME" = "app_name" ] || [ -z "$NEW_NAME" ]; then
+            echo "⚠️  APP_NAME is still set to the default 'app_name'."
+            echo "Edit .github/workflows/init.yml and set APP_NAME before pushing."
+            exit 1
+          fi
+          # Derive a PascalCase version for class names (e.g. cool_app -> CoolApp)
+          PASCAL_NAME="$(echo "$NEW_NAME" | sed -r 's/(^|_)([a-z])/\U\2/g')"
+
+          echo "name=$NEW_NAME" >> "$GITHUB_OUTPUT"
+          echo "pascal_name=$PASCAL_NAME" >> "$GITHUB_OUTPUT"
+          echo "App name resolved to: $NEW_NAME (class prefix: $PASCAL_NAME)"
+
+      - name: Rename Directories Containing 'app_name'
+        run: |
+          NEW_NAME="${{ steps.app-name.outputs.name }}"
+          OLD_NAME="app_name"
+
+          # Rename directories (deepest first to avoid path conflicts)
+          find . -depth -type d -name "*${OLD_NAME}*" \
+            ! -path "./.git/*" \
+            | while read -r dir; do
+            new_dir="$(echo "$dir" | sed "s|$OLD_NAME|$NEW_NAME|g")"
+            echo "Renaming dir: $dir → $new_dir"
+            mv "$dir" "$new_dir"
+          done
+
+      - name: Update Docker Files
+        run: |
+          NEW_NAME="${{ steps.app-name.outputs.name }}"
+          OLD_NAME="app_name"
+
+          for file in Dockerfile docker-compose.yml; do
+            if [ -f "$file" ]; then
+              sed -i "s|$OLD_NAME|$NEW_NAME|g" "$file"
+              echo "Updated '$file'"
+            else
+              echo "'$file' not found — skipping."
+            fi
+          done
+
+      - name: Update Vite Config
+        run: |
+          NEW_NAME="${{ steps.app-name.outputs.name }}"
+          OLD_NAME="app_name"
+
+          for file in vite.config.js vitest.config.js; do
+            if [ -f "$file" ]; then
+              sed -i "s|$OLD_NAME|$NEW_NAME|g" "$file"
+              echo "Updated '$file'"
+            else
+              echo "'$file' not found — skipping."
+            fi
+          done
+
+      - name: Update Django Files
+        run: |
+          NEW_NAME="${{ steps.app-name.outputs.name }}"
+          PASCAL_NAME="${{ steps.app-name.outputs.pascal_name }}"
+          OLD_NAME="app_name"
+          OLD_PASCAL="AppName"
+
+          # Update all Python files referencing 'app_name' (settings, urls,
+          # apps.py, setup.py, views, templatetags, tests, etc.). App-package
+          # files may live under the renamed directory, so locate them by content.
+          grep -rl "$OLD_NAME" . --include="*.py" \
+            --exclude-dir=".git" \
+            | while read -r file; do
+            sed -i "s|$OLD_NAME|$NEW_NAME|g" "$file"
+            echo "Updated '$file'"
+          done
+
+          # Update PascalCase class names/references (e.g. AppNameConfig -> CoolAppConfig)
+          grep -rl "$OLD_PASCAL" . --include="*.py" \
+            --exclude-dir=".git" \
+            | while read -r file; do
+            sed -i "s|$OLD_PASCAL|$PASCAL_NAME|g" "$file"
+            echo "Updated class references in '$file'"
+          done
+
+      - name: Update .gitignore
+        run: |
+          NEW_NAME="${{ steps.app-name.outputs.name }}"
+          OLD_NAME="app_name"
+
+          if [ -f ".gitignore" ]; then
+            sed -i "s|$OLD_NAME|$NEW_NAME|g" .gitignore
+            echo "Updated '.gitignore'"
+          else
+            echo "'.gitignore' not found — skipping."
+          fi
+
+      - name: Replace 'app_name' in Remaining File Contents
+        run: |
+          NEW_NAME="${{ steps.app-name.outputs.name }}"
+          OLD_NAME="app_name"
+
+          # Replace in all other files, excluding already-handled files
+          grep -rl "$OLD_NAME" . \
+            --exclude-dir=".git" \
+            --exclude=".github/workflows/cicd.yml" \
+            --exclude=".github/workflows/init.yml" \
+            --exclude="Dockerfile" \
+            --exclude="docker-compose.yml" \
+            --exclude="vite.config.js" \
+            --exclude=".gitignore" \
+            | xargs sed -i "s|$OLD_NAME|$NEW_NAME|g"
+
+          echo "Replaced all remaining '$OLD_NAME' references with '$NEW_NAME'."
+
+      - name: Update README
+        run: |
+          NEW_NAME="${{ steps.app-name.outputs.name }}"
+          OLD_NAME="app_name"
+
+          if [ -f "README_sample.md" ]; then
+            # Replace 'app_name' in README_sample.md
+            sed -i "s|$OLD_NAME|$NEW_NAME|g" README_sample.md
+
+            # Replace README.md with the updated sample
+            mv README_sample.md README.md
+            echo "Replaced README.md with updated README_sample.md"
+          else
+            echo "'README_sample.md' not found — skipping."
+          fi
+
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "chore: initialize repository from template"
+          git push
+
+      - name: Self-Destruct Workflow
+        run: |
+          git rm .github/workflows/init.yml
+          git commit -m "chore: remove post-init template workflow"
+          git push
