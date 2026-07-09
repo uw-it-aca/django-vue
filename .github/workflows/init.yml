@@ -53,7 +53,7 @@ jobs:
             mv "$dir" "$new_dir"
           done
 
-      - name: Update Docker Files
+      - name: Update Docker and Docker Compose Files
         run: |
           NEW_NAME="${{ steps.app-name.outputs.name }}"
           OLD_NAME="app_name"
@@ -77,6 +77,7 @@ jobs:
           # Update all Python files referencing 'app_name' (settings, urls,
           # apps.py, setup.py, views, templatetags, tests, etc.). App-package
           # files may live under the renamed directory, so locate them by content.
+          # This affects files inside "/docker" and "/cool_app" (newly renamed directory).
           grep -rl "$OLD_NAME" . --include="*.py" \
             --exclude-dir=".git" \
             | while read -r file; do
