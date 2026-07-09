@@ -67,21 +67,7 @@ jobs:
             fi
           done
 
-      - name: Update Vite Config
-        run: |
-          NEW_NAME="${{ steps.app-name.outputs.name }}"
-          OLD_NAME="app_name"
-
-          for file in vite.config.js vitest.config.js; do
-            if [ -f "$file" ]; then
-              sed -i "s|$OLD_NAME|$NEW_NAME|g" "$file"
-              echo "Updated '$file'"
-            else
-              echo "'$file' not found — skipping."
-            fi
-          done
-
-      - name: Update Django Files
+      - name: Update Python and Django Files
         run: |
           NEW_NAME="${{ steps.app-name.outputs.name }}"
           PASCAL_NAME="${{ steps.app-name.outputs.pascal_name }}"
@@ -106,24 +92,28 @@ jobs:
             echo "Updated class references in '$file'"
           done
 
-      - name: Update .gitignore
+      - name: Update root-level Vite and Vitest configs
         run: |
           NEW_NAME="${{ steps.app-name.outputs.name }}"
           OLD_NAME="app_name"
 
-          if [ -f ".gitignore" ]; then
-            sed -i "s|$OLD_NAME|$NEW_NAME|g" .gitignore
-            echo "Updated '.gitignore'"
-          else
-            echo "'.gitignore' not found — skipping."
-          fi
+          for file in vite.config.js vitest.config.js; do
+            if [ -f "$file" ]; then
+              sed -i "s|$OLD_NAME|$NEW_NAME|g" "$file"
+              echo "Updated '$file'"
+            else
+              echo "'$file' not found — skipping."
+            fi
+          done
 
-      - name: Replace 'app_name' in Remaining File Contents
+      - name: Replace 'app_name' in Remaining root-level Files
         run: |
           NEW_NAME="${{ steps.app-name.outputs.name }}"
           OLD_NAME="app_name"
 
-          # Replace in all other files, excluding already-handled files
+          # Replace in all other files, excluding already-handled files.
+          # This includes files like .gitignore, .coveragerc, MANIFEST.in, and package.json
+          # that reference 'app_name'.
           grep -rl "$OLD_NAME" . \
             --exclude-dir=".git" \
             --exclude=".github/workflows/cicd.yml" \
@@ -131,7 +121,7 @@ jobs:
             --exclude="Dockerfile" \
             --exclude="docker-compose.yml" \
             --exclude="vite.config.js" \
-            --exclude=".gitignore" \
+            --exclude="vitest.config.js" \
             | xargs sed -i "s|$OLD_NAME|$NEW_NAME|g"
 
           echo "Replaced all remaining '$OLD_NAME' references with '$NEW_NAME'."
