@@ -1,11 +1,13 @@
 # Copyright 2026 UW-IT, University of Washington
 # SPDX-License-Identifier: Apache-2.0
 
-import re
 import json
+import re
+from unittest.mock import mock_open, patch
+
 from django.test import TestCase, override_settings
-from unittest.mock import patch, mock_open
-from app_name.templatetags.vite import vite_styles, vite_scripts
+
+from app_name.templatetags.vite import vite_scripts, vite_styles
 
 
 class ViteTestClass(TestCase):
