@@ -10,9 +10,9 @@ See the README on `GitHub
 # The VERSION file is created by travis-ci, based on the tag name
 version_path = "app_name/VERSION"
 print(os.path.join(os.path.dirname(__file__), version_path))
-VERSION = open(os.path.join(os.path.dirname(__file__), version_path)).read()
-VERSION = VERSION.replace("\n", "")
-
+version_file = os.path.join(os.path.dirname(__file__), version_path)
+with open(version_file, encoding="utf-8") as f:
+    VERSION = f.read().strip()
 # allow setup.py to be run from any path
 os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
