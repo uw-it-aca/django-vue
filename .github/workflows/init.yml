@@ -7,7 +7,9 @@ on:
 
 jobs:
   initialize-project:
-    if: github.repository != 'uw-it-aca/django-vue'
+    if: >-
+      github.repository != 'uw-it-aca/django-vue' &&
+      github.event.before == '0000000000000000000000000000000000000000'
     runs-on: ubuntu-latest
     permissions:
       contents: write
