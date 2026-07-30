@@ -18,6 +18,7 @@ jobs:
       # ---------------------------------------------------------------
       # SET YOUR APP NAME HERE before pushing to main.
       # This value replaces all instances of 'app_name' in the project.
+      # Use Django naming conventions with underscores (e.g. 'app_name' -> 'app_name')
       # ---------------------------------------------------------------
       APP_NAME: app_name
 
