@@ -7,7 +7,9 @@ on:
 
 jobs:
   initialize-project:
-    if: github.repository != 'uw-it-aca/django-vue'
+    if: >-
+      github.repository != 'uw-it-aca/django-vue' &&
+      github.event.before == '0000000000000000000000000000000000000000'
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -16,6 +18,7 @@ jobs:
       # ---------------------------------------------------------------
       # SET YOUR APP NAME HERE before pushing to main.
       # This value replaces all instances of 'app_name' in the project.
+      # Use Django naming conventions with underscores (e.g. 'app_name' -> 'app_name')
       # ---------------------------------------------------------------
       APP_NAME: app_name
 
@@ -44,11 +47,18 @@ jobs:
           NEW_NAME="${{ steps.app-name.outputs.name }}"
           OLD_NAME="app_name"
 
-          # Rename directories (deepest first to avoid path conflicts)
+          # Rename directories (deepest first to avoid path conflicts).
+          # Only replace app_name in the directory's basename, not the
+          # full path, so that nested matches (e.g.
+          # app_name_vue/public/app_name/img) don't produce an invalid
+          # target path before parent directories have been renamed.
           find . -depth -type d -name "*${OLD_NAME}*" \
             ! -path "./.git/*" \
             | while read -r dir; do
-            new_dir="$(echo "$dir" | sed "s|$OLD_NAME|$NEW_NAME|g")"
+            parent="$(dirname "$dir")"
+            base="$(basename "$dir")"
+            new_base="$(echo "$base" | sed "s|$OLD_NAME|$NEW_NAME|g")"
+            new_dir="${parent}/${new_base}"
             echo "Renaming dir: $dir → $new_dir"
             mv "$dir" "$new_dir"
           done
