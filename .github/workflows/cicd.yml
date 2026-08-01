@@ -47,6 +47,9 @@ on:
 
 jobs:
   context:
+    if: >-
+      github.event_name == 'pull_request' ||
+      github.event.before != '0000000000000000000000000000000000000000'
     runs-on: ubuntu-24.04
 
     outputs:
