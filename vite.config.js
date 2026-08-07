@@ -1,5 +1,6 @@
 import { fileURLToPath, URL } from "node:url";
-import vue from "@vitejs/plugin-vue";
+import Vue from "@vitejs/plugin-vue";
+import VueRouter from "vue-router/vite";
 import { defineConfig, loadEnv } from "vite";
 
 // https://vitejs.dev/config/
@@ -46,7 +47,12 @@ export default defineConfig(({ mode }) => {
     base: "/static/", // allows for proper css url path creation during the build process
 
     // MARK: standard vite/vue plugin and resolver config
-    plugins: [vue()],
+    plugins: [
+      VueRouter({
+        routesFolder: "app_name_vue/pages",
+      }),
+      Vue(),
+    ],
     resolve: {
       alias: {
         "@": fileURLToPath(new URL("./app_name_vue", import.meta.url)),
