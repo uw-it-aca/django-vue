@@ -42,8 +42,7 @@ const contextStore = useContextStore();
 // bootstrap-vue-next
 app.use(createBootstrap());
 
-// vue-router
-app.use(router);
+
 
 /*
 // vue-gtag-next
@@ -65,4 +64,6 @@ app.use(VueGtag, {
 // microsoft clarity
 Clarity.init(contextStore.context.clarityProjectId);
 
+// vue-router
+app.use(router);
 app.mount("#app");

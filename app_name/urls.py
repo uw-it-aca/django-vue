@@ -26,8 +26,11 @@ if settings.DEBUG:
     ]
 
 urlpatterns += [
-    # add api endpoints here
-    # add default Vue page routes here
-    re_path(r"^(customize|page2|page3)$", DefaultPageView.as_view()),
-    re_path(r"^$", DefaultPageView.as_view(), name="index"),
+
+    # add API endpoints here
+    # re_path(r'^api/v1/user_pref/$',SomeThing.as_view(), name='user-pref'),
+
+    # Vue SPA catch-all: serves index.html for any route not matched above.
+    # Vue Router (with file-based auto-routing) handles client-side navigation.
+    re_path(r"^.*$", DefaultPageView.as_view(), name="vue-spa"),
 ]

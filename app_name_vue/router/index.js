@@ -1,13 +1,11 @@
 import { createRouter, createWebHistory } from "vue-router";
-
-// vue-gtag-next track routing
-// import { trackRouter } from "vue-gtag-next";
+import { routes, handleHotUpdate } from "vue-router/auto-routes";
 
 import Customize from "@/pages/customize.vue";
-// page components
 import Home from "@/pages/home.vue";
 
-const routes = [
+// manually routes (old way)
+const manualRoutes = [
   {
     path: "/",
     name: "Home",
@@ -23,10 +21,10 @@ const routes = [
 
 const router = createRouter({
   history: createWebHistory(),
-  routes,
+  routes: [...manualRoutes, ...routes],
 });
 
-// add router tracking to vue-gtag-next
-// trackRouter(router);
-
+if (import.meta.hot) {
+  handleHotUpdate(router);
+}
 export default router;
