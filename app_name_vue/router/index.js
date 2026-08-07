@@ -4,7 +4,7 @@ import { routes, handleHotUpdate } from "vue-router/auto-routes";
 import Customize from "@/pages/customize.vue";
 import Home from "@/pages/home.vue";
 
-// manually routes (old way)
+// manually added routes (old way)
 const manualRoutes = [
   {
     path: "/",
