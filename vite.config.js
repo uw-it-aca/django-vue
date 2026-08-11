@@ -2,6 +2,7 @@ import { fileURLToPath, URL } from "node:url";
 import Vue from "@vitejs/plugin-vue";
 import VueRouter from "vue-router/vite";
 import { defineConfig, loadEnv } from "vite";
+import vueRouteManifest from "./vite-plugin-vue-route-manifest.js";
 
 // https://vitejs.dev/config/
 // FIX 1: Changed to an arrow function so you can declare variables inside
@@ -52,6 +53,10 @@ export default defineConfig(({ mode }) => {
         routesFolder: "app_name_vue/pages",
       }),
       Vue(),
+      vueRouteManifest({
+        pagesDir: "app_name_vue/pages",
+        outputPath: "app_name/static/app_name/vue-routes.json",
+      }),
     ],
     resolve: {
       alias: {
