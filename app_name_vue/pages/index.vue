@@ -1,4 +1,4 @@
-// home.vue
+// index.vue
 
 <template>
   <DefaultLayout :page-title="pageTitle">
