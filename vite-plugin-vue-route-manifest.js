@@ -12,7 +12,7 @@ import path from "node:path";
  * Note: picking up newly added/removed pages under `vite build --watch` also
  * requires restarting the whole Vite process, since vue-router's file-based
  * routing plugin only scans app_name_vue/pages once per process lifetime in
- * watch mode. See tools/watch-with-restart.mjs, used by `npm run watch`,
+ * watch mode. See tools/watch-with-restart.js, used by `npm run watch`,
  * which handles that restart.
  *
  * @param {object} options
