@@ -15,7 +15,7 @@
   "type": "module",
   "scripts": {
     "build": "vite build",
-    "watch": "node tools/watch-with-restart.mjs",
+    "watch": "node tools/watch-with-restart.js",
     "test": "vitest --environment jsdom",
     "coverage": "vitest run --coverage",
     "lighthouse": "lhci collect",
