@@ -31,7 +31,7 @@
     "@vueuse/core": "^14.4.0",
     "bootstrap": "^5.3.8",
     "bootstrap-icons": "^1.13.1",
-    "bootstrap-vue-next": "^0.46.0",
+    "bootstrap-vue-next": "^1.0.0",
     "pinia": "^3.0.4",
     "solstice-theme": "github:uw-it-aca/solstice-theme#1.0.7",
     "solstice-vue": "github:uw-it-aca/solstice-vue#1.1.8",
@@ -44,17 +44,17 @@
   "devDependencies": {
     "@lhci/cli": "^0.15.1",
     "@vitejs/plugin-vue": "^6.0.8",
-    "@vitest/coverage-v8": "^4.1.10",
+    "@vitest/coverage-v8": "^4.1.11",
     "@vue/test-utils": "^2.4.11",
     "chokidar": "^5.0.0",
     "coveralls": "^3.1.1",
     "dotenv": "^17.4.2",
     "jsdom": "^29.1.1",
     "oxfmt": "^0.58.0",
-    "oxlint": "^1.78.0",
-    "sass": "^1.102.0",
+    "oxlint": "^1.79.0",
+    "sass": "^1.103.0",
     "typescript": "~5.8.3",
-    "vite": "^8.2.1",
-    "vitest": "^4.1.10"
+    "vite": "^8.2.2",
+    "vitest": "^4.1.11"
   }
 }
