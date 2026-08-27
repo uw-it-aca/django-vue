@@ -1,33 +1,27 @@
 import { fileURLToPath, URL } from "node:url";
-import vue from "@vitejs/plugin-vue";
+import Vue from "@vitejs/plugin-vue";
+import VueRouter from "vue-router/vite";
 import { defineConfig, loadEnv } from "vite";
+import vueRouteManifest from "./vite-plugin-vue-route-manifest.js";
 
 // https://vitejs.dev/config/
-// FIX 1: Changed to an arrow function so you can declare variables inside
+// Using the function form of defineConfig to access the current mode (development/production)
+// and configure environment-dependent options like source maps.
 export default defineConfig(({ mode }) => {
-  // MARK: start vite build config
-  // vite creates a manifest and assets during the build process (local and prod)
-  // django collectstatics will put assets in '/static/app_name/assets'
-  // django will put the manifest in '/static/.vite/manifest.json'
-  // vite manifest prefaces all files with the path 'app_name/assets/xxxx'
-
-  const env = loadEnv(mode, process.cwd(), ""); // load all env vars (including custom ones without the VITE_ prefix)
+  const env = loadEnv(mode, process.cwd(), "");
   const isLocalDev = env.ENV === "localdev";
 
-  // FIX 2: Correctly return the configuration object from the function
   return {
     build: {
       manifest: true,
-      sourcemap: isLocalDev, // only generate source maps for local development
+      sourcemap: isLocalDev,
       rolldownOptions: {
         input: [
-          // list all entry points
           "./app_name_vue/main.js",
         ],
         output: {
-          // Include source maps in the manifest for local development, but not in production
           sourcemapExcludeSources: false,
-          // optimize css asset file names (remove hash) for better Clarity caching
+          // Remove hash from CSS filenames for better Clarity caching
           assetFileNames: (assetInfo) => {
             const prefix = "app_name/assets/";
             const name = assetInfo.names?.[0] ?? "";
@@ -38,15 +32,29 @@ export default defineConfig(({ mode }) => {
           },
         },
       },
-      outDir: "./app_name/static/", // relative path to django's static directory
-      assetsDir: "app_name/assets", // default ('assets')... this is the namespaced subdirectory of outDir that vite uses
+      // Build output goes to Django's static directory.
+      // Django collectstatic will serve assets at '/static/app_name/assets/'
+      // and the manifest at '/static/.vite/manifest.json'.
+      outDir: "./app_name/static/",
+      assetsDir: "app_name/assets",
       emptyOutDir: true,
     },
-    publicDir: "app_name_vue/public", // Vite will copy contents to outDir
-    base: "/static/", // allows for proper css url path creation during the build process
+    publicDir: "app_name_vue/public",
+    // Base path must match Django's STATIC_URL so CSS url() references resolve correctly
+    base: "/static/",
 
-    // MARK: standard vite/vue plugin and resolver config
-    plugins: [vue()],
+    plugins: [
+      VueRouter({
+        routesFolder: "app_name_vue/pages",
+      }),
+      Vue(),
+      // Generates a JSON manifest of Vue routes so Django can resolve
+      // client-side routes for server-side rendering or URL validation
+      vueRouteManifest({
+        pagesDir: "app_name_vue/pages",
+        outputPath: "app_name/static/app_name/vue-routes.json",
+      }),
+    ],
     resolve: {
       alias: {
         "@": fileURLToPath(new URL("./app_name_vue", import.meta.url)),
@@ -56,9 +64,9 @@ export default defineConfig(({ mode }) => {
       preprocessorOptions: {
         scss: {
           quietDeps: true,
-          silenceDeprecations: ["global-builtin", "import"], // silence bootstrap5 related deprecations
+          silenceDeprecations: ["global-builtin", "import"],
         },
       },
     },
-  }; // FIX 3: Removed the trailing syntax fragments and wrapped the object closure properly
+  };
 });
