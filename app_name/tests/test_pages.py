@@ -12,7 +12,7 @@ class PageTest(TestCase):
         DEBUG=True,
     )
     def test_page_context(self):
-        url = reverse("index")
+        url = reverse("vue-spa")
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
 
