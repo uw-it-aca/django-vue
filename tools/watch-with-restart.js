@@ -32,6 +32,9 @@ function startVite() {
   viteProcess = spawn("vite", ["build", "--watch", "--mode", "development"], {
     stdio: "inherit",
   });
+  viteProcess.on("error", (err) => {
+    console.error("[watch-with-restart] Failed to start vite:", err);
+  });
 
   viteProcess.on("exit", (code, signal) => {
     if (shuttingDown) return;
