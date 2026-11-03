@@ -54,6 +54,9 @@ function restartVite() {
   viteProcess = null;
   proc.once("exit", () => startVite());
   proc.kill("SIGTERM");
+  setTimeout(() => {
+    if (!proc.killed) proc.kill("SIGKILL");
+  }, 2000);
 }
 
 function scheduleRestart(reason) {
