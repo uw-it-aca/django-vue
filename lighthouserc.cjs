@@ -1,4 +1,6 @@
 // lighthouserc.cjs
+// Must use .cjs extension because @lhci/cli loads config with require(),
+// which cannot import ES modules in a "type": "module" project.
 require("dotenv").config();
 const port = process.env.RUNSERVER_PORT;
 

@@ -1,0 +1,7 @@
+[tool.ruff.lint]
+select = ["E", "F", "W", "ISC", "RUF"]
+
+[tool.ruff.lint.per-file-ignores]
+"*/migrations/*" = ["E501", "RUF012"]
+"*/models.py" = ["RUF012"]
+"*/schemas.py" = ["RUF012"]
